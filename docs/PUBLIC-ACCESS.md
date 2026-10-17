@@ -5,6 +5,10 @@
 
 These are authenticated TLS frontends on the LinuxONE VM. Nginx forwards to the existing loopback backends: Jupyter 38888 and application 8080. Both public endpoints were reached from the participant's computer with the certificate verified; see `evidence/public-connectivity.json`. A localhost SSH URL is also valid: it forwards to the same IBM VM and does not mean inference runs on the laptop.
 
+## If you see “plain HTTP request was sent to HTTPS port”
+
+Open the complete **https://148.100.99.173:8888/lab** address in Chrome. Port 8888 expects TLS. The proxy now redirects accidental plain HTTP requests on ports 8888/8443 to their fixed HTTPS addresses using status 308, rather than showing nginx's 400 page. The deployed configuration and successful HTTPS requests are checked in `evidence/http-https-redirect.json`. Enter credentials only after reaching verified HTTPS. If an embedded browser or network proxy still shows this error, open the exact HTTPS address directly in Chrome or use the documented SSH tunnel.
+
 ## Certificate trust
 
 The short-lived certificate is self-signed and expires on **24 October 2026**. Chrome will show a certificate warning. Before entering a token, inspect the certificate and verify this SHA-256 fingerprint:

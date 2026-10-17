@@ -37,6 +37,7 @@ http {
   server {
     listen 8888 ssl;
     server_name 148.100.99.173;
+    error_page 497 =308 https://148.100.99.173:8888$request_uri;
     client_max_body_size 20m;
     location / {
       proxy_pass http://127.0.0.1:38888;
@@ -52,6 +53,7 @@ http {
   server {
     listen 8443 ssl;
     server_name 148.100.99.173;
+    error_page 497 =308 https://148.100.99.173:8443$request_uri;
     location / {
       proxy_pass http://127.0.0.1:8080;
       proxy_http_version 1.1;
