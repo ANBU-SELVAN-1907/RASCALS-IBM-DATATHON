@@ -1,6 +1,6 @@
 # Demonstrate the actual deployed solution
 
-The public dashboard is at https://148.100.99.173:8443. Follow PUBLIC-ACCESS.md to verify its certificate manually, then use the private app token. Jupyter uses a different token at https://148.100.99.173:8888/lab. Neither token belongs in a video or public URL.
+The public dashboard is at https://148.100.99.173:8443. Follow PUBLIC-ACCESS.md to verify its certificate manually, then use the private app token. Jupyter uses a different token at https://148.100.99.173:38888/lab. Neither token belongs in a video or public URL.
 
 1. Show the assigned LinuxONE instance, then the executed notebook and its `s390x` output. In the dashboard's Evaluation evidence view, show the model version/hash and live containment properties. Explain that the browser is only a client.
 2. In Service overview, select **Database connection pressure** and **4x event-time replay**, then **Run scenario**. The fixed synthetic example lasts about 75 wall-clock seconds for five minutes of event time. Warmup and persistence intentionally delay the first alert.

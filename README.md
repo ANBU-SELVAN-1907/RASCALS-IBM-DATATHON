@@ -87,17 +87,17 @@ python scripts/validate_submission.py
 
 ## Open Jupyter and the dashboard
 
-Assigned VM: **https://148.100.99.173:8888/lab** for Jupyter and **https://148.100.99.173:8443** for the dashboard. Verify the short-lived certificate fingerprint in [public access](docs/PUBLIC-ACCESS.md) manually, then enter the appropriate private token. Both run on IBM LinuxONE. SSH is also supported:
+Assigned VM: **https://148.100.99.173:38888/lab** for Jupyter and **https://148.100.99.173:8443** for the dashboard. Verify the short-lived certificate fingerprint in [public access](docs/PUBLIC-ACCESS.md) manually, then enter the appropriate private token. Both run on IBM LinuxONE. SSH is also supported:
 
 ```powershell
-ssh -i "C:\path\to\your-key.pem" -N -o ExitOnForwardFailure=yes -L 127.0.0.1:8080:127.0.0.1:8080 -L 127.0.0.1:38888:127.0.0.1:38888 linux1@YOUR_VM_IP
+ssh -i "C:\path\to\your-key.pem" -N -o ExitOnForwardFailure=yes -L 127.0.0.1:8080:127.0.0.1:8080 -L 127.0.0.1:38888:127.0.0.1:38889 linux1@YOUR_VM_IP
 ```
 
 Open `http://127.0.0.1:8080` for the app, or `http://127.0.0.1:38888/lab` for Jupyter. Their tokens are different. On the VM, retrieve the app token with `sudo podman exec continuityguard cat /home/ibm-user/cg-state/.access-token`. Never publish a private key, token, state database or authenticated URL.
 
 ### Open your notebooks in Chrome
 
-1. Open **https://148.100.99.173:8888/lab**. This is Jupyter on the IBM VM.
+1. Open **https://148.100.99.173:38888/lab**. This is Jupyter on the IBM VM.
 2. Inspect the certificate and verify the fingerprint in [PUBLIC-ACCESS.md](docs/PUBLIC-ACCESS.md) before making the browser trust decision.
 3. Enter your **Jupyter token** in the **Password or token** box, then select **Log in**. The dashboard token is different. No new password is needed.
 4. In the left file browser open **shared > continuityguard > notebooks**. Open `01_train_and_evaluate.executed.ipynb` to view existing training results. Files ending `.executed.ipynb` retain outputs; the corresponding source notebooks are available for reruns.

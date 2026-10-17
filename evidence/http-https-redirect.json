@@ -1,5 +1,12 @@
 [
   {
+    "request": "http://148.100.99.173:38888/lab",
+    "status": 308,
+    "location": "https://148.100.99.173:38888/lab",
+    "https_final_status": 200,
+    "tls_certificate_verified": true
+  },
+  {
     "request": "http://148.100.99.173:8888/lab",
     "status": 308,
     "location": "https://148.100.99.173:8888/lab",

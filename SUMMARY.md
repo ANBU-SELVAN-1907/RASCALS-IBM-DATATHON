@@ -39,7 +39,7 @@ The assigned VM is `148.100.99.173`, native **s390x**, RHEL 9.8. Training kernel
 
 Public TLS access is also configured:
 
-- JupyterLab: **https://148.100.99.173:8888/lab**
+- JupyterLab: **https://148.100.99.173:38888/lab**
 - Dashboard: **https://148.100.99.173:8443**
 
 Read [certificate verification and access details](docs/PUBLIC-ACCESS.md) before entering credentials. The short-lived certificate is self-signed. Tokens are private and different for Jupyter and the app. Neither belongs in the repository or a recorded URL.

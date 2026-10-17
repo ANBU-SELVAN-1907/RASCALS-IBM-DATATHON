@@ -99,7 +99,7 @@ These are clearly labeled **synthetic illustrations** from the frozen v3 model. 
 if '## Output previews' not in s:s=s.replace('## Reproduce through LinuxONE Jupyter',previews+'## Reproduce through LinuxONE Jupyter')
 access='''### Open your notebooks in Chrome
 
-1. Open **https://148.100.99.173:8888/lab**. This is Jupyter on the IBM VM.
+1. Open **https://148.100.99.173:38888/lab**. This is Jupyter on the IBM VM.
 2. Inspect the certificate and verify the fingerprint in [PUBLIC-ACCESS.md](docs/PUBLIC-ACCESS.md) before making the browser trust decision.
 3. Enter your **Jupyter token** in the **Password or token** box, then select **Log in**. The dashboard token is different. No new password is needed.
 4. In the left file browser open **shared > continuityguard > notebooks**. Open `01_train_and_evaluate.executed.ipynb` to view existing training results. Files ending `.executed.ipynb` retain outputs; the corresponding source notebooks are available for reruns.
