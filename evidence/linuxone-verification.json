@@ -1,0 +1,53 @@
+{
+  "verified_utc": "2026-10-17T08:37:49.340300+00:00",
+  "image_id": "5fd741ab33d22e4e66054a2683805f415aa0cc6f509d75d74241cda89cc2aeca",
+  "architecture": "s390x",
+  "user": "1000",
+  "state": "running",
+  "health": "healthy",
+  "memory_limit_bytes": 2147483648,
+  "cpu_quota": 150000,
+  "cpu_period": 100000,
+  "readonly_rootfs": true,
+  "cap_drop": [
+    "CAP_CHOWN",
+    "CAP_DAC_OVERRIDE",
+    "CAP_FOWNER",
+    "CAP_FSETID",
+    "CAP_KILL",
+    "CAP_NET_BIND_SERVICE",
+    "CAP_SETFCAP",
+    "CAP_SETGID",
+    "CAP_SETPCAP",
+    "CAP_SETUID",
+    "CAP_SYS_CHROOT"
+  ],
+  "security_opt": [
+    "no-new-privileges"
+  ],
+  "network_mode": "host",
+  "health_response": {
+    "status": "ready",
+    "architecture": "s390x",
+    "model_version": "cg-2026-10-17-v2"
+  },
+  "audit": {
+    "valid": true,
+    "records": 84,
+    "head": "c27a59d158e83abc131fc53ab5b868660d727766ae4f11a14307f21f1acf3199",
+    "scope": "local hash chain; externally retain head to detect full-history replacement"
+  },
+  "explanation": {
+    "status": "complete",
+    "mode": "local Granite \u00b7 constrained generation",
+    "summary": "Review RB-POOL for batch-reporting. Observed measurements: Connection pool occupancy 78.7 % (E1); Memory occupancy 36.9 % (E4); Latency p95 291.3 ms (E5).",
+    "evidence_ids": [
+      "E1",
+      "E4"
+    ],
+    "runbook_id": "RB-POOL",
+    "completion_tokens": 86,
+    "elapsed_seconds": 21.73,
+    "scope": "Generation selects a verified wording under a strict evidence schema; no autonomous action."
+  }
+}

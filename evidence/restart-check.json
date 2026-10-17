@@ -1,0 +1,14 @@
+{
+  "verified_utc": "2026-10-17T08:39:15.860262+00:00",
+  "before_restart": {
+    "valid": true,
+    "records": 84,
+    "head": "c27a59d158e83abc131fc53ab5b868660d727766ae4f11a14307f21f1acf3199",
+    "scope": "local hash chain; externally retain head to detect full-history replacement"
+  },
+  "after_restart_records": 86,
+  "retained_prefix_head": "c27a59d158e83abc131fc53ab5b868660d727766ae4f11a14307f21f1acf3199",
+  "persisted": true,
+  "scope": "Original audit prefix retained. Model load adds a new record on restart. Live feature windows and browser sessions reset.",
+  "shutdown_note": "An open SSE connection exceeded Podman 10-second stop timeout; Podman forced termination. SQLite journal recovered and prefix survived."
+}

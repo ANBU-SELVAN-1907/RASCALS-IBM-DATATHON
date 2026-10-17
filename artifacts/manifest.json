@@ -1,0 +1,15 @@
+{
+  "version": "cg-2026-10-17-v2",
+  "trained_utc": "2026-10-17T08:23:49.312709+00:00",
+  "architecture": "s390x",
+  "model": "boosted_trees_7_leaves",
+  "forecast_horizon_seconds": 60,
+  "feature_count": 26,
+  "sha256": "98d7f1a718dd5529f4e838de13a7db2293f819791d50d1904910c5b94a2e8d7a",
+  "packages": {
+    "numpy": "2.0.2",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.13.1",
+    "joblib": "1.6.0"
+  }
+}

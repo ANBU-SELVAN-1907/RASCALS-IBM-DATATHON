@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+*.pem
+*.key
+state/
+.access-token
+*.sqlite*
+*.log
+.ipynb_checkpoints/
+*.tar.gz
+tmp/
+!requirements.lock.txt

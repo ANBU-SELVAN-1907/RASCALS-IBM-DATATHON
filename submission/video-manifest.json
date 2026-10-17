@@ -1,0 +1,51 @@
+{
+  "duration_seconds": 158.58,
+  "resolution": "1280x720",
+  "format": "H.264/AAC MP4",
+  "presentation": "Saved-evidence walkthrough, not continuous live capture",
+  "voice": "Microsoft Zira synthetic narration; no person impersonated",
+  "scenes": [
+    {
+      "scene": 1,
+      "title": "Protect time-critical digital services",
+      "seconds": 23.64,
+      "narration": "We are RASCALS. ContinuityGuard detects developing failures in hospital digital-service infrastructure. A shared database bottleneck can disrupt several dependent services. We give operators earlier warning, measured evidence and an inspectable next step. This walkthrough uses actual saved application screenshots and synthetic narration. All telemetry is simulated."
+    },
+    {
+      "scene": 2,
+      "title": "Prediction stays on LinuxONE",
+      "seconds": 23.06,
+      "narration": "Training and testing executed through Jupyter on IBM LinuxONE, using native s390x Python. A calibrated boosted-tree model forecasts a service-objective breach within sixty seconds. Isolation Forest separately reports novelty. A bounded queue, causal rolling features and persistent incident policy connect incoming telemetry to operator decisions."
+    },
+    {
+      "scene": 3,
+      "title": "Watch a developing dependency fault",
+      "seconds": 22.16,
+      "narration": "This screenshot comes from the deployed application after a controlled database-pressure replay. Four software services share a database dependency. Forecast scores, latency and service state update as events arrive. The dashboard distinguishes simulated service measurements from observed host resources. A persistent warning creates an evidence-linked incident."
+    },
+    {
+      "scene": 4,
+      "title": "Review evidence before choosing a response",
+      "seconds": 20.18,
+      "narration": "The selected incident retains the measurements at warning time. It links connection-pool occupancy, memory and latency to a declared runbook and affected software services. The suspected database source is a heuristic hypothesis, not proof of causality. Operators can inspect the evidence before deciding what to investigate."
+    },
+    {
+      "scene": 5,
+      "title": "Explain and preview, with explicit tradeoffs",
+      "seconds": 20.65,
+      "narration": "Local IBM Granite generated the displayed constrained explanation on LinuxONE. It took twenty-two seconds and cited verified evidence and a runbook. A paired sandbox preview compared deferring optional batch work with taking no action under the same workload. These benefits follow simulator assumptions; no real system was modified."
+    },
+    {
+      "scene": 6,
+      "title": "Measure the gain and the cost",
+      "seconds": 22.9,
+      "narration": "On sixty final synthetic runs, ContinuityGuard warned before forty-three of forty-seven service incidents. Median early lead was thirty-seven seconds, versus nine for static thresholds. Precision was lower: sixty-one point four percent versus sixty-eight point three. Both missed four incidents. These results are not hospital production validation."
+    },
+    {
+      "scene": 7,
+      "title": "Reproducible, inspectable, ready for review",
+      "seconds": 25.99,
+      "narration": "Twenty correctness tests passed in Jupyter. Deployment evidence records a non-root container, resource limits and a read-only filesystem. The repository includes code, executed notebooks, model hashes, both runtime measurements and documented limits. Our next step is authorized real telemetry and operator feedback. RASCALS presents ContinuityGuard: useful warning time with accountable decisions."
+    }
+  ]
+}

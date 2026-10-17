@@ -1,0 +1,12 @@
+.git
+state
+__pycache__
+**/__pycache__
+evidence
+notebooks
+docs
+submission
+*.pem
+*.key
+.env*
+artifacts/development-v1-report.json
