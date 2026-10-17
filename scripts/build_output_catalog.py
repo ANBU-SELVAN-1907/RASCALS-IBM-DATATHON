@@ -75,5 +75,44 @@ The main evaluation uses declared **synthetic** scenarios. A separate native not
 if '## Start with the complete guide and outputs' not in s:s=s.replace('## Review the submission',header+'## Review the submission')
 elif 'RASCALS-Implementation-Guide.mp4' not in s:s=s.replace('## Review the submission','[Short submission walkthrough](submission/RASCALS-ContinuityGuard-Walkthrough.mp4) / [extended setup guide](submission/RASCALS-Implementation-Guide.mp4), Full HD with labeled synthetic narration.\n\n## Review the submission')
 if '04_original_measurements.ipynb' not in s:s=s.replace('Each source notebook has', '4. `04_original_measurements.ipynb`: original measured request/process behavior and separate novelty fit.\n5. `05_toolkit_readiness.ipynb`: supported-family challenger ONNX preparation; no entitled Toolkit execution claim.\n\nEach source notebook has')
+previews='''## Output previews
+
+### Original service measurements collected on LinuxONE
+
+![Actual measured service timings and novelty scores](artifacts/measured/observed-service.png)
+
+The separate measured-data experiment recorded 64 observations. Median request p95 was **0.98 ms** in the baseline check and **81.64 ms** during deliberately increased computation. All 12 pressure windows exceeded the baseline novelty cutoff; two recovery windows also did. These are real measurements from a small computation service, separate from the main synthetic forecast evaluation. [Raw CSV](artifacts/measured/original-linuxone-service.csv) / [full report](artifacts/measured/report.json).
+
+### Executed AI training in JupyterLab
+
+![Executed training notebook on the actual LinuxONE VM](evidence/workflow/jupyter-training.png)
+
+The saved notebook shows the native **s390x** kernel, fitting code and retained outputs. [Executed training notebook](notebooks/01_train_and_evaluate.executed.ipynb) / [37-test native audit](artifacts/correctness-report.json).
+
+### Seven scenario timelines
+
+![Seven fixed-seed system scenarios](artifacts/scenarios/scenario-gallery.png)
+
+These are clearly labeled **synthetic illustrations** from the frozen v3 model. Blue marks show urgent-service alerts; red dotted marks show sustained breach onset. Sudden failure has no demonstrated early warning. [Scenario output table](artifacts/scenarios/outputs.json) / [complete output gallery](docs/OUTPUTS.md).
+
+'''
+if '## Output previews' not in s:s=s.replace('## Reproduce through LinuxONE Jupyter',previews+'## Reproduce through LinuxONE Jupyter')
+access='''### Open your notebooks in Chrome
+
+1. Open **https://148.100.99.173:8888/lab**. This is Jupyter on the IBM VM.
+2. Inspect the certificate and verify the fingerprint in [PUBLIC-ACCESS.md](docs/PUBLIC-ACCESS.md) before making the browser trust decision.
+3. Enter your **Jupyter token** in the **Password or token** box, then select **Log in**. The dashboard token is different. No new password is needed.
+4. In the left file browser open **shared > continuityguard > notebooks**. Open `01_train_and_evaluate.executed.ipynb` to view existing training results. Files ending `.executed.ipynb` retain outputs; the corresponding source notebooks are available for reruns.
+
+If you need to retrieve the existing Jupyter token, run this in your private SSH session on the VM:
+
+```bash
+sudo podman exec datathon-notebook /opt/venv/bin/jupyter server list
+```
+
+Copy only the value after `token=` into the login form. Keep that command's output private; do not paste it into GitHub or a recording.
+
+'''
+if '### Open your notebooks in Chrome' not in s:s=s.replace('Choose database connection pressure and 4x replay.',access+'Choose database connection pressure and 4x replay.')
 readme.write_text(s,encoding='utf-8')
 print('Output gallery and repository navigation updated.')
