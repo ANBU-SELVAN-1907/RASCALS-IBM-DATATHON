@@ -11,3 +11,4 @@
 *.joblib binary
 *.mp4 binary
 *.onnx binary
+*.csv -text
