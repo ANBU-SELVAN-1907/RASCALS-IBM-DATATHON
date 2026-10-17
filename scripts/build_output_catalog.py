@@ -12,9 +12,11 @@ text='''# Outputs: evidence you can inspect
 
 ![Deployed dashboard](../evidence/dashboard.png)
 
-The dashboard is native LinuxONE inference on controlled scenario data, not a mockup. Its retained evidence and local explanation are visible. The selected policy includes a static guard; a warning does not always mean the learned score alone exceeded its threshold.
+The retained screenshot shows the actual V3 interface on controlled scenario data. Current V5 numerical and deployment evidence is linked below; it is not represented as a newly captured screenshot. Its retained evidence and local explanation are visible. The V5 policy preserves initial threshold warnings and uses learned risk for repeat triage.
 
-![Native model and container proof](../evidence/evaluation.png)
+![Historical V3 interface proof](../evidence/evaluation.png)
+
+This interface capture is historical. Current V5 values are in vidence/linuxone-verification.json and rtifacts/report.json.
 
 ## Seven fixed-seed scenarios
 
@@ -43,7 +45,8 @@ Read [current results](RESULTS.md) with precision, misses, lead-time denominator
 
 | Output | Inspect |
 |---|---|
-| Main training and selected model | `notebooks/01_train_and_evaluate.executed.ipynb`, `artifacts/manifest.json` |
+| Current actual training and selected model | `notebooks/06_detector_upgrade.executed.ipynb`, `artifacts/manifest.json` |
+| Frozen-model review | `notebooks/01_train_and_evaluate.executed.ipynb` |
 | Correctness and engine timing | `notebooks/02_test_and_benchmark.executed.ipynb` |
 | Native audit, actual HTTP and Granite | `notebooks/03_engineering_audit.executed.ipynb`, `evidence/jupyter-ai-proof.json` |
 | Original measurements | `notebooks/04_original_measurements.executed.ipynb`, `artifacts/measured/` |
@@ -63,6 +66,7 @@ readme=P/'README.md';s=readme.read_text(encoding='utf-8')
 header='''## Start with the complete guide and outputs
 
 - [Complete problem, solution, model and implementation summary](SUMMARY.md)
+- [Detector upgrade, preserved first warnings and paired comparison](docs/DETECTOR-UPGRADE.md)
 - [Output gallery and scenario results](docs/OUTPUTS.md)
 - [Public-IP Jupyter/dashboard access and certificate check](docs/PUBLIC-ACCESS.md)
 - [IBM Toolkit: applied guidance, ONNX preparation and entitlement boundary](docs/IBM-TOOLKIT.md)
@@ -85,15 +89,15 @@ The separate measured-data experiment recorded 64 observations. Median request p
 
 ### Executed AI training in JupyterLab
 
-![Executed training notebook on the actual LinuxONE VM](evidence/workflow/jupyter-training.png)
+![Historical V3 training view on the actual LinuxONE VM](evidence/workflow/jupyter-training.png)
 
-The saved notebook shows the native **s390x** kernel, fitting code and retained outputs. [Executed training notebook](notebooks/01_train_and_evaluate.executed.ipynb) / [37-test native audit](artifacts/correctness-report.json).
+This historical V3 screenshot shows the native **s390x** kernel. Current V5 fitting and fresh-test outputs are in [notebook 06](notebooks/06_detector_upgrade.executed.ipynb). [Executed training notebook](notebooks/01_train_and_evaluate.executed.ipynb) / [Current native audit](artifacts/correctness-report.json).
 
 ### Seven scenario timelines
 
 ![Seven fixed-seed system scenarios](artifacts/scenarios/scenario-gallery.png)
 
-These are clearly labeled **synthetic illustrations** from the frozen v3 model. Blue marks show urgent-service alerts; red dotted marks show sustained breach onset. Sudden failure has no demonstrated early warning. [Scenario output table](artifacts/scenarios/outputs.json) / [complete output gallery](docs/OUTPUTS.md).
+These are clearly labeled **synthetic illustrations** from the frozen V5 model. Blue marks show urgent-service alerts; red dotted marks show sustained breach onset. Sudden failure has no demonstrated early warning. [Scenario output table](artifacts/scenarios/outputs.json) / [complete output gallery](docs/OUTPUTS.md).
 
 '''
 if '## Output previews' not in s:s=s.replace('## Reproduce through LinuxONE Jupyter',previews+'## Reproduce through LinuxONE Jupyter')

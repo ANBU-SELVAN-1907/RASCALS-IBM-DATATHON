@@ -6,8 +6,8 @@ Prepared for team RASCALS. The project is a working LinuxONE prototype; no score
 - **Challenge:** Real-Time AI for Critical Decisions / System Anomaly Detection.
 - **Form text:** copy the five blocks in `FORM-ANSWERS.md`; each is below 1,024 characters.
 - **Pitch:** `RASCALS-ContinuityGuard-Pitch.pdf`, 14 readable slides, approximately 0.41 MB, below the 5 MB limit. Includes problem, solution, flows, models, outputs, scenarios, distinctive features and datathon learnings.
-- **Compulsory video draft:** `RASCALS-ContinuityGuard-Walkthrough.mp4`, 2:44.60 container duration, 1920x1080, H.264/AAC. This is a narrated walkthrough of actual saved evidence, not continuous live recording. The synthetic voice is labeled. Review it and preferably replace narration with team members explaining their own work using `VIDEO-SCRIPT.md`.
-- **Supporting video:** `RASCALS-Implementation-Guide.mp4`, 6:17.99 container duration, Full HD. Covers VM/access, source, training, evaluation, tests, measured data, Toolkit boundary, deployment and operator workflow. Do not upload it as the compulsory <=3-minute video.
+- **Compulsory video draft:** `RASCALS-ContinuityGuard-Walkthrough.mp4`, current duration in video-manifest.json, 1920x1080, H.264/AAC. This is a narrated walkthrough of actual saved evidence, not continuous live recording. The synthetic voice is labeled. Review it and preferably replace narration with team members explaining their own work using `VIDEO-SCRIPT.md`.
+- **Supporting video:** `RASCALS-Implementation-Guide.mp4`, current duration in implementation-video-manifest.json, Full HD. Covers VM/access, source, training, evaluation, tests, measured data, Toolkit boundary, deployment and operator workflow. Do not upload it as the compulsory <=3-minute video.
 - **Complete explanation:** `../SUMMARY.md`, `../docs/OUTPUTS.md` and `../docs/DEMO-GUIDE.md`.
 - **Supporting documentation:** link the repository's `docs/DEPLOYMENT.md`, `docs/METHODOLOGY.md` and `evidence/`.
 - **Resources:** the fifth form block contains direct resource links; fuller attribution is in `docs/ATTRIBUTIONS.md`.
@@ -24,4 +24,6 @@ The portal has not been submitted, and no YouTube/Vimeo upload or organizer conf
 
 ## Verified technical handoff
 
-Five executed project notebooks have success records on s390x. The final native suite passed 37 tests with no failures/errors/skips. The frozen main model is v3; a separate original measured-service CSV and an optional validation-only ONNX challenger are clearly distinguished. Registry entitlement is unavailable: no supported IBM Toolkit runtime or acceleration is claimed. Jupyter and the dashboard are reachable over authenticated TLS by public IP, with manual certificate verification required; see `../docs/PUBLIC-ACCESS.md`.
+Six executed project notebooks have success records on s390x. The final native suite passed 43 tests with no failures/errors/skips. The frozen main model is V5; a separate original measured-service CSV and an optional validation-only ONNX challenger are clearly distinguished. Registry entitlement is unavailable: no supported IBM Toolkit runtime or acceleration is claimed. Jupyter and the dashboard are reachable over authenticated TLS by public IP, with manual certificate verification required; see `../docs/PUBLIC-ACCESS.md`.
+
+Use the current V5 PDF/video and speaker notes. Prior V3 metrics and narration are historical. The V4 initial-warning filter was rejected; V5 retains first warnings and filters repeats. Read docs/DETECTOR-UPGRADE.md for the paired comparison and limits.

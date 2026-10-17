@@ -42,10 +42,21 @@ class ModelBundle:
         return forecast | anomaly
 
     def decision_flags(self, probability, novelty, values):
-        from .evaluation import static_flags
+        from .evaluation import static_flags,confirmed_flags
+        if self.state['policy']['mode']=='repeat_filtered':
+            return static_flags(np.atleast_2d(values))
+        if self.state['policy']['mode']=='risk_filtered':
+            values=np.atleast_2d(values)
+            return (probability>=self.state['policy']['forecast_threshold']) | (static_flags(values) & (probability>=self.state['policy']['warning_gate'])) | confirmed_flags(values)
         if self.state['policy']['mode'] == 'guarded_forecast':
             return (probability >= self.state['policy']['forecast_threshold']) | static_flags(np.atleast_2d(values))
         return self.flags(probability, novelty)
+
+    def refresh_flags(self, probability, values):
+        from .evaluation import repeat_refresh_flags
+        values=np.atleast_2d(values)
+        if self.state['policy']['mode']!='repeat_filtered':return np.ones(len(values),dtype=bool)
+        return repeat_refresh_flags(probability,values,self.state['policy']['warning_gate'],self.state['policy'].get('trend_guard',False))
 
 def evidence(event, vector):
     """Measurements and slopes are inspectable evidence, not model attribution."""

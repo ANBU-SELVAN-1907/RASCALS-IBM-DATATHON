@@ -14,6 +14,7 @@ def main(root):
     root=Path(root);out=root/'artifacts/scenarios';out.mkdir(exist_ok=True)
     import matplotlib;matplotlib.use('Agg')
     import matplotlib.pyplot as plt
+    version=json.loads((root/'artifacts/manifest.json').read_text())['version']
     fig,axes=plt.subplots(4,2,figsize=(13,12));rows=[]
     for scenario,ax in zip(SCENARIOS,axes.flat):
         events,_=simulate(Experiment(scenario,101,strength=1.12))
@@ -32,9 +33,18 @@ def main(root):
         for t in warning:ax.axvline(t,color='#315b83',alpha=.6)
         if first is not None:ax.axvline(first,color='#b44e48',linestyle=':',linewidth=2)
         ax.set(title=scenario.replace('_',' '),xlabel='Synthetic event seconds',ylabel='p95 latency (ms)');ax.grid(alpha=.15)
-    axes.flat[-1].axis('off');axes.flat[-1].text(.02,.78,'All seven scenarios / frozen v3 model\n\nBlue: urgent-service alert\nRed dotted: first sustained breach\nOrange: latency objective only\n\nA breach can also follow error fraction.\nFixed seed 101; severity 1.12.\nThese illustrations do not replace final evaluation.',va='top',fontsize=12)
+        if scenario=='pool_exhaustion':
+            small,axis=plt.subplots(figsize=(10,4))
+            axis.plot([e['latency_p95_ms'] for e in urgent],color='#167567',label='Urgent-results latency')
+            axis.axhline(1000,color='#be6d3f',linestyle='--',label='Latency objective')
+            for i,t in enumerate(warning):axis.axvline(t,color='#315b83',alpha=.7,label='Actual notification' if i==0 else None)
+            if first is not None:axis.axvline(first,color='#b44e48',linestyle=':',label='Sustained breach onset')
+            axis.set(title='Frozen '+version+' / controlled pool-pressure illustration',xlabel='Synthetic event seconds / seed 101, strength 1.12',ylabel='p95 latency (ms)');axis.grid(alpha=.15);axis.legend(fontsize=8)
+            small.tight_layout();small.savefig(out/'pool-example.png',dpi=200);plt.close(small)
+    axes.flat[-1].axis('off');axes.flat[-1].text(.02,.78,'All seven scenarios / '+version+'\n\nBlue: urgent-service notification\nRed dotted: first sustained breach\nOrange: latency objective only\n\nA breach can also follow error fraction.\nFixed seed 101; severity 1.12.\nThese illustrations do not replace final evaluation.',va='top',fontsize=12)
     fig.tight_layout();fig.savefig(out/'scenario-gallery.png',dpi=200);fig.savefig(out/'scenario-gallery.svg');plt.close(fig)
-    (out/'outputs.json').write_text(json.dumps({'model_version':'cg-2026-10-17-v3','scenarios':rows},indent=2));print(json.dumps(rows,indent=2))
+    svg=out/'scenario-gallery.svg';svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
+    (out/'outputs.json').write_text(json.dumps({'model_version':version,'scenarios':rows},indent=2));print(json.dumps(rows,indent=2))
     return rows
 
 if __name__=='__main__':main(Path(__file__).resolve().parents[1])

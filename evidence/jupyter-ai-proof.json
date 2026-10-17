@@ -1,13 +1,13 @@
 {
   "architecture": "s390x",
   "model_manifest": {
-    "version": "cg-2026-10-17-v3",
-    "trained_utc": "2026-10-17T09:14:05.726376+00:00",
+    "version": "cg-2026-10-17-v5",
+    "trained_utc": "2026-10-17T13:07:45.438758+00:00",
     "architecture": "s390x",
-    "model": "boosted_trees_7_leaves",
+    "model": "logistic_C0.1",
     "forecast_horizon_seconds": 60,
     "feature_count": 26,
-    "sha256": "ef34fa93fb93f09197869c9f3563268307cc896cb856ab21ccbd6074f9edcb97",
+    "sha256": "ca4328b8ed2099ea4a007e75e626a4a6db63344d5c492c344733ac6f9f4d65b5",
     "packages": {
       "numpy": "2.0.2",
       "scikit-learn": "1.9.0",
@@ -16,13 +16,13 @@
     }
   },
   "predictive_incident": {
-    "id": "39aa47e4170a",
-    "created_at": "2026-10-17T11:46:59.977026+00:00",
-    "event_time": "2026-10-17T00:02:43+00:00",
+    "id": "370e309a0b34",
+    "created_at": "2026-10-17T13:13:18.239385+00:00",
+    "event_time": "2026-10-17T00:02:51+00:00",
     "service": "database",
     "suspected_source": "database",
     "category": "pool",
-    "risk": 0.9797103478275777,
+    "risk": 0.9993172883987427,
     "novelty_percentile": 1.0,
     "already_breached": false,
     "affected_services": [
@@ -32,22 +32,22 @@
     ],
     "evidence": [
       {
-        "id": "E1",
-        "label": "Connection pool occupancy",
-        "value": 83.3,
-        "unit": "%"
-      },
-      {
         "id": "E3",
         "label": "Waiting queue",
-        "value": 12.3,
+        "value": 22.2,
         "unit": "requests"
       },
       {
-        "id": "E4",
-        "label": "Memory occupancy",
-        "value": 37.3,
+        "id": "E1",
+        "label": "Connection pool occupancy",
+        "value": 90.1,
         "unit": "%"
+      },
+      {
+        "id": "E5",
+        "label": "Latency p95",
+        "value": 696.8,
+        "unit": "ms"
       }
     ],
     "runbook": {
@@ -67,21 +67,21 @@
   "generative_explanation": {
     "status": "complete",
     "mode": "local Granite \u00b7 constrained generation",
-    "summary": "database needs operator investigation. Investigate database connection pressure. Supporting measurements: Connection pool occupancy 83.3 % (E1); Waiting queue 12.3 requests (E3); Memory occupancy 37.3 % (E4).",
+    "summary": "database needs operator investigation. Investigate database connection pressure. Supporting measurements: Waiting queue 22.2 requests (E3); Connection pool occupancy 90.1 % (E1); Latency p95 696.8 ms (E5).",
     "evidence_ids": [
-      "E1",
       "E3",
-      "E4"
+      "E1",
+      "E5"
     ],
     "runbook_id": "RB-POOL",
-    "completion_tokens": 97,
-    "elapsed_seconds": 15.81,
+    "completion_tokens": 100,
+    "elapsed_seconds": 18.75,
     "scope": "Generation selects a verified wording under a strict evidence schema; no autonomous action."
   },
   "audit": {
     "valid": true,
-    "records": 3,
-    "head": "3b0c0bc4ddfc60231dd591a5600a3e0c7ed505561b0b9812673b79d243a09476",
+    "records": 4,
+    "head": "27a94f8358fe647d07ab5f62ef9b16ab36ac19eb2100ff0cacc49d2fedfd4a7f",
     "scope": "local hash chain; externally retain head to detect full-history replacement"
   },
   "scope": "Actual native s390x predictive and local generative execution; synthetic incident; constrained wording, not open-ended root-cause reasoning."

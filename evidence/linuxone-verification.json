@@ -1,6 +1,6 @@
 {
-  "verified_utc": "2026-10-17T11:47:53.924495+00:00",
-  "image_id": "cc1edd6cbc7dd5e6dd8ab8764371ff2d19a257c8283a594616a19f84db19f4fd",
+  "verified_utc": "2026-10-17T13:16:33.234124+00:00",
+  "image_id": "6f31eaea0cea0dbc19c05a19e38b888267190f607506c5d953fa3ab93943e740",
   "container_state": "running",
   "memory_limit_bytes": 2147483648,
   "cpu_quota": 150000,
@@ -20,13 +20,13 @@
     "no_new_privileges": "1",
     "root_filesystem_readonly": true,
     "model": {
-      "version": "cg-2026-10-17-v3",
-      "trained_utc": "2026-10-17T09:14:05.726376+00:00",
+      "version": "cg-2026-10-17-v5",
+      "trained_utc": "2026-10-17T13:07:45.438758+00:00",
       "architecture": "s390x",
-      "model": "boosted_trees_7_leaves",
+      "model": "logistic_C0.1",
       "forecast_horizon_seconds": 60,
       "feature_count": 26,
-      "sha256": "ef34fa93fb93f09197869c9f3563268307cc896cb856ab21ccbd6074f9edcb97",
+      "sha256": "ca4328b8ed2099ea4a007e75e626a4a6db63344d5c492c344733ac6f9f4d65b5",
       "packages": {
         "numpy": "2.0.2",
         "scikit-learn": "1.9.0",
@@ -41,12 +41,12 @@
   "health_response": {
     "status": "ready",
     "architecture": "s390x",
-    "model_version": "cg-2026-10-17-v3"
+    "model_version": "cg-2026-10-17-v5"
   },
   "audit": {
     "valid": true,
-    "records": 119,
-    "head": "db352ded87c14c1d27cd11b2df80444eb9a019a23b4cff0cde2dfc28bdc90146",
+    "records": 133,
+    "head": "7f57b184dbca6f22172bbde0a4f46ee90140dc81dd11b380ac75b286425b6a6f",
     "scope": "local hash chain; externally retain head to detect full-history replacement"
   }
 }

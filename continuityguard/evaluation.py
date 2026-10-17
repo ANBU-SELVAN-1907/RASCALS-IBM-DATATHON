@@ -2,21 +2,16 @@
 from collections import deque
 import numpy as np
 from .simulation import SERVICES, service_breaches
+from .alert_policy import AlertTracker
 
-def alert_times(flags, ready):
-    windows = {s: deque(maxlen=5) for s in SERVICES}
-    latched = {s: False for s in SERVICES}
-    last = {s: -1000 for s in SERVICES}
+def alert_times(flags, ready, refresh_allowed=None):
+    tracker=AlertTracker()
     result = {s: [] for s in SERVICES}
     for i, (flag, ok) in enumerate(zip(flags, ready)):
         s, second = SERVICES[i % len(SERVICES)], i // len(SERVICES)
-        windows[s].append(bool(flag and ok))
-        if not any(windows[s]):
-            latched[s] = False
-        if sum(windows[s]) >= 3 and not latched[s] and second - last[s] >= 30:
+        allow=True if refresh_allowed is None else bool(refresh_allowed[i])
+        if tracker.push(s,second,flag,ok,allow):
             result[s].append(second)
-            last[s] = second
-            latched[s] = True
     return result
 
 def intervals(breaches):
@@ -29,13 +24,13 @@ def intervals(breaches):
             result.append([int(p), int(p)])
     return result
 
-def evaluate_runs(runs, flags_by_run, early_window=60):
+def evaluate_runs(runs, flags_by_run, early_window=60, keep_details=True, refresh_by_run=None):
     incidents = detected = early = total_alerts = false_alerts = healthy_false = 0
     healthy_seconds = 0
     leads, late, details = [], [], []
-    for run, flags in zip(runs, flags_by_run):
-        alerts = alert_times(flags, run["ready"])
-        breaches = service_breaches(run["events"])
+    for run_index,(run, flags) in enumerate(zip(runs, flags_by_run)):
+        alerts = alert_times(flags, run["ready"],None if refresh_by_run is None else refresh_by_run[run_index])
+        breaches = run['breaches'] if 'breaches' in run else service_breaches(run["events"])
         normal = run["manifest"]["scenario"].startswith("healthy")
         if normal:
             healthy_seconds += run["manifest"]["seconds"] * len(SERVICES)
@@ -56,7 +51,7 @@ def evaluate_runs(runs, flags_by_run, early_window=60):
                         leads.append(start - first)
                     else:
                         late.append(first - start)
-                details.append({"seed": run["manifest"]["seed"], "scenario": run["manifest"]["scenario"], "service": service, "first_breach_second": start, "alert_second": first, "lead_seconds": start-first if first is not None else None})
+                if keep_details:details.append({"seed": run["manifest"]["seed"], "scenario": run["manifest"]["scenario"], "service": service, "first_breach_second": start, "alert_second": first, "lead_seconds": start-first if first is not None else None})
             false_alerts += len(remaining)
     return {
         "incidents": incidents, "alerts": total_alerts, "detected": detected,
@@ -80,6 +75,15 @@ def objective(metrics, budget=.5):
 
 def static_flags(x):
     return (x[:, 0] > 800) | (x[:, 1] > .90) | (x[:, 6] > .08) | (x[:, 4] > .90)
+
+def confirmed_flags(x):
+    """Observed service-objective limits bypass learned filtering."""
+    return (x[:,0]>1000) | (x[:,6]>.10)
+
+def repeat_refresh_flags(probability,x,gate,trend_guard):
+    allow=(probability>=gate)|confirmed_flags(x)
+    if trend_guard:allow=allow|(x[:,10]>1.)|(x[:,11]>.001)|(x[:,12]>.1)
+    return allow
 
 def robust_score(x, center, scale):
     # Restrict to operational signals. Demand alone is not a failure.

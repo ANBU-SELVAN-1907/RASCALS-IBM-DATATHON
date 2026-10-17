@@ -41,10 +41,10 @@ def main(root,restart=False,demo=False):
         deadline=time.monotonic()+100
         while time.monotonic()<deadline:
             snapshot=api('state')
-            if snapshot['incidents']:break
+            if any(i['service']=='database' for i in snapshot['incidents']):break
             time.sleep(1)
         else:raise RuntimeError('Demo did not produce an incident')
-        incident=snapshot['incidents'][0]
+        incident=min((i for i in snapshot['incidents'] if i['service']=='database'),key=lambda i:i['event_time'])
         api('explain',{'incident_id':incident['id']})
         response=api('response-preview',{'incident_id':incident['id']})
         deadline=time.monotonic()+100

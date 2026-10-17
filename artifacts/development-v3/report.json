@@ -1,0 +1,2119 @@
+{
+  "scope": "Synthetic service-simulator evaluation on LinuxONE; not real hospital validation",
+  "split": {
+    "training_runs": 60,
+    "calibration_runs": 18,
+    "validation_runs": 24,
+    "test_runs": 60,
+    "unseen_abrupt_runs": 6,
+    "no_shared_seeds": true,
+    "seconds_per_run": 300,
+    "forecast_training_rows": 53106
+  },
+  "manifest": {
+    "version": "cg-2026-10-17-v3",
+    "trained_utc": "2026-10-17T09:14:05.726376+00:00",
+    "architecture": "s390x",
+    "model": "boosted_trees_7_leaves",
+    "forecast_horizon_seconds": 60,
+    "feature_count": 26,
+    "sha256": "ef34fa93fb93f09197869c9f3563268307cc896cb856ab21ccbd6074f9edcb97",
+    "packages": {
+      "numpy": "2.0.2",
+      "scikit-learn": "1.9.0",
+      "scipy": "1.13.1",
+      "joblib": "1.6.0"
+    }
+  },
+  "candidate_models": [
+    {
+      "name": "logistic_regression",
+      "validation_pr_auc": 0.7638253000498372,
+      "validation_brier": 0.01928645744919777
+    },
+    {
+      "name": "boosted_trees_7_leaves",
+      "validation_pr_auc": 0.7188996823440457,
+      "validation_brier": 0.020935902762018063
+    },
+    {
+      "name": "boosted_trees_15_leaves",
+      "validation_pr_auc": 0.7165574903256801,
+      "validation_brier": 0.021737094047685236
+    }
+  ],
+  "selected_model": "boosted_trees_7_leaves",
+  "policy": {
+    "mode": "guarded_forecast",
+    "forecast_threshold": 0.97,
+    "novelty_threshold": 0.6049514944657695,
+    "novelty_quantile": 0.995
+  },
+  "validation_policy_metrics": {
+    "incidents": 17,
+    "alerts": 21,
+    "detected": 15,
+    "early_detections": 14,
+    "late_detections": 1,
+    "missed": 2,
+    "incident_precision": 0.7142857142857143,
+    "incident_recall": 0.8823529411764706,
+    "early_warning_recall": 0.8235294117647058,
+    "median_early_lead_seconds": 12.5,
+    "healthy_service_hours": 4.0,
+    "healthy_false_alerts": 0,
+    "false_alarms_per_healthy_service_hour": 0.0,
+    "unmatched_alerts_all_runs": 6,
+    "incident_details": [
+      {
+        "seed": 20300,
+        "scenario": "pool_exhaustion",
+        "service": "database",
+        "first_breach_second": 170,
+        "alert_second": 154,
+        "lead_seconds": 16
+      },
+      {
+        "seed": 20300,
+        "scenario": "pool_exhaustion",
+        "service": "urgent-results",
+        "first_breach_second": 173,
+        "alert_second": 160,
+        "lead_seconds": 13
+      },
+      {
+        "seed": 20300,
+        "scenario": "pool_exhaustion",
+        "service": "appointments",
+        "first_breach_second": 179,
+        "alert_second": 159,
+        "lead_seconds": 20
+      },
+      {
+        "seed": 20300,
+        "scenario": "pool_exhaustion",
+        "service": "batch-reporting",
+        "first_breach_second": 173,
+        "alert_second": 160,
+        "lead_seconds": 13
+      },
+      {
+        "seed": 20400,
+        "scenario": "retry_storm",
+        "service": "database",
+        "first_breach_second": 242,
+        "alert_second": 216,
+        "lead_seconds": 26
+      },
+      {
+        "seed": 20400,
+        "scenario": "retry_storm",
+        "service": "urgent-results",
+        "first_breach_second": 255,
+        "alert_second": 243,
+        "lead_seconds": 12
+      },
+      {
+        "seed": 20400,
+        "scenario": "retry_storm",
+        "service": "appointments",
+        "first_breach_second": 257,
+        "alert_second": 257,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 20401,
+        "scenario": "retry_storm",
+        "service": "database",
+        "first_breach_second": 198,
+        "alert_second": 193,
+        "lead_seconds": 5
+      },
+      {
+        "seed": 20401,
+        "scenario": "retry_storm",
+        "service": "database",
+        "first_breach_second": 293,
+        "alert_second": null,
+        "lead_seconds": null
+      },
+      {
+        "seed": 20401,
+        "scenario": "retry_storm",
+        "service": "urgent-results",
+        "first_breach_second": 212,
+        "alert_second": 199,
+        "lead_seconds": 13
+      },
+      {
+        "seed": 20401,
+        "scenario": "retry_storm",
+        "service": "appointments",
+        "first_breach_second": 207,
+        "alert_second": 201,
+        "lead_seconds": 6
+      },
+      {
+        "seed": 20403,
+        "scenario": "retry_storm",
+        "service": "database",
+        "first_breach_second": 184,
+        "alert_second": 177,
+        "lead_seconds": 7
+      },
+      {
+        "seed": 20403,
+        "scenario": "retry_storm",
+        "service": "urgent-results",
+        "first_breach_second": 192,
+        "alert_second": 184,
+        "lead_seconds": 8
+      },
+      {
+        "seed": 20403,
+        "scenario": "retry_storm",
+        "service": "urgent-results",
+        "first_breach_second": 298,
+        "alert_second": null,
+        "lead_seconds": null
+      },
+      {
+        "seed": 20403,
+        "scenario": "retry_storm",
+        "service": "appointments",
+        "first_breach_second": 186,
+        "alert_second": 185,
+        "lead_seconds": 1
+      },
+      {
+        "seed": 20403,
+        "scenario": "retry_storm",
+        "service": "appointments",
+        "first_breach_second": 297,
+        "alert_second": 250,
+        "lead_seconds": 47
+      },
+      {
+        "seed": 20403,
+        "scenario": "retry_storm",
+        "service": "batch-reporting",
+        "first_breach_second": 193,
+        "alert_second": 181,
+        "lead_seconds": 12
+      }
+    ]
+  },
+  "systems": {
+    "Static thresholds": {
+      "incidents": 43,
+      "alerts": 55,
+      "detected": 33,
+      "early_detections": 31,
+      "late_detections": 2,
+      "missed": 10,
+      "incident_precision": 0.6,
+      "incident_recall": 0.7674418604651163,
+      "early_warning_recall": 0.7209302325581395,
+      "median_early_lead_seconds": 10.0,
+      "healthy_service_hours": 10.0,
+      "healthy_false_alerts": 0,
+      "false_alarms_per_healthy_service_hour": 0.0,
+      "unmatched_alerts_all_runs": 22,
+      "incident_details": [
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 206,
+          "alert_second": 198,
+          "lead_seconds": 8
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 212,
+          "alert_second": 204,
+          "lead_seconds": 8
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 217,
+          "alert_second": 197,
+          "lead_seconds": 20
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 213,
+          "alert_second": 198,
+          "lead_seconds": 15
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 201,
+          "alert_second": 196,
+          "lead_seconds": 5
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 207,
+          "alert_second": 204,
+          "lead_seconds": 3
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 211,
+          "alert_second": 203,
+          "lead_seconds": 8
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 264,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 216,
+          "alert_second": 204,
+          "lead_seconds": 12
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 255,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 168,
+          "alert_second": 164,
+          "lead_seconds": 4
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 172,
+          "alert_second": 169,
+          "lead_seconds": 3
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 177,
+          "alert_second": 168,
+          "lead_seconds": 9
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 264,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 290,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 177,
+          "alert_second": 167,
+          "lead_seconds": 10
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 290,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70306,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 254,
+          "alert_second": 232,
+          "lead_seconds": 22
+        },
+        {
+          "seed": 70306,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 285,
+          "alert_second": 262,
+          "lead_seconds": 23
+        },
+        {
+          "seed": 70307,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 276,
+          "alert_second": 253,
+          "lead_seconds": 23
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 191,
+          "alert_second": 179,
+          "lead_seconds": 12
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 250,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 293,
+          "alert_second": 242,
+          "lead_seconds": 51
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 276,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 209,
+          "alert_second": 204,
+          "lead_seconds": 5
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 216,
+          "alert_second": 208,
+          "lead_seconds": 8
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 215,
+          "alert_second": 200,
+          "lead_seconds": 15
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 215,
+          "alert_second": 203,
+          "lead_seconds": 12
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 169,
+          "alert_second": 163,
+          "lead_seconds": 6
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 180,
+          "alert_second": 172,
+          "lead_seconds": 8
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 280,
+          "alert_second": 248,
+          "lead_seconds": 32
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 178,
+          "alert_second": 178,
+          "lead_seconds": 0
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 294,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 182,
+          "alert_second": 178,
+          "lead_seconds": 4
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 298,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 210,
+          "alert_second": 206,
+          "lead_seconds": 4
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 211,
+          "alert_second": 211,
+          "lead_seconds": 0
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 217,
+          "alert_second": 204,
+          "lead_seconds": 13
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 222,
+          "alert_second": 221,
+          "lead_seconds": 1
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 252,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70408,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 223,
+          "alert_second": 196,
+          "lead_seconds": 27
+        },
+        {
+          "seed": 70504,
+          "scenario": "memory_pressure",
+          "service": "database",
+          "first_breach_second": 200,
+          "alert_second": 187,
+          "lead_seconds": 13
+        },
+        {
+          "seed": 70506,
+          "scenario": "memory_pressure",
+          "service": "database",
+          "first_breach_second": 276,
+          "alert_second": 259,
+          "lead_seconds": 17
+        }
+      ]
+    },
+    "Robust statistics": {
+      "incidents": 43,
+      "alerts": 159,
+      "detected": 19,
+      "early_detections": 19,
+      "late_detections": 0,
+      "missed": 24,
+      "incident_precision": 0.11949685534591195,
+      "incident_recall": 0.4418604651162791,
+      "early_warning_recall": 0.4418604651162791,
+      "median_early_lead_seconds": 39.0,
+      "healthy_service_hours": 10.0,
+      "healthy_false_alerts": 12,
+      "false_alarms_per_healthy_service_hour": 1.2,
+      "unmatched_alerts_all_runs": 140,
+      "incident_details": [
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 206,
+          "alert_second": 159,
+          "lead_seconds": 47
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 212,
+          "alert_second": 170,
+          "lead_seconds": 42
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 217,
+          "alert_second": 175,
+          "lead_seconds": 42
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 213,
+          "alert_second": 176,
+          "lead_seconds": 37
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 201,
+          "alert_second": 168,
+          "lead_seconds": 33
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 207,
+          "alert_second": 180,
+          "lead_seconds": 27
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 211,
+          "alert_second": 175,
+          "lead_seconds": 36
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 264,
+          "alert_second": 205,
+          "lead_seconds": 59
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 216,
+          "alert_second": 180,
+          "lead_seconds": 36
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 255,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 168,
+          "alert_second": 141,
+          "lead_seconds": 27
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 172,
+          "alert_second": 151,
+          "lead_seconds": 21
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 177,
+          "alert_second": 156,
+          "lead_seconds": 21
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 264,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 290,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 177,
+          "alert_second": 137,
+          "lead_seconds": 40
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 290,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70306,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 254,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70306,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 285,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70307,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 276,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 191,
+          "alert_second": 136,
+          "lead_seconds": 55
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 250,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 293,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 276,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 209,
+          "alert_second": 167,
+          "lead_seconds": 42
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 216,
+          "alert_second": 176,
+          "lead_seconds": 40
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 215,
+          "alert_second": 176,
+          "lead_seconds": 39
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 215,
+          "alert_second": 185,
+          "lead_seconds": 30
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 169,
+          "alert_second": 110,
+          "lead_seconds": 59
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 180,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 280,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 178,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 294,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 182,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 298,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 210,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 211,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 217,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 222,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 252,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70408,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 223,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70504,
+          "scenario": "memory_pressure",
+          "service": "database",
+          "first_breach_second": 200,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70506,
+          "scenario": "memory_pressure",
+          "service": "database",
+          "first_breach_second": 276,
+          "alert_second": null,
+          "lead_seconds": null
+        }
+      ]
+    },
+    "Isolation Forest": {
+      "incidents": 43,
+      "alerts": 141,
+      "detected": 25,
+      "early_detections": 25,
+      "late_detections": 0,
+      "missed": 18,
+      "incident_precision": 0.1773049645390071,
+      "incident_recall": 0.5813953488372093,
+      "early_warning_recall": 0.5813953488372093,
+      "median_early_lead_seconds": 41.0,
+      "healthy_service_hours": 10.0,
+      "healthy_false_alerts": 4,
+      "false_alarms_per_healthy_service_hour": 0.4,
+      "unmatched_alerts_all_runs": 116,
+      "incident_details": [
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 206,
+          "alert_second": 158,
+          "lead_seconds": 48
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 212,
+          "alert_second": 157,
+          "lead_seconds": 55
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 217,
+          "alert_second": 159,
+          "lead_seconds": 58
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 213,
+          "alert_second": 158,
+          "lead_seconds": 55
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 201,
+          "alert_second": 168,
+          "lead_seconds": 33
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 207,
+          "alert_second": 171,
+          "lead_seconds": 36
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 211,
+          "alert_second": 169,
+          "lead_seconds": 42
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 264,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 216,
+          "alert_second": 170,
+          "lead_seconds": 46
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 255,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 168,
+          "alert_second": 141,
+          "lead_seconds": 27
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 172,
+          "alert_second": 137,
+          "lead_seconds": 35
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 177,
+          "alert_second": 132,
+          "lead_seconds": 45
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 264,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 290,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 177,
+          "alert_second": 133,
+          "lead_seconds": 44
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 290,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70306,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 254,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70306,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 285,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70307,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 276,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 191,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 250,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 293,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 276,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 209,
+          "alert_second": 168,
+          "lead_seconds": 41
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 216,
+          "alert_second": 170,
+          "lead_seconds": 46
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 215,
+          "alert_second": 170,
+          "lead_seconds": 45
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 215,
+          "alert_second": 169,
+          "lead_seconds": 46
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 169,
+          "alert_second": 139,
+          "lead_seconds": 30
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 180,
+          "alert_second": 150,
+          "lead_seconds": 30
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 280,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 178,
+          "alert_second": 150,
+          "lead_seconds": 28
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 294,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 182,
+          "alert_second": 146,
+          "lead_seconds": 36
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 298,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 210,
+          "alert_second": 174,
+          "lead_seconds": 36
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 211,
+          "alert_second": 184,
+          "lead_seconds": 27
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 217,
+          "alert_second": 188,
+          "lead_seconds": 29
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 222,
+          "alert_second": 185,
+          "lead_seconds": 37
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 252,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70408,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 223,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70504,
+          "scenario": "memory_pressure",
+          "service": "database",
+          "first_breach_second": 200,
+          "alert_second": 155,
+          "lead_seconds": 45
+        },
+        {
+          "seed": 70506,
+          "scenario": "memory_pressure",
+          "service": "database",
+          "first_breach_second": 276,
+          "alert_second": null,
+          "lead_seconds": null
+        }
+      ]
+    },
+    "ContinuityGuard": {
+      "incidents": 43,
+      "alerts": 54,
+      "detected": 32,
+      "early_detections": 31,
+      "late_detections": 1,
+      "missed": 11,
+      "incident_precision": 0.5925925925925926,
+      "incident_recall": 0.7441860465116279,
+      "early_warning_recall": 0.7209302325581395,
+      "median_early_lead_seconds": 13.0,
+      "healthy_service_hours": 10.0,
+      "healthy_false_alerts": 0,
+      "false_alarms_per_healthy_service_hour": 0.0,
+      "unmatched_alerts_all_runs": 22,
+      "incident_details": [
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 206,
+          "alert_second": 187,
+          "lead_seconds": 19
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 212,
+          "alert_second": 196,
+          "lead_seconds": 16
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 217,
+          "alert_second": 196,
+          "lead_seconds": 21
+        },
+        {
+          "seed": 70300,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 213,
+          "alert_second": 197,
+          "lead_seconds": 16
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 201,
+          "alert_second": 196,
+          "lead_seconds": 5
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 207,
+          "alert_second": 204,
+          "lead_seconds": 3
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 211,
+          "alert_second": 203,
+          "lead_seconds": 8
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 264,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 216,
+          "alert_second": 200,
+          "lead_seconds": 16
+        },
+        {
+          "seed": 70301,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 255,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 168,
+          "alert_second": 159,
+          "lead_seconds": 9
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 172,
+          "alert_second": 167,
+          "lead_seconds": 5
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 177,
+          "alert_second": 166,
+          "lead_seconds": 11
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 264,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 290,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 177,
+          "alert_second": 167,
+          "lead_seconds": 10
+        },
+        {
+          "seed": 70302,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 290,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70306,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 254,
+          "alert_second": 211,
+          "lead_seconds": 43
+        },
+        {
+          "seed": 70306,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 285,
+          "alert_second": 262,
+          "lead_seconds": 23
+        },
+        {
+          "seed": 70307,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 276,
+          "alert_second": 253,
+          "lead_seconds": 23
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 191,
+          "alert_second": 179,
+          "lead_seconds": 12
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 250,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 293,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70308,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 276,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "database",
+          "first_breach_second": 209,
+          "alert_second": 195,
+          "lead_seconds": 14
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "urgent-results",
+          "first_breach_second": 216,
+          "alert_second": 200,
+          "lead_seconds": 16
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "appointments",
+          "first_breach_second": 215,
+          "alert_second": 200,
+          "lead_seconds": 15
+        },
+        {
+          "seed": 70309,
+          "scenario": "pool_exhaustion",
+          "service": "batch-reporting",
+          "first_breach_second": 215,
+          "alert_second": 203,
+          "lead_seconds": 12
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 169,
+          "alert_second": 163,
+          "lead_seconds": 6
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 180,
+          "alert_second": 172,
+          "lead_seconds": 8
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 280,
+          "alert_second": 245,
+          "lead_seconds": 35
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 178,
+          "alert_second": 172,
+          "lead_seconds": 6
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 294,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 182,
+          "alert_second": 178,
+          "lead_seconds": 4
+        },
+        {
+          "seed": 70406,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 298,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 210,
+          "alert_second": 205,
+          "lead_seconds": 5
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "urgent-results",
+          "first_breach_second": 211,
+          "alert_second": 211,
+          "lead_seconds": 0
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "appointments",
+          "first_breach_second": 217,
+          "alert_second": 204,
+          "lead_seconds": 13
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 222,
+          "alert_second": 209,
+          "lead_seconds": 13
+        },
+        {
+          "seed": 70407,
+          "scenario": "retry_storm",
+          "service": "batch-reporting",
+          "first_breach_second": 252,
+          "alert_second": null,
+          "lead_seconds": null
+        },
+        {
+          "seed": 70408,
+          "scenario": "retry_storm",
+          "service": "database",
+          "first_breach_second": 223,
+          "alert_second": 196,
+          "lead_seconds": 27
+        },
+        {
+          "seed": 70504,
+          "scenario": "memory_pressure",
+          "service": "database",
+          "first_breach_second": 200,
+          "alert_second": 187,
+          "lead_seconds": 13
+        },
+        {
+          "seed": 70506,
+          "scenario": "memory_pressure",
+          "service": "database",
+          "first_breach_second": 276,
+          "alert_second": 259,
+          "lead_seconds": 17
+        }
+      ]
+    }
+  },
+  "forecast_test": {
+    "pr_auc": 0.7863614836663788,
+    "brier_score": 0.016010736149373553,
+    "positive_prevalence": 0.03796948247203182,
+    "reliability_bins": [
+      {
+        "lower": 0.0,
+        "upper": 0.2,
+        "count": 50221,
+        "mean_prediction": 0.005788517841932469,
+        "observed_rate": 0.0036239819995619363
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.4,
+        "count": 833,
+        "mean_prediction": 0.2917661501799522,
+        "observed_rate": 0.26290516206482595
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.6000000000000001,
+        "count": 581,
+        "mean_prediction": 0.5004194691914232,
+        "observed_rate": 0.42168674698795183
+      },
+      {
+        "lower": 0.6000000000000001,
+        "upper": 0.8,
+        "count": 614,
+        "mean_prediction": 0.7046023253979968,
+        "observed_rate": 0.5781758957654723
+      },
+      {
+        "lower": 0.8,
+        "upper": 1.0,
+        "count": 1294,
+        "mean_prediction": 0.9321248835708801,
+        "observed_rate": 0.7975270479134466
+      }
+    ]
+  },
+  "run_bootstrap": {
+    "replicates": 500,
+    "seed": 97531,
+    "unit": "whole run; services within a run stay together",
+    "scope": "Uncertainty conditional on this synthetic simulator family, not production generalization. Lead intervals condition on early detections.",
+    "systems": {
+      "Static thresholds": {
+        "early_recall_percentile_95": [
+          0.6140818858560795,
+          0.8806249999999998
+        ],
+        "median_early_lead_percentile_95_seconds": [
+          8.0,
+          16.0
+        ]
+      },
+      "Robust statistics": {
+        "early_recall_percentile_95": [
+          0.13786997885835095,
+          0.6560066598360655
+        ],
+        "median_early_lead_percentile_95_seconds": [
+          27.0,
+          55.0
+        ]
+      },
+      "Isolation Forest": {
+        "early_recall_percentile_95": [
+          0.322375,
+          0.7535472972972972
+        ],
+        "median_early_lead_percentile_95_seconds": [
+          32.5,
+          48.0
+        ]
+      },
+      "ContinuityGuard": {
+        "early_recall_percentile_95": [
+          0.5803064516129032,
+          0.8857142857142857
+        ],
+        "median_early_lead_percentile_95_seconds": [
+          8.0,
+          16.76249999999999
+        ]
+      }
+    }
+  },
+  "unseen_abrupt_failures": {
+    "incidents": 24,
+    "alerts": 24,
+    "detected": 24,
+    "early_detections": 0,
+    "late_detections": 24,
+    "missed": 0,
+    "incident_precision": 1.0,
+    "incident_recall": 1.0,
+    "early_warning_recall": 0.0,
+    "median_early_lead_seconds": null,
+    "healthy_service_hours": 0.0,
+    "healthy_false_alerts": 0,
+    "false_alarms_per_healthy_service_hour": null,
+    "unmatched_alerts_all_runs": 0,
+    "incident_details": [
+      {
+        "seed": 80000,
+        "scenario": "abrupt_failure",
+        "service": "database",
+        "first_breach_second": 77,
+        "alert_second": 77,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80000,
+        "scenario": "abrupt_failure",
+        "service": "urgent-results",
+        "first_breach_second": 77,
+        "alert_second": 77,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80000,
+        "scenario": "abrupt_failure",
+        "service": "appointments",
+        "first_breach_second": 77,
+        "alert_second": 77,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80000,
+        "scenario": "abrupt_failure",
+        "service": "batch-reporting",
+        "first_breach_second": 77,
+        "alert_second": 77,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80001,
+        "scenario": "abrupt_failure",
+        "service": "database",
+        "first_breach_second": 82,
+        "alert_second": 82,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80001,
+        "scenario": "abrupt_failure",
+        "service": "urgent-results",
+        "first_breach_second": 82,
+        "alert_second": 82,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80001,
+        "scenario": "abrupt_failure",
+        "service": "appointments",
+        "first_breach_second": 82,
+        "alert_second": 82,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80001,
+        "scenario": "abrupt_failure",
+        "service": "batch-reporting",
+        "first_breach_second": 82,
+        "alert_second": 82,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80002,
+        "scenario": "abrupt_failure",
+        "service": "database",
+        "first_breach_second": 126,
+        "alert_second": 126,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80002,
+        "scenario": "abrupt_failure",
+        "service": "urgent-results",
+        "first_breach_second": 126,
+        "alert_second": 126,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80002,
+        "scenario": "abrupt_failure",
+        "service": "appointments",
+        "first_breach_second": 126,
+        "alert_second": 126,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80002,
+        "scenario": "abrupt_failure",
+        "service": "batch-reporting",
+        "first_breach_second": 126,
+        "alert_second": 126,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80003,
+        "scenario": "abrupt_failure",
+        "service": "database",
+        "first_breach_second": 85,
+        "alert_second": 85,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80003,
+        "scenario": "abrupt_failure",
+        "service": "urgent-results",
+        "first_breach_second": 85,
+        "alert_second": 85,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80003,
+        "scenario": "abrupt_failure",
+        "service": "appointments",
+        "first_breach_second": 85,
+        "alert_second": 85,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80003,
+        "scenario": "abrupt_failure",
+        "service": "batch-reporting",
+        "first_breach_second": 85,
+        "alert_second": 85,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80004,
+        "scenario": "abrupt_failure",
+        "service": "database",
+        "first_breach_second": 120,
+        "alert_second": 120,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80004,
+        "scenario": "abrupt_failure",
+        "service": "urgent-results",
+        "first_breach_second": 120,
+        "alert_second": 120,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80004,
+        "scenario": "abrupt_failure",
+        "service": "appointments",
+        "first_breach_second": 120,
+        "alert_second": 120,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80004,
+        "scenario": "abrupt_failure",
+        "service": "batch-reporting",
+        "first_breach_second": 120,
+        "alert_second": 120,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80005,
+        "scenario": "abrupt_failure",
+        "service": "database",
+        "first_breach_second": 118,
+        "alert_second": 118,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80005,
+        "scenario": "abrupt_failure",
+        "service": "urgent-results",
+        "first_breach_second": 118,
+        "alert_second": 118,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80005,
+        "scenario": "abrupt_failure",
+        "service": "appointments",
+        "first_breach_second": 118,
+        "alert_second": 118,
+        "lead_seconds": 0
+      },
+      {
+        "seed": 80005,
+        "scenario": "abrupt_failure",
+        "service": "batch-reporting",
+        "first_breach_second": 118,
+        "alert_second": 118,
+        "lead_seconds": 0
+      }
+    ]
+  },
+  "paired_responses": [
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "defer_batch",
+      "action_at_second": 187,
+      "urgent_success_without": 1623,
+      "urgent_success_with": 1890,
+      "urgent_success_difference": 267,
+      "urgent_breach_seconds_without": 88,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 1038,
+      "same_exogenous_seed": 70300
+    },
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "defer_batch",
+      "action_at_second": 196,
+      "urgent_success_without": 1436,
+      "urgent_success_with": 1646,
+      "urgent_success_difference": 210,
+      "urgent_breach_seconds_without": 71,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 919,
+      "same_exogenous_seed": 70301
+    },
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "defer_batch",
+      "action_at_second": 159,
+      "urgent_success_without": 2091,
+      "urgent_success_with": 2389,
+      "urgent_success_difference": 298,
+      "urgent_breach_seconds_without": 88,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 1317,
+      "same_exogenous_seed": 70302
+    },
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "defer_batch",
+      "action_at_second": 211,
+      "urgent_success_without": 1435,
+      "urgent_success_with": 1544,
+      "urgent_success_difference": 109,
+      "urgent_breach_seconds_without": 1,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 831,
+      "same_exogenous_seed": 70306
+    },
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "defer_batch",
+      "action_at_second": 186,
+      "urgent_success_without": 1826,
+      "urgent_success_with": 1917,
+      "urgent_success_difference": 91,
+      "urgent_breach_seconds_without": 0,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 1048,
+      "same_exogenous_seed": 70307
+    },
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "defer_batch",
+      "action_at_second": 179,
+      "urgent_success_without": 1863,
+      "urgent_success_with": 2026,
+      "urgent_success_difference": 163,
+      "urgent_breach_seconds_without": 1,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 1095,
+      "same_exogenous_seed": 70308
+    },
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "defer_batch",
+      "action_at_second": 195,
+      "urgent_success_without": 1518,
+      "urgent_success_with": 1766,
+      "urgent_success_difference": 248,
+      "urgent_breach_seconds_without": 81,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 957,
+      "same_exogenous_seed": 70309
+    },
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "cap_retries",
+      "action_at_second": 173,
+      "urgent_success_without": 2022,
+      "urgent_success_with": 2082,
+      "urgent_success_difference": 60,
+      "urgent_breach_seconds_without": 0,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 0,
+      "same_exogenous_seed": 70401
+    },
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "cap_retries",
+      "action_at_second": 196,
+      "urgent_success_without": 1633,
+      "urgent_success_with": 1681,
+      "urgent_success_difference": 48,
+      "urgent_breach_seconds_without": 0,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 0,
+      "same_exogenous_seed": 70405
+    },
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "cap_retries",
+      "action_at_second": 163,
+      "urgent_success_without": 2046,
+      "urgent_success_with": 2271,
+      "urgent_success_difference": 225,
+      "urgent_breach_seconds_without": 43,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 0,
+      "same_exogenous_seed": 70406
+    },
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "cap_retries",
+      "action_at_second": 204,
+      "urgent_success_without": 1505,
+      "urgent_success_with": 1669,
+      "urgent_success_difference": 164,
+      "urgent_breach_seconds_without": 20,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 0,
+      "same_exogenous_seed": 70407
+    },
+    {
+      "scope": "paired synthetic experiment; effects are simulator assumptions",
+      "action": "cap_retries",
+      "action_at_second": 196,
+      "urgent_success_without": 1671,
+      "urgent_success_with": 1744,
+      "urgent_success_difference": 73,
+      "urgent_breach_seconds_without": 0,
+      "urgent_breach_seconds_with": 0,
+      "deferred_batch_requests": 0,
+      "same_exogenous_seed": 70408
+    }
+  ],
+  "method": {
+    "slo": "p95 >1000 ms or failures/requests >0.10, sustained for three 1-second windows",
+    "persistence": "3 of last 5 flagged windows; 30-second re-alert cooldown",
+    "matching": "one alert per incident, from 60 seconds before onset through 15 seconds after incident end",
+    "healthy_exposure": "healthy, healthy_surge and healthy_shift service-seconds",
+    "selection": "joint model/policy validation: 0.65 early-warning recall + 0.35 precision; penalize false alarms above 0.5/healthy service-hour",
+    "novelty_is_probability": false,
+    "development_history": "v1 30000-series and v2 50000-series were inspected; v3 aligns incident matching to 60 seconds, reselects on validation and tests fresh 70000-series seeds"
+  },
+  "limitations": [
+    "Synthetic data and simulator intervention assumptions",
+    "Declared topology and heuristic suspected cause, not causal proof",
+    "Calibrated model output is conditional on the synthetic distribution",
+    "Abrupt incidents can have no observable warning precursor",
+    "No production hospital, z/OS or accelerator validation"
+  ],
+  "training_and_evaluation_seconds": 29.38
+}

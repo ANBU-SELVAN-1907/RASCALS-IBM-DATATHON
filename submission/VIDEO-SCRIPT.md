@@ -1,84 +1,79 @@
-# Short submission narration
+# Current short submission narration
 
-## Problem: developing failures in essential services
+## Problem: useful warning before disruption
 
-We are RASCALS from Hindustan Institute of Technology and Science. ContinuityGuard identifies developing system faults and gives operators a reviewable warning before disruption. Our demonstration uses original controlled scenarios, with a separate experiment containing actual LinuxONE service measurements. This is a chaptered evidence walkthrough, with labeled synthetic narration.
+We are RASCALS from Hindustan Institute of Technology and Science. ContinuityGuard helps operators detect developing faults behind essential digital services. It connects telemetry, warning evidence and an inspectable response preview. Hospital software defines our demonstration priorities; no patient data is used.
 
-## Solution: AI and the decision path stay on LinuxONE
+## Actual AI fitting and selection on LinuxONE
 
-Native s390x Jupyter fits and tests the models. The deployed app combines calibrated boosted-tree forecasts, a threshold guard and separate novelty scores. Persistent signals create incidents with retained measurements, dependency priorities and runbooks. Local Granite generates constrained wording. The operator can inspect a paired simulator response before deciding what to investigate.
+Native s390x Jupyter fitted five candidates with separate training, calibration and validation. Calibrated logistic regression was selected for repeat triage. Initial threshold warnings are preserved. Observed breach limits bypass filtering. Independent forecast paging is disabled; Isolation Forest adds novelty context.
 
-## Working scenarios and actual operator output
+## Follow a real inference path on controlled data
 
-The actual dashboard runs on the assigned IBM VM. Pool pressure and retry-cascade examples warn before sustained service breach. A sudden failure is detected at onset, without a promised precursor. The action preview reports modeled benefit with deferred optional work. It executes no remediation against a real service.
+This frozen-model timeline uses a declared synthetic database-pressure scenario. Persistent signals create incidents with retained measurements, dependent services and a reviewed runbook. Bounded episode rechecks fix the old permanent-alert suppression. Published scenario outputs retain notification event times.
 
-## Original measurements, with raw-data provenance
+## Local explanation and the response tradeoff
 
-We also collected real request timings and process counters from a bounded microservice on LinuxONE. Increased request computation raised measured latency. A separate baseline-trained novelty detector flagged the controlled pressure. The raw CSV, timestamps, recovery false alerts and hash are published. This experiment does not validate hospital outage prediction.
+Granite generates constrained wording locally with verified evidence IDs. This paired simulator example models 309 additional successful urgent-results transactions, while deferring 1175 optional requests. Both paths use identical demand. No real service is remediated.
 
-## Evaluation: report the misses and competitive baseline
+## The measured comparison, including misses
 
-On sixty fresh synthetic runs, both ContinuityGuard and static thresholds warned before thirty-one of forty-three service incidents. Median early lead was thirteen seconds versus ten. Precision was fifty-nine point three percent versus sixty percent. These results and uncertainty do not establish consistent model superiority. Earlier development reports remain available.
+On 180 fresh synthetic runs, both methods warned early for 130 of 135 incidents. Precision improved from 43.5 to 45.3 percent. Unmatched notifications fell from 174 to 162. Both retained 11-second median early lead and 1 miss. This is a modest within-simulator improvement.
 
-## LinuxONE proof, tests and IBM Toolkit boundary
+## Verify native execution and the failure boundaries
 
-37 native tests passed. Actual authenticated HTTP ingestion processed all one thousand offered events in the short test. Container controls, model hashes and restart evidence are public. IBM Toolkit deployment guidance was applied, and an optional Random Forest export was checked. Entitled Toolkit execution and hardware acceleration are not claimed.
+43 native tests passed, including warning preservation, repeat filtering, causal features, malformed inputs and failures. The authenticated local HTTP path processed one thousand offered events in ten seconds. Published evidence verifies model hashes, container restrictions, local generation and restart persistence. Queue acknowledgement differs from completed inference.
 
-## Learnings and a complete reproducible handoff
+## Original data and learnings from the datathon
 
-We learned to align prediction and evaluation horizons, distinguish queue timing from inference, and separate measured data from simulation. The repository contains the summary, five executed notebooks, scenarios, source, outputs, deployment and access instructions. Review the short video, confirm required labs and submit manually. ContinuityGuard makes warning evidence and next steps inspectable.
+A separate notebook records sixty-four actual LinuxONE service observations with a raw CSV and provenance hash. These do not validate the simulator predictor. We learned to preserve baselines, freeze before testing and retain rejected experiments. Toolkit acceleration remains unverified without entitlement.
 
+## A reproducible handoff
+
+The public repository contains source, six executed notebooks, results and deployment instructions. The team reviews the work, confirms prerequisite mapping and submits manually. ContinuityGuard makes warning evidence and notification tradeoffs inspectable. This chaptered walkthrough uses disclosed synthetic narration.
 
 # Extended implementation narration
 
-## 01 / What the project does
+## 01 / Prepare the assigned native IBM environment
 
-This implementation guide follows RASCALS ContinuityGuard from environment setup through model training, testing, actual measurements, deployment and operator output. The problem is system anomaly detection: identify developing abnormal activity and alert an organization before a major disruption. We use a hospital-software scenario to define service priorities. No patient data or clinical decisions are involved. The guide is chaptered, using actual saved evidence and reproducible commands; it is not a continuous recording of provisioning.
+Provision the assigned LinuxONE Community Cloud VM and complete both organizer-assigned labs before original project work. Our host is RHEL nine point eight and uses Podman with the supplied native s390x image. Preserve persistent notebook storage. The private key stays outside the project. This guide is chaptered evidence and reproducible commands, not a continuous provisioning recording.
 
-## 02 / Prepare the real IBM LinuxONE environment
+## 02 / Open the actual IBM VM
 
-Start with your assigned LinuxONE Community Cloud VM and its private SSH key. Our host is RHEL nine point eight, with native s390x architecture and Podman. Confirm the operating system instead of applying Ubuntu commands blindly. Keep the key outside the repository. Complete both organizer-assigned labs before original project work; our sample execution evidence is retained, but the exact category mapping requires organizer confirmation.
+The participant requested public port three eight eight eight eight. An HTTP visit redirects to HTTPS on that same port. Verify the certificate fingerprint manually, then enter the existing Jupyter token. The dashboard uses a different token. The private Jupyter backend is now loopback port three eight eight eight nine. SSH access is another route to the same IBM VM.
 
-## 03 / Open authenticated Jupyter on the IBM VM
+## 03 / Understand the data and source
 
-The assigned VM now provides Jupyter over TLS on port eight eight eight eight, and the dashboard over TLS on port eight four four three. Verify the published certificate fingerprint manually before entering either token. The certificate is short-lived and self-signed. Jupyter and the app use separate private tokens. An SSH tunnel is an alternative route to the same VM; localhost does not mean the models run on the laptop.
+Read SUMMARY and the data card. Hospital-service windows are generated by our original controlled simulator. The separate measured-service CSV contains actual request timings and process counters. The feature module shares twenty-six current and historical inputs between fitting and live inference. Scenario, seed, onset and future outcomes are excluded from the predictors. The model, runtime, API and explanation code are inspectable.
 
-## 04 / Place and understand the source
+## 04 / Train and freeze through Jupyter
 
-Clone the repository into persistent Jupyter shared storage and open its notebooks directory. Read SUMMARY dot m d and the model and data cards. The simulator, features, model training, streaming engine, explanation and API are separate source modules. The final model is frozen at version three. The raw original measurements are separate from the synthetic hospital-service scenarios.
+Notebook zero six performs the current fitting, validation selection and first fresh evaluation. Two hundred forty training runs, sixty calibration runs and one hundred twenty validation runs remain separate. The model and protocol hashes are frozen before the one hundred eighty final runs are generated. Notebook zero one reviews those unchanged artifacts. Rerunning the same seeds is reproduction, not another independent test.
 
-## 05 / Train, calibrate, select and evaluate
+## 05 / Explain the actual operational policy
 
-Run notebook zero one from top to bottom on the native kernel. It fits three tabular forecasting candidates on sixty training runs, fits calibration on eighteen separate runs, and selects the model and alert policy on twenty-four validation runs. Sixty fresh final runs are scored afterward. Current and historical features never contain future values or fault metadata. The target and early incident matching both use sixty seconds.
+Two logistic and three boosted-tree candidates compete on a declared notification objective. Standardized logistic regression with C equal to zero point one was selected. The first threshold warning is never filtered by low model confidence. Only persistent repeats need the selected learned-risk confirmation. Observed latency or error breach bypasses filtering. Independent model paging is disabled. This is a notification-quality contribution, not a claim of earlier detection on every event.
 
-## 06 / Read the results before making claims
+## 06 / Verify the lifecycle correction
 
-The selected model is small histogram gradient boosting, with maximum seven leaves and a separate sigmoid calibrator. The selected policy combines a high learned score with explicit operational thresholds. Isolation Forest reports novelty separately. Both the submitted system and static baseline warned before thirty-one of forty-three final service incidents. Precision and misses remain competitive with the baseline, rather than demonstrating consistent learned-model superiority. Publish that tradeoff.
+The permanent latch could suppress a qualifying later warning. Shared bounded rechecks now apply to every comparator. The previously missed development case retains its fifty-one-second threshold warning. The final native suite passed 43 tests. Offline and live alert policies share the same source. Missing data resets warmup; failures enter an explicit static fallback. The corrected baseline also benefits, so cross-version recall changes cannot be attributed to ML.
 
-## 07 / Run the engineering checks
+## 07 / Read the fresh paired comparison
 
-Run notebooks zero two and zero three. The latter tests the final source, starts an isolated real HTTP service for ingestion checks and verifies local Granite output. Inspect actual test names, counts and failure records. The bounded queue rejects overload explicitly. Invalid inputs, gaps, source provenance and consumer errors have regression coverage. Queue acceptance is not completed inference; each timing boundary is labeled.
+On 180 predeclared fresh synthetic runs, both methods warned early for 130 of 135 service incidents. Precision was 45.3 percent versus 43.5 percent. Unmatched notifications fell from 174 to 162. Median early lead stayed 11 seconds, with 1 missed incident each. This is a modest within-simulator improvement, not universal superiority. Whole-run paired resampling retains dependent services together. The rejected version four trial remains published because filtering initial warnings traded recall for precision. No final-test threshold changes were made.
 
-## 08 / Inspect original service measurements
+## 08 / Inspect actual measurements and Toolkit limits
 
-Notebook zero four collects actual timings and process counters from a bounded localhost computation service on LinuxONE. It observes baseline behavior, deliberately increases the real request computation, then records recovery. A separate Isolation Forest is fitted on baseline observations only. Here is the actual executed notebook with the architecture, source call and measured outputs. No latency values were invented. This small experiment is not a production hospital incident.
+Notebook zero four collects original request timings and process counters from a bounded computation service on LinuxONE. It fits a separate baseline novelty detector and retains recovery false alerts. Notebook zero five checks a separate Random Forest ONNX candidate. IBM Toolkit deployment guidance was applied, but entitled Toolkit container execution and hardware acceleration are not claimed. These experiments do not replace the frozen main detector.
 
-## 09 / Review IBM Toolkit preparation
+## 09 / Deploy and verify on LinuxONE
 
-Notebook zero five trains a separate Random Forest challenger using the existing training and validation runs, exports ONNX and checks its structure. That family appears in IBM Snap ML import documentation. The participant has no configured registry entitlement, so the supported IBM container and acceleration have not run. Toolkit deployment guidance is applied to identity, filesystem and protected access, with remaining rootful and host-networking limits stated.
+The deployment script builds a native application container before replacing the named app. It preserves the state volume and a stopped rollback container. Non-root identity, read-only root, dropped capabilities and resource limits are verified. The application stores a local audit chain. Restart checks retain its prefix; this is persistence, not high availability. Private tokens are read internally and excluded from exported evidence.
 
-## 10 / Deploy without losing evidence
+## 10 / Demonstrate the decision workflow
 
-Build the application on LinuxONE using the provided deployment script. Deliberate replacement preserves the state volume and a stopped rollback container. The application runs with limited CPU, memory and PIDs, a read-only root, non-root identity and dropped capabilities. Run verification to check model consistency, local generation and restart persistence. Public access uses a separate TLS proxy and a narrow SELinux policy; authentication stays enabled.
+Choose database connection pressure and four-times replay in the deployed dashboard. Select the first database incident, inspect its retained evidence and request local Granite wording. Preview the allowed simulator response. In the verified current example, modeled urgent-results successes increase by 309, with 1175 optional requests deferred. External data requires its own session; paired simulator previews are disabled there.
 
-## 11 / Start a scenario and inspect the warning
+## 11 / Review and submit
 
-In the deployed dashboard, select database connection pressure and four-times replay. The interface labels synthetic event time and the fixed scenario severity. Wait for warmup and persistent risk. Select an incident and inspect its retained measurements, declared affected software services and runbook. Local Granite cites verified evidence and cannot run shell commands. The response preview compares the same future workload with and without a simulator action. It shows deferred optional work with the modeled benefit.
-
-## 12 / Cover the remaining scenarios and external input
-
-Healthy load, surge and shift examples should not be equated with failures. The gallery also shows pool exhaustion, retry cascades, memory pressure and sudden failure. For authorized real telemetry, explicitly start an external session and send already-aggregated windows through the adapter. The server overrides synthetic provenance, and response previews are disabled. A model trained on our simulator requires validation and calibration before operational use on an organization’s data.
-
-## 13 / Learnings, cleanup and final submission
-
-The main lessons were native platform compatibility, consistent evaluation horizons, honest timing boundaries and complete evidence references. Keep required models, lab volumes, executed notebooks and source. Remove only verified reproducible build intermediates, never unreviewed data. Review the pitch, output gallery, summary and resource credits. Upload the compulsory video under three minutes to an accessible YouTube or Vimeo link. This longer guide is supporting material; submit the event form manually.
+Review the latest PDF, SUMMARY, model and data cards, resource credits and speaker notes. Prior screenshots and experiments remain clearly labeled history. Read the current frozen report instead of repeating an old model headline. Upload the reviewed short video to an accessible YouTube or Vimeo URL, confirm the mandatory-lab mapping and submit the event portal manually. The longer guide is supporting material.

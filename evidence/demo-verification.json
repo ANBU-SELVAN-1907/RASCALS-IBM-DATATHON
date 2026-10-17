@@ -1,14 +1,14 @@
 {
-  "verified_utc": "2026-10-17T11:48:55.464233+00:00",
-  "model_version": "cg-2026-10-17-v3",
+  "verified_utc": "2026-10-17T13:25:14.542916+00:00",
+  "model_version": "cg-2026-10-17-v5",
   "incident": {
-    "id": "bc37872cc5a6",
-    "created_at": "2026-10-17T11:48:34.899263+00:00",
-    "event_time": "2026-10-17T11:50:36.927389+00:00",
+    "id": "e341c4527fac",
+    "created_at": "2026-10-17T13:24:54.041955+00:00",
+    "event_time": "2026-10-17T13:27:02.066688+00:00",
     "service": "database",
     "suspected_source": "database",
     "category": "pool",
-    "risk": 0.9797103478275777,
+    "risk": 0.9993172883987427,
     "novelty_percentile": 1.0,
     "already_breached": false,
     "affected_services": [
@@ -18,22 +18,22 @@
     ],
     "evidence": [
       {
-        "id": "E1",
-        "label": "Connection pool occupancy",
-        "value": 83.3,
-        "unit": "%"
-      },
-      {
         "id": "E3",
         "label": "Waiting queue",
-        "value": 12.3,
+        "value": 22.2,
         "unit": "requests"
       },
       {
-        "id": "E4",
-        "label": "Memory occupancy",
-        "value": 37.3,
+        "id": "E1",
+        "label": "Connection pool occupancy",
+        "value": 90.1,
         "unit": "%"
+      },
+      {
+        "id": "E5",
+        "label": "Latency p95",
+        "value": 696.8,
+        "unit": "ms"
       }
     ],
     "runbook": {
@@ -53,27 +53,27 @@
   "explanation": {
     "status": "complete",
     "mode": "local Granite \u00b7 constrained generation",
-    "summary": "database needs operator investigation. Investigate database connection pressure. Supporting measurements: Connection pool occupancy 83.3 % (E1); Waiting queue 12.3 requests (E3); Memory occupancy 37.3 % (E4).",
+    "summary": "database needs operator investigation. Investigate database connection pressure. Supporting measurements: Waiting queue 22.2 requests (E3); Connection pool occupancy 90.1 % (E1); Latency p95 696.8 ms (E5).",
     "evidence_ids": [
-      "E1",
       "E3",
-      "E4"
+      "E1",
+      "E5"
     ],
     "runbook_id": "RB-POOL",
-    "completion_tokens": 97,
-    "elapsed_seconds": 19.4,
+    "completion_tokens": 100,
+    "elapsed_seconds": 19.87,
     "scope": "Generation selects a verified wording under a strict evidence schema; no autonomous action."
   },
   "response_preview": {
     "scope": "paired synthetic experiment; effects are simulator assumptions",
     "action": "defer_batch",
-    "action_at_second": 163,
-    "urgent_success_without": 1936,
-    "urgent_success_with": 2251,
-    "urgent_success_difference": 315,
+    "action_at_second": 171,
+    "urgent_success_without": 1828,
+    "urgent_success_with": 2137,
+    "urgent_success_difference": 309,
     "urgent_breach_seconds_without": 104,
     "urgent_breach_seconds_with": 0,
-    "deferred_batch_requests": 1238,
+    "deferred_batch_requests": 1175,
     "same_exogenous_seed": 101
   },
   "scope": "Actual application actions on controlled synthetic telemetry; no real service modified."

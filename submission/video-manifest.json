@@ -1,6 +1,6 @@
 {
-  "duration_seconds": 164.47,
-  "model_version": "cg-2026-10-17-v3",
+  "duration_seconds": 172.49,
+  "model_version": "cg-2026-10-17-v5",
   "resolution": "1920x1080",
   "format": "H.264/AAC MP4",
   "presentation": "Chaptered implementation/evidence guide, not continuous live screen recording",
@@ -8,46 +8,52 @@
   "scenes": [
     {
       "scene": 1,
-      "title": "Problem: developing failures in essential services",
-      "seconds": 22.88,
-      "narration": "We are RASCALS from Hindustan Institute of Technology and Science. ContinuityGuard identifies developing system faults and gives operators a reviewable warning before disruption. Our demonstration uses original controlled scenarios, with a separate experiment containing actual LinuxONE service measurements. This is a chaptered evidence walkthrough, with labeled synthetic narration."
+      "title": "Problem: useful warning before disruption",
+      "seconds": 20.55,
+      "narration": "We are RASCALS from Hindustan Institute of Technology and Science. ContinuityGuard helps operators detect developing faults behind essential digital services. It connects telemetry, warning evidence and an inspectable response preview. Hospital software defines our demonstration priorities; no patient data is used."
     },
     {
       "scene": 2,
-      "title": "Solution: AI and the decision path stay on LinuxONE",
-      "seconds": 24.53,
-      "narration": "Native s390x Jupyter fits and tests the models. The deployed app combines calibrated boosted-tree forecasts, a threshold guard and separate novelty scores. Persistent signals create incidents with retained measurements, dependency priorities and runbooks. Local Granite generates constrained wording. The operator can inspect a paired simulator response before deciding what to investigate."
+      "title": "Actual AI fitting and selection on LinuxONE",
+      "seconds": 22.08,
+      "narration": "Native s390x Jupyter fitted five candidates with separate training, calibration and validation. Calibrated logistic regression was selected for repeat triage. Initial threshold warnings are preserved. Observed breach limits bypass filtering. Independent forecast paging is disabled; Isolation Forest adds novelty context."
     },
     {
       "scene": 3,
-      "title": "Working scenarios and actual operator output",
-      "seconds": 20.85,
-      "narration": "The actual dashboard runs on the assigned IBM VM. Pool pressure and retry-cascade examples warn before sustained service breach. A sudden failure is detected at onset, without a promised precursor. The action preview reports modeled benefit with deferred optional work. It executes no remediation against a real service."
+      "title": "Follow a real inference path on controlled data",
+      "seconds": 19.19,
+      "narration": "This frozen-model timeline uses a declared synthetic database-pressure scenario. Persistent signals create incidents with retained measurements, dependent services and a reviewed runbook. Bounded episode rechecks fix the old permanent-alert suppression. Published scenario outputs retain notification event times."
     },
     {
       "scene": 4,
-      "title": "Original measurements, with raw-data provenance",
-      "seconds": 23.58,
-      "narration": "We also collected real request timings and process counters from a bounded microservice on LinuxONE. Increased request computation raised measured latency. A separate baseline-trained novelty detector flagged the controlled pressure. The raw CSV, timestamps, recovery false alerts and hash are published. This experiment does not validate hospital outage prediction."
+      "title": "Local explanation and the response tradeoff",
+      "seconds": 20.16,
+      "narration": "Granite generates constrained wording locally with verified evidence IDs. This paired simulator example models 309 additional successful urgent-results transactions, while deferring 1175 optional requests. Both paths use identical demand. No real service is remediated."
     },
     {
       "scene": 5,
-      "title": "Evaluation: report the misses and competitive baseline",
-      "seconds": 23.27,
-      "narration": "On sixty fresh synthetic runs, both ContinuityGuard and static thresholds warned before thirty-one of forty-three service incidents. Median early lead was thirteen seconds versus ten. Precision was fifty-nine point three percent versus sixty percent. These results and uncertainty do not establish consistent model superiority. Earlier development reports remain available."
+      "title": "The measured comparison, including misses",
+      "seconds": 24.7,
+      "narration": "On 180 fresh synthetic runs, both methods warned early for 130 of 135 incidents. Precision improved from 43.5 to 45.3 percent. Unmatched notifications fell from 174 to 162. Both retained 11-second median early lead and 1 miss. This is a modest within-simulator improvement."
     },
     {
       "scene": 6,
-      "title": "LinuxONE proof, tests and IBM Toolkit boundary",
-      "seconds": 23.72,
-      "narration": "37 native tests passed. Actual authenticated HTTP ingestion processed all one thousand offered events in the short test. Container controls, model hashes and restart evidence are public. IBM Toolkit deployment guidance was applied, and an optional Random Forest export was checked. Entitled Toolkit execution and hardware acceleration are not claimed."
+      "title": "Verify native execution and the failure boundaries",
+      "seconds": 25.31,
+      "narration": "43 native tests passed, including warning preservation, repeat filtering, causal features, malformed inputs and failures. The authenticated local HTTP path processed one thousand offered events in ten seconds. Published evidence verifies model hashes, container restrictions, local generation and restart persistence. Queue acknowledgement differs from completed inference."
     },
     {
       "scene": 7,
-      "title": "Learnings and a complete reproducible handoff",
-      "seconds": 25.64,
-      "narration": "We learned to align prediction and evaluation horizons, distinguish queue timing from inference, and separate measured data from simulation. The repository contains the summary, five executed notebooks, scenarios, source, outputs, deployment and access instructions. Review the short video, confirm required labs and submit manually. ContinuityGuard makes warning evidence and next steps inspectable."
+      "title": "Original data and learnings from the datathon",
+      "seconds": 19.9,
+      "narration": "A separate notebook records sixty-four actual LinuxONE service observations with a raw CSV and provenance hash. These do not validate the simulator predictor. We learned to preserve baselines, freeze before testing and retain rejected experiments. Toolkit acceleration remains unverified without entitlement."
+    },
+    {
+      "scene": 8,
+      "title": "A reproducible handoff",
+      "seconds": 20.6,
+      "narration": "The public repository contains source, six executed notebooks, results and deployment instructions. The team reviews the work, confirms prerequisite mapping and submits manually. ContinuityGuard makes warning evidence and notification tradeoffs inspectable. This chaptered walkthrough uses disclosed synthetic narration."
     }
   ],
-  "container_duration_seconds": 164.6
+  "container_duration_seconds": 172.59
 }

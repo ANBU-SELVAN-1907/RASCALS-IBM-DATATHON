@@ -8,7 +8,8 @@ import numpy as np
 from fastapi.testclient import TestClient
 from continuityguard.features import matrix
 from continuityguard.simulation import Experiment, SERVICES, simulate, service_breaches
-from continuityguard.evaluation import alert_times
+from continuityguard.evaluation import alert_times,evaluate_runs
+from continuityguard.alert_policy import AlertTracker
 from continuityguard.runtime import Engine, Journal
 from continuityguard.models import ModelBundle
 from continuityguard.web import create_app
@@ -16,6 +17,50 @@ from continuityguard.web import create_app
 ARTIFACTS=Path(__file__).resolve().parents[1]/'artifacts'
 
 class CausalDataTests(unittest.TestCase):
+    def test_low_risk_repeat_filter_preserves_first_warning(self):
+        tracker=AlertTracker()
+        times=[t for t in range(100) if tracker.push('database',t,True,refresh_allowed=False)]
+        self.assertEqual(times,[2])
+        self.assertTrue(tracker.push('database',100,True,refresh_allowed=True))
+
+    def test_repeat_policy_preserves_static_initial_signal(self):
+        bundle=ModelBundle(ARTIFACTS)
+        bundle.state['policy']={'mode':'repeat_filtered','warning_gate':.9,'trend_guard':False}
+        x=np.zeros((1,len(bundle.state['feature_names'])));x[0,0]=850
+        self.assertTrue(bundle.decision_flags(np.array([.01]),np.array([0.]),x)[0])
+        self.assertFalse(bundle.refresh_flags(np.array([.01]),x)[0])
+        x[0,0]=1200
+        self.assertTrue(bundle.refresh_flags(np.array([.01]),x)[0])
+
+    def test_refresh_recovers_breach_after_out_of_horizon_warning(self):
+        events,manifest=simulate(Experiment('healthy',7))
+        for event in events[291*4:294*4]:
+            if event['service']=='urgent-results':event['latency_p95_ms']=1200
+        flags=np.zeros(len(events),dtype=bool)
+        flags[230*4+SERVICES.index('urgent-results')::4]=True
+        run={'events':events,'manifest':manifest,'ready':np.ones(len(events),dtype=bool)}
+        result=evaluate_runs([run],[flags])
+        self.assertEqual(result['detected'],1)
+        self.assertEqual(result['early_detections'],1)
+        self.assertEqual(result['incident_details'][0]['alert_second'],292)
+
+    def test_persistent_alert_is_rechecked_within_forecast_horizon(self):
+        tracker=AlertTracker()
+        times=[t for t in range(145) if tracker.push('database',t,True)]
+        self.assertEqual(times,[2,62,122])
+
+    def test_refresh_requires_current_persistent_evidence(self):
+        tracker=AlertTracker()
+        self.assertTrue(any(tracker.push('database',t,True) for t in range(3)))
+        self.assertFalse(any(tracker.push('database',t,False) for t in range(3,100)))
+
+    def test_confirmed_limit_cannot_be_filtered_by_low_model_risk(self):
+        bundle=ModelBundle(ARTIFACTS)
+        bundle.state['policy']={'mode':'risk_filtered','forecast_threshold':.98,'warning_gate':.8}
+        x=np.zeros((1,len(bundle.state['feature_names'])))
+        x[0,0]=1200
+        self.assertTrue(bundle.decision_flags(np.array([.01]),np.array([0.]),x)[0])
+
     def test_future_changes_cannot_change_past_features(self):
         events,_=simulate(Experiment('pool_exhaustion',91))
         changed=[dict(e) for e in events]
@@ -146,7 +191,7 @@ class StreamingTests(unittest.TestCase):
         from continuityguard.features import timestamp
         x,ready=matrix(self.events)
         p,n,_=self.engine.bundle.predict(x)
-        expected=alert_times(self.engine.bundle.decision_flags(p,n,x),ready)
+        expected=alert_times(self.engine.bundle.decision_flags(p,n,x),ready,self.engine.bundle.refresh_flags(p,x))
         observed={s:[] for s in SERVICES}
         start=timestamp(self.events[0]['event_time'])
         for k in range(0,len(self.events),4):

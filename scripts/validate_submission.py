@@ -19,7 +19,7 @@ for index,block in enumerate(blocks,1):
     print('Form field',index,':',len(block),'/ 1024 characters')
 manifest=json.loads((root/'artifacts/manifest.json').read_text())
 assert hashlib.sha256((root/'artifacts/models.joblib').read_bytes()).hexdigest()==manifest['sha256']
-for filename in ('01_train_and_evaluate','02_test_and_benchmark','03_engineering_audit','04_original_measurements','05_toolkit_readiness'):
+for filename in ('01_train_and_evaluate','02_test_and_benchmark','03_engineering_audit','04_original_measurements','05_toolkit_readiness','06_detector_upgrade'):
     state=json.loads((root/f'notebooks/{filename}.execution.json').read_text())
     assert state['state']=='success',state
     print('Executed notebook:',filename,state['state'])
@@ -59,6 +59,20 @@ assert demo['model_version']==manifest['version']
 assert demo['explanation']['evidence_ids']==[e['id'] for e in demo['incident']['evidence']]
 report=json.loads((root/'artifacts/report.json').read_text())
 assert report['manifest']['sha256']==manifest['sha256']
+freeze=json.loads((root/'artifacts/freeze.json').read_text())
+assert freeze['model_sha256']==manifest['sha256'] and freeze['test_not_generated_during_selection']
+assert hashlib.sha256((root/'artifacts/protocol.json').read_bytes()).hexdigest()==freeze['protocol_sha256']
+assert freeze['policy']==report['policy']
+assert report['policy']['mode']=='repeat_filtered' and report['policy']['standalone_forecast_paging'] is False
+splits=json.loads((root/'artifacts/split-manifest.json').read_text())
+used=set()
+for name,runs in splits.items():
+    seeds={v['seed'] for v in runs}
+    assert not used&seeds,name
+    used|=seeds
+assert min(v['seed'] for v in splits['test'])>=500000
+regression=json.loads((root/'evidence/alert-regression.json').read_text())
+assert regression['model_version']==manifest['version'] and regression['first_threshold_warning_preserved']
 assert '60 seconds before' in report['method']['matching'] and manifest['forecast_horizon_seconds']==60
 team=json.loads((root/'submission/team.json').read_text())
 assert team['team_name'] in team['project_title'] and len(team['members'])==4

@@ -1,0 +1,13 @@
+{
+  "model_version": "cg-2026-10-17-v5",
+  "known_v3_case": {
+    "seed": 70308,
+    "scenario": "pool_exhaustion",
+    "service": "urgent-results",
+    "first_breach_second": 293,
+    "alert_second": 242,
+    "lead_seconds": 51
+  },
+  "first_threshold_warning_preserved": true,
+  "scope": "Previously inspected V3 regression case, not independent fresh evaluation."
+}

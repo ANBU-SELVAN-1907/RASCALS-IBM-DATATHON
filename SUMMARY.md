@@ -18,14 +18,14 @@ The intended beneficiaries are IT operations teams and, indirectly, people relyi
 
 ## 2. The solution in one paragraph
 
-ContinuityGuard continuously processes service-window telemetry on IBM LinuxONE. Causal features feed a calibrated learned forecast and an independent novelty estimator. A validation-selected threshold guard and persistence rules produce an incident. The incident retains measured evidence, declared downstream service priorities and a reviewed investigation runbook. Local Granite generates constrained explanatory wording with complete evidence references. An operator can compare an allowlisted simulator action against no action under identical future demand. The browser exposes what the system observed, why investigation was suggested and what the preview assumes.
+ContinuityGuard continuously processes service-window telemetry on IBM LinuxONE. Causal features feed a calibrated learned forecast and an independent novelty estimator. Initial threshold warnings are preserved; a calibrated model filters only low-risk persistent repeats, and observed breach limits bypass filtering. The incident retains measured evidence, declared downstream service priorities and a reviewed investigation runbook. Local Granite generates constrained explanatory wording with complete evidence references. An operator can compare an allowlisted simulator action against no action under identical future demand. The browser exposes what the system observed, why investigation was suggested and what the preview assumes.
 
 ## 3. What is original and what is measured
 
 | Evidence class | Origin | Correct interpretation |
 |---|---|---|
 | Hospital-service scenarios | Original simulator written for this project | Controlled synthetic telemetry; not collected from a hospital |
-| Final forecast results | Frozen v3 model evaluated on fresh synthetic runs | Performance within that simulator family |
+| Final forecast results | Frozen V5 model evaluated on fresh synthetic runs | Performance within that simulator family |
 | Original service CSV | Actual request timings/process counters collected on this LinuxONE VM | Real bounded localhost computation experiment; not a hospital failure |
 | HTTP throughput | Actual authenticated API requests, queue, inference and SQLite path | Real local processing of synthetic fixture events |
 | Platform proof | Actual s390x process/container properties | Native LinuxONE execution and stated controls |
@@ -55,7 +55,7 @@ flowchart TD
   E --> F[Frozen hashed model and reports]
   S[Isolated sandbox OR external session] --> Q[Authenticated bounded ingestion]
   Q --> W[Causal service windows]
-  F --> P[Forecast + threshold guard]
+  F --> P[Threshold warning + risk-aware repeat triage]
   W --> P
   W --> N[Separate novelty score]
   P --> I[Persistence / incident / evidence]
@@ -79,10 +79,10 @@ The 26 predictor inputs comprise eight current measurements, two load-normalized
 
 | Component | Actual implementation | Reason and limit |
 |---|---|---|
-| Future breach model | scikit-learn HistGradientBoostingClassifier, 120 iterations, max 7 leaves, learning rate .06, L2=1 | Small nonlinear tabular model; won the declared validation objective among three candidates; not universally best |
+| Future breach model | StandardScaler + LogisticRegression(C=0.1), separate sigmoid calibration | Chosen among five candidates for notification quality; risk supports repeat triage |
 | Score calibration | Separate sigmoid/logistic calibrator | Fits calibration runs, not final test; remaining overconfidence is published |
 | Novelty | Isolation Forest, 100 trees, max_samples=256 | Learns healthy variation; novelty percentile is not outage probability |
-| Current page policy | Forecast >=.97 OR fixed operational thresholds, then persistence | Selected on validation; a warning can occur below .97 because the guard is explicit |
+| Current notification policy | Initial threshold warnings retained; ML risk gate for persistent repeats; observed-limit bypass | Independent model paging disabled; 60-second rechecks prevent permanent suppression |
 | Local explanation | IBM Granite 4.0 H 350M base through supplied llama.cpp | Selects verified wording under strict schema; not free-form root-cause reasoning |
 | Original measured-data experiment | Separate Isolation Forest fitted on 30 observed baseline windows | Demonstrates novelty on actual service timings; does not validate the breach forecast |
 | Optional Toolkit challenger | 40-tree Random Forest, max depth 7, ONNX export checked | Validation-only preparation for a supported Snap ML model family; not deployed or accelerated |
@@ -91,11 +91,11 @@ The base model is supplied by the lab runtime and is not trained from scratch by
 
 ## 8. Training, evaluation and what changed during the audit
 
-The main experiment uses 60 training runs, 18 calibration runs, 24 validation runs and 60 fresh final runs. Whole runs and distinct seeds remain separate. The current final seeds are 70000-series. Six additional abrupt-failure stress runs use 80000-series seeds.
+The main experiment uses 240 training, 60 calibration, 120 validation and 180 predeclared fresh final runs. Final seeds are 500000-series, generated after model/protocol freeze. Twelve separate abrupt stress runs use 520000-series seeds. V1-V4 are retained development history.
 
 An early development evaluation allowed alerts up to 90 seconds before incident onset although the model predicted 60 seconds ahead. The audit aligned the early matching window to 60 seconds, repeated policy selection on validation and used a new final seed range. Earlier reports are retained as development history rather than hidden. Rerunning the frozen final seeds is reproduction, not a new independent test.
 
-Final v3 result: **31/43 service incidents warned before onset**, the same early count as static thresholds. Median lead among early detections is **13 seconds vs 10 seconds**. Incident precision is **59.3% vs 60.0%**; missed incidents are **11 vs 10**. This does not establish consistent ML superiority. Service incidents within one run are correlated. Whole-run bootstrap intervals and all denominators are published.
+Final V5 result: Early warnings: 130/135 versus 130/135; precision 45.3% versus 43.5%; median early lead 11s versus 11s; misses 1 versus 1; unmatched notifications 162 versus 174. This is a modest within-simulator precision improvement with unchanged measured early detection. Whole-run paired intervals and all denominators are published; real-world superiority is unproven.
 
 The abrupt stress set detected 24/24 service incidents and warned before none. An unseen sudden fault without observable precursors cannot be promised an advance warning. The system therefore detects and reports as well as forecasts; it does not claim every disruption is predictable.
 
@@ -117,7 +117,7 @@ The supplied demo proof includes an actual local explanation, a simulator previe
 2. Create the LinuxONE VM and private SSH key. Use the actual OS instructions; this VM is RHEL, not Ubuntu.
 3. Start the organizer-provided native Jupyter image with persistent lab storage. Complete both assigned lab workflows before project implementation; existing Churn/Loan execution evidence is retained, with organizer mapping still unconfirmed.
 4. Clone the public project or copy the repository to Jupyter's `shared/continuityguard` directory. Never copy the private key into the project.
-5. Run notebook 01 for main training, calibration, selection and evaluation. Inspect the model hash and complete report.
+5. Run notebook 06 for fitting, calibration, validation selection and frozen fresh evaluation; notebook 01 reviews the resulting unchanged model. Inspect the model hash and complete report.
 6. Run notebook 02 for correctness/direct-engine timing and 03 for final engineering tests, actual HTTP integration and native Granite proof.
 7. Run notebook 04 for the original measured-service experiment and 05 for Toolkit preparation. Their scope differs from the main forecast evaluation.
 8. Build the app container on the LinuxONE host using the deployment script. Apply its CPU/memory/PID limits, non-root identity and read-only root. Preserve the state volume during deliberate updates.
@@ -136,7 +136,7 @@ The app runs as UID 1000 with a read-only root, 2 GiB memory, 1.5 CPU quota, bou
 
 The real HTTP integration processed all 1,000 offered synthetic fixture events in a 10-second 100-events/s trial. Client and server share the VM. Queue acknowledgement, engine processing and final completion have separate boundaries; no browser/WAN latency or peak capacity is claimed. An active-client restart retained the audit prefix without a forced kill. This is persistence, not high availability.
 
-Thirty-seven regression tests passed natively. They cover causality, online/offline parity, malformed inputs, temporal gaps, overload, consumer failure, model corruption, provenance, authentication, TLS session cookies and grounded fallback. No test suite proves the absence of every bug. Durable exactly-once delivery, multi-node operation, signed artifacts, audit anchoring and real-domain validation remain adoption work.
+43 regression tests passed natively. They cover causality, online/offline parity, malformed inputs, temporal gaps, overload, consumer failure, model corruption, provenance, authentication, TLS session cookies and grounded fallback. No test suite proves the absence of every bug. Durable exactly-once delivery, multi-node operation, signed artifacts, audit anchoring and real-domain validation remain adoption work.
 
 ## 14. Learnings during the datathon
 
@@ -154,6 +154,8 @@ Thirty-seven regression tests passed natively. They cover causality, online/offl
 |---|---|
 | Readable problem/solution and setup | This summary and `README.md` |
 | Full architecture and model rationale | `docs/TECHNICAL-DESIGN.md`, `docs/MODEL-CARD.md` |
+| Current detector upgrade | `docs/DETECTOR-UPGRADE.md`, `notebooks/06_detector_upgrade.executed.ipynb` |
+| Current detector upgrade | `docs/DETECTOR-UPGRADE.md`, `notebooks/06_detector_upgrade.executed.ipynb` |
 | Training/evaluation rules | `docs/METHODOLOGY.md`, `artifacts/report.json` |
 | Data provenance | `docs/DATA-CARD.md`, `artifacts/measured/` |
 | All outputs and scenarios | `docs/OUTPUTS.md`, `artifacts/scenarios/` |

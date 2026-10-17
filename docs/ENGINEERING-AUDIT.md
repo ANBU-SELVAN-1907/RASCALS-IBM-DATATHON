@@ -4,7 +4,9 @@ The native Jupyter correctness report contains the final test count and complete
 
 | Finding | Correction | Regression evidence |
 |---|---|---|
-| 90-second incident allowance differed from 60-second prediction target | v3 matches both to 60 seconds, reselects on validation and tests new seeds | Current report method/split manifest; earlier reports retained |
+| 90-second incident allowance differed from 60-second prediction target | V3 introduced the common 60-second horizon; V5 retains it and evaluates a frozen policy on fresh seeds | Current report method/split manifest; earlier reports retained |
+| Permanent alert latch suppressed a later qualifying warning | A shared, bounded episode recheck applies to every comparator | Previously inspected regression now preserves the 51-second warning; online/offline parity |
+| Filtering initial warnings improved precision at the expense of recall in the rejected V4 trial | V5 preserves initial threshold signals and filters only persistent repeats, with observed-breach bypass | Fresh paired comparison; archived V4; first-warning and repeat-policy tests |
 | Long event gaps retained old feature/persistence state | Rewarm per service after gaps over five seconds; clear votes and SLO continuity at the actual gap | Gap/warmup test; online/offline parity |
 | Invalid direct-engine data could advance time before validation | Validate finite values before committing feature state | Nonfinite input followed by valid input test |
 | Nonfinite model output could appear ready | Reject invalid output shapes/values and label static fallback as degraded | Nonfinite model-output test |

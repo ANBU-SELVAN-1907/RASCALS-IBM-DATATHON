@@ -19,15 +19,15 @@
       "rejected_processing_events": 0,
       "duplicates": 0,
       "failed_batches": 0,
-      "enqueue_seconds": 10.002,
-      "through_final_processing_confirmation_seconds": 10.006,
+      "enqueue_seconds": 10.005,
+      "through_final_processing_confirmation_seconds": 10.008,
       "processed_events_per_second": 9.99,
-      "p95_http_queue_ack_ms": 9.293,
-      "p95_engine_batch_ms": 30.4,
+      "p95_http_queue_ack_ms": 9.332,
+      "p95_engine_batch_ms": 16.77,
       "audit": {
         "valid": true,
         "records": 2,
-        "head": "46d8e204fb86f6619df7a5c6094365f5af027162ed2622cd63e71f9c6c240d0a",
+        "head": "db3bc773fe7091f47c54f47f78ce8032635ad3eb2b6fe2d488d37c68ca99f1df",
         "scope": "local hash chain; externally retain head to detect full-history replacement"
       }
     },
@@ -40,15 +40,15 @@
       "rejected_processing_events": 0,
       "duplicates": 0,
       "failed_batches": 0,
-      "enqueue_seconds": 10.004,
-      "through_final_processing_confirmation_seconds": 10.008,
-      "processed_events_per_second": 49.96,
-      "p95_http_queue_ack_ms": 5.301,
-      "p95_engine_batch_ms": 22.99,
+      "enqueue_seconds": 10.003,
+      "through_final_processing_confirmation_seconds": 10.007,
+      "processed_events_per_second": 49.97,
+      "p95_http_queue_ack_ms": 8.272,
+      "p95_engine_batch_ms": 8.97,
       "audit": {
         "valid": true,
         "records": 3,
-        "head": "b2a84535a59059fade6626f9906a3bfccc4b2c5f04fab08b56a090a60d52fdf1",
+        "head": "58adaf7c84da23917b492d6f845bca3154dccd067792ce2af6b0fc76a9bb43b0",
         "scope": "local hash chain; externally retain head to detect full-history replacement"
       }
     },
@@ -61,15 +61,15 @@
       "rejected_processing_events": 0,
       "duplicates": 0,
       "failed_batches": 0,
-      "enqueue_seconds": 10.005,
-      "through_final_processing_confirmation_seconds": 10.01,
-      "processed_events_per_second": 99.9,
-      "p95_http_queue_ack_ms": 8.006,
-      "p95_engine_batch_ms": 8.89,
+      "enqueue_seconds": 10.004,
+      "through_final_processing_confirmation_seconds": 10.009,
+      "processed_events_per_second": 99.91,
+      "p95_http_queue_ack_ms": 7.982,
+      "p95_engine_batch_ms": 9.1,
       "audit": {
         "valid": true,
-        "records": 9,
-        "head": "ad1cfb4cb82119f67d1662f9aefaa7419e0f5217fd806034709319c44a1662b0",
+        "records": 12,
+        "head": "f95361617ddb8a932eadc4f11bb8b31302154a2d41f6cd65ef1c7eaafaea39d4",
         "scope": "local hash chain; externally retain head to detect full-history replacement"
       }
     }

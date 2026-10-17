@@ -13,14 +13,14 @@ Detect developing system faults from incoming telemetry, inspect an evidence-lin
 ## Start with the complete guide and outputs
 
 - [Complete problem, solution, model and implementation summary](SUMMARY.md)
+- [Detector upgrade, preserved first warnings and paired comparison](docs/DETECTOR-UPGRADE.md)
 - [Output gallery and scenario results](docs/OUTPUTS.md)
 - [Public-IP Jupyter/dashboard access and certificate check](docs/PUBLIC-ACCESS.md)
 - [IBM Toolkit: applied guidance, ONNX preparation and entitlement boundary](docs/IBM-TOOLKIT.md)
 - [Datathon learnings](SUMMARY.md#14-learnings-during-the-datathon)
+- [Short submission walkthrough](submission/RASCALS-ContinuityGuard-Walkthrough.mp4) and [extended setup guide](submission/RASCALS-Implementation-Guide.mp4), both Full HD with labeled synthetic narration.
 
 The main evaluation uses declared **synthetic** scenarios. A separate native notebook now retains **original measured service data**, raw timestamps/counters and its provenance hash. These evidence classes are not interchangeable.
-
-[Short submission walkthrough](submission/RASCALS-ContinuityGuard-Walkthrough.mp4) / [extended setup guide](submission/RASCALS-Implementation-Guide.mp4), Full HD with labeled synthetic narration.
 
 ## Review the submission
 
@@ -31,20 +31,24 @@ The main evaluation uses declared **synthetic** scenarios. A separate native not
 
 ## Current measured result
 
-On 60 fresh synthetic runs, both ContinuityGuard and static thresholds warned before 31/43 service incidents. Median early lead was 13 seconds versus 10. Precision was 59.3% versus 60.0%; missed incidents were 11 versus 10. This does not establish consistent ML superiority.
+On 180 predeclared fresh synthetic runs, ContinuityGuard warned early for 130/135 service incidents versus 130/135 for static thresholds. Precision was 45.3% versus 43.5%; median early lead was 11s versus 11s; misses were 1 versus 1. Unmatched notifications were 162 versus 174. This is a modest measured precision gain within one simulator family, not universal superiority.
 
 | Detector | Early recall | Precision | Median early lead | Late | Missed |
 |---|---:|---:|---:|---:|---:|
-| Static thresholds | 72.1% | 60.0% | 10 s | 2 | 10 |
-| Robust statistics | 44.2% | 11.9% | 39 s | 0 | 24 |
-| Isolation Forest | 58.1% | 17.7% | 41 s | 0 | 18 |
-| ContinuityGuard | 72.1% | 59.3% | 13 s | 1 | 11 |
+| Static thresholds | 96.3% | 43.5% | 11 s | 4 | 1 |
+| Robust statistics | 98.5% | 11.2% | 26 s | 2 | 0 |
+| Isolation Forest | 99.3% | 14.3% | 35.5 s | 0 | 1 |
+| ContinuityGuard | 96.3% | 45.3% | 11 s | 4 | 1 |
 
-The current model is **boosted_trees_7_leaves**, with sigmoid calibration and a **guarded_forecast** policy at **0.97**. In v3, learned risk OR static thresholds can trigger persistence. Isolation Forest is a separate novelty signal; novelty is not an outage probability or an independent paging trigger. The 60-second forecast and early matching window agree.
+![Frozen V5 precision and recall comparison](artifacts/benchmark.png)
 
-37 native tests passed. Actual local authenticated HTTP ingestion processed 1000/1000 events at 100 offered events/s in a 10-second trial. Read [measurement boundaries and uncertainty](docs/RESULTS.md) before quoting latency. Model hash and environment are in [manifest](artifacts/manifest.json).
+The current model is **logistic_C0.1**, with standardization, separate sigmoid calibration and a **repeat_filtered** policy. Initial threshold warnings are retained. Learned risk >= **0.97** or observed latency/error breach permits a persistent repeat notification. Independent forecast paging is disabled; the learned score is used for repeat triage. Isolation Forest is a separate novelty signal; novelty is not an outage probability or an independent paging trigger. The 60-second forecast and early matching window agree.
 
-![Actual operator console](evidence/dashboard.png)
+43 native tests passed. Actual local authenticated HTTP ingestion processed 1000/1000 events at 100 offered events/s in a 10-second trial. Read [measurement boundaries and uncertainty](docs/RESULTS.md) before quoting latency. Model hash and environment are in [manifest](artifacts/manifest.json).
+
+![Historical V3 operator-console screenshot](evidence/dashboard.png)
+
+Historical V3 interface view; current V5 numerical results are above and in the frozen report/API evidence. The screenshot is retained as history, not represented as a new V5 capture.
 
 ## Output previews
 
@@ -56,29 +60,31 @@ The separate measured-data experiment recorded 64 observations. Median request p
 
 ### Executed AI training in JupyterLab
 
-![Executed training notebook on the actual LinuxONE VM](evidence/workflow/jupyter-training.png)
+![Historical V3 training view on the actual LinuxONE VM](evidence/workflow/jupyter-training.png)
 
-The saved notebook shows the native **s390x** kernel, fitting code and retained outputs. [Executed training notebook](notebooks/01_train_and_evaluate.executed.ipynb) / [37-test native audit](artifacts/correctness-report.json).
+This historical V3 screenshot shows the native **s390x** kernel. Current V5 fitting and fresh-test outputs are in [notebook 06](notebooks/06_detector_upgrade.executed.ipynb). [Frozen-model review](notebooks/01_train_and_evaluate.executed.ipynb) / [Current native audit](artifacts/correctness-report.json).
 
 ### Seven scenario timelines
 
 ![Seven fixed-seed system scenarios](artifacts/scenarios/scenario-gallery.png)
 
-These are clearly labeled **synthetic illustrations** from the frozen v3 model. Blue marks show urgent-service alerts; red dotted marks show sustained breach onset. Sudden failure has no demonstrated early warning. [Scenario output table](artifacts/scenarios/outputs.json) / [complete output gallery](docs/OUTPUTS.md).
+These are clearly labeled **synthetic illustrations** from the frozen V5 model. Blue marks show urgent-service alerts; red dotted marks show sustained breach onset. Sudden failure has no demonstrated early warning. [Scenario output table](artifacts/scenarios/outputs.json) / [complete output gallery](docs/OUTPUTS.md).
 
 ## Reproduce through LinuxONE Jupyter
 
 Open `shared/continuityguard/notebooks` in the supplied native s390x environment:
 
-1. `01_train_and_evaluate.ipynb`: fit, calibrate, select and evaluate.
+1. `01_train_and_evaluate.ipynb`: review the unchanged frozen model and results; original V3 training is archived.
 2. `02_test_and_benchmark.ipynb`: correctness and direct-engine timing.
 3. `03_engineering_audit.ipynb`: final suite, actual isolated HTTP integration and local predictive/generative proof.
 4. `04_original_measurements.ipynb`: original measured service timings and a separate novelty fit.
-5. `05_toolkit_readiness.ipynb`: Random Forest and checked ONNX export; no entitled Toolkit execution claim.
+5. `05_toolkit_readiness.ipynb`: separate Random Forest and checked ONNX export; no entitled Toolkit execution claim.
+6. `06_detector_upgrade.ipynb`: actual V5 fitting, validation selection, model/protocol freeze and first fresh evaluation.
 
-Each source notebook has a retained executed copy and success record. Rerunning frozen final seeds is reproduction, not a new independent test. The v1/v2 development reports remain in artifacts. See [methodology](docs/METHODOLOGY.md), [data card](docs/DATA-CARD.md) and [model card](docs/MODEL-CARD.md).
+Each source notebook has a retained executed copy and success record. Rerunning frozen final seeds is reproduction, not a new independent test. V1-V4 development reports remain in artifacts, including the rejected V4 precision/recall tradeoff. See [methodology](docs/METHODOLOGY.md), [data card](docs/DATA-CARD.md) and [model card](docs/MODEL-CARD.md).
 
 ```bash
+python scripts/execute_notebook.py notebooks/06_detector_upgrade.ipynb
 python scripts/execute_notebook.py notebooks/01_train_and_evaluate.ipynb
 python scripts/execute_notebook.py notebooks/02_test_and_benchmark.ipynb
 python scripts/execute_notebook.py notebooks/03_engineering_audit.ipynb
@@ -110,7 +116,7 @@ sudo podman exec datathon-notebook /opt/venv/bin/jupyter server list
 
 Copy only the value after `token=` into the login form. Keep that command's output private; do not paste it into GitHub or a recording.
 
-Choose database connection pressure and 4x replay. Inspect an incident, request an explanation and preview the sandbox response. The selected policy includes a threshold guard: a warning can occur even when the displayed learned score is below 0.97. In Evaluation evidence, inspect the live platform controls and verify the audit journal.
+Choose database connection pressure and 4x replay. Inspect an incident, request an explanation and preview the sandbox response. The initial warning follows operational thresholds; ML governs repeat triage. A low displayed risk does not suppress the first threshold warning. In Evaluation evidence, inspect the live platform controls and verify the audit journal.
 
 External input is a separate session: stop/reset the sandbox using `POST /api/external-session` (or the External stream button), then send validated windows to `POST /api/events`. Client-supplied synthetic provenance is overwritten. Response previews are disabled for external input. [Adapter and schema](docs/EXTERNAL-INPUT.md) explain the limits; forecasts require validation on real deployment data.
 

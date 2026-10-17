@@ -1,11 +1,11 @@
 {
-  "version": "cg-2026-10-17-v3",
-  "trained_utc": "2026-10-17T09:14:05.726376+00:00",
+  "version": "cg-2026-10-17-v5",
+  "trained_utc": "2026-10-17T13:07:45.438758+00:00",
   "architecture": "s390x",
-  "model": "boosted_trees_7_leaves",
+  "model": "logistic_C0.1",
   "forecast_horizon_seconds": 60,
   "feature_count": 26,
-  "sha256": "ef34fa93fb93f09197869c9f3563268307cc896cb856ab21ccbd6074f9edcb97",
+  "sha256": "ca4328b8ed2099ea4a007e75e626a4a6db63344d5c492c344733ac6f9f4d65b5",
   "packages": {
     "numpy": "2.0.2",
     "scikit-learn": "1.9.0",

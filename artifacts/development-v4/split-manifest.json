@@ -1,0 +1,6132 @@
+{
+  "train": [
+    {
+      "scenario": "healthy",
+      "seed": 300000,
+      "onset": 79,
+      "strength": 0.9892516444867345,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300001,
+      "onset": 88,
+      "strength": 0.8481695049978727,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300002,
+      "onset": 103,
+      "strength": 1.0304285981000403,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300003,
+      "onset": 108,
+      "strength": 1.0667434318912927,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300004,
+      "onset": 126,
+      "strength": 0.9014275043155718,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300005,
+      "onset": 111,
+      "strength": 1.0935449439582987,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300006,
+      "onset": 115,
+      "strength": 1.1943917249743623,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300007,
+      "onset": 121,
+      "strength": 1.0466557560764553,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300008,
+      "onset": 125,
+      "strength": 0.9724088746155076,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300009,
+      "onset": 84,
+      "strength": 0.7827154431514969,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300010,
+      "onset": 79,
+      "strength": 0.9093489266566406,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300011,
+      "onset": 114,
+      "strength": 0.7758352046610981,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300012,
+      "onset": 120,
+      "strength": 0.9962534096958455,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300013,
+      "onset": 78,
+      "strength": 1.0788494791991934,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300014,
+      "onset": 86,
+      "strength": 0.7180742523872516,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300015,
+      "onset": 98,
+      "strength": 0.854196055457249,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300016,
+      "onset": 97,
+      "strength": 0.9386402137619282,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300017,
+      "onset": 97,
+      "strength": 0.7408406065624087,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300018,
+      "onset": 83,
+      "strength": 1.0623224376723623,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300019,
+      "onset": 106,
+      "strength": 1.0611679893535304,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300020,
+      "onset": 129,
+      "strength": 1.116629300510086,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300021,
+      "onset": 81,
+      "strength": 1.087462909496091,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300022,
+      "onset": 106,
+      "strength": 0.8905002886647477,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300023,
+      "onset": 89,
+      "strength": 1.0916147511366678,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300024,
+      "onset": 97,
+      "strength": 0.9558802875081001,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300025,
+      "onset": 127,
+      "strength": 0.9370997944076507,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300026,
+      "onset": 93,
+      "strength": 1.1651231877821224,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300027,
+      "onset": 115,
+      "strength": 0.8158121602259412,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300028,
+      "onset": 83,
+      "strength": 1.1003623818557975,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300029,
+      "onset": 101,
+      "strength": 1.04635931186729,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300030,
+      "onset": 125,
+      "strength": 0.847292269352661,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300031,
+      "onset": 117,
+      "strength": 0.9430222416348262,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300032,
+      "onset": 106,
+      "strength": 0.8311710204136407,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300033,
+      "onset": 104,
+      "strength": 0.9990167996226251,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300034,
+      "onset": 116,
+      "strength": 1.1711009373242618,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300035,
+      "onset": 93,
+      "strength": 0.8988665998072303,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300036,
+      "onset": 113,
+      "strength": 1.1708073392291034,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300037,
+      "onset": 76,
+      "strength": 1.0734753663530363,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300038,
+      "onset": 129,
+      "strength": 0.7240194837933037,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 300039,
+      "onset": 121,
+      "strength": 0.9149353190534923,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300100,
+      "onset": 84,
+      "strength": 1.030169059647943,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300101,
+      "onset": 124,
+      "strength": 0.942250410489524,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300102,
+      "onset": 124,
+      "strength": 0.8554648206343536,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300103,
+      "onset": 112,
+      "strength": 1.09565577033616,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300104,
+      "onset": 117,
+      "strength": 0.8254885264170823,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300105,
+      "onset": 125,
+      "strength": 0.9298338659760429,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300106,
+      "onset": 97,
+      "strength": 0.9865244193055567,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300107,
+      "onset": 103,
+      "strength": 0.9315555898377151,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300108,
+      "onset": 112,
+      "strength": 1.0486880039787576,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300109,
+      "onset": 89,
+      "strength": 0.7127982195906735,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300110,
+      "onset": 98,
+      "strength": 1.0452502576396012,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300111,
+      "onset": 78,
+      "strength": 0.7893404053994231,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300112,
+      "onset": 103,
+      "strength": 0.9153193702554577,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300113,
+      "onset": 90,
+      "strength": 1.014637820728183,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300114,
+      "onset": 91,
+      "strength": 1.0121630197495386,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300115,
+      "onset": 100,
+      "strength": 0.80146677541382,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300116,
+      "onset": 84,
+      "strength": 1.1708417595823506,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300117,
+      "onset": 119,
+      "strength": 0.9501850677568764,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300118,
+      "onset": 124,
+      "strength": 1.1838698902728453,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300119,
+      "onset": 77,
+      "strength": 0.8181293649367448,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300120,
+      "onset": 98,
+      "strength": 0.89123397457269,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300121,
+      "onset": 123,
+      "strength": 0.9458208370338059,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300122,
+      "onset": 101,
+      "strength": 0.9965782838761109,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300123,
+      "onset": 127,
+      "strength": 0.9605164214612798,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300124,
+      "onset": 112,
+      "strength": 0.7243960067514045,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300125,
+      "onset": 109,
+      "strength": 1.0273362219472224,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300126,
+      "onset": 94,
+      "strength": 1.0306125127253218,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300127,
+      "onset": 77,
+      "strength": 0.9489022545474479,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300128,
+      "onset": 96,
+      "strength": 1.119284143471242,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300129,
+      "onset": 89,
+      "strength": 1.142921221444093,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300130,
+      "onset": 105,
+      "strength": 0.7536998404444417,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300131,
+      "onset": 101,
+      "strength": 0.7538271124084823,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300132,
+      "onset": 103,
+      "strength": 0.9576586773269693,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300133,
+      "onset": 84,
+      "strength": 1.098404361093679,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300134,
+      "onset": 79,
+      "strength": 0.7417220429541787,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300135,
+      "onset": 97,
+      "strength": 1.1016711025264487,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300136,
+      "onset": 98,
+      "strength": 1.1107608254004184,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300137,
+      "onset": 78,
+      "strength": 0.7828080229171913,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300138,
+      "onset": 101,
+      "strength": 0.8002214930484888,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 300139,
+      "onset": 117,
+      "strength": 1.1142329731066676,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300200,
+      "onset": 82,
+      "strength": 0.8917132305390454,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300201,
+      "onset": 92,
+      "strength": 0.9705429810712207,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300202,
+      "onset": 128,
+      "strength": 0.9487809999892215,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300203,
+      "onset": 104,
+      "strength": 0.7784449747360829,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300204,
+      "onset": 83,
+      "strength": 0.7502718654715126,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300205,
+      "onset": 122,
+      "strength": 0.733482117821302,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300206,
+      "onset": 125,
+      "strength": 0.7309271941828441,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300207,
+      "onset": 81,
+      "strength": 1.1468713088155642,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300208,
+      "onset": 97,
+      "strength": 1.0249251130734944,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300209,
+      "onset": 109,
+      "strength": 0.9392283219534745,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300210,
+      "onset": 100,
+      "strength": 0.876748738518074,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300211,
+      "onset": 83,
+      "strength": 1.01325650254178,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300212,
+      "onset": 125,
+      "strength": 0.8483127872327787,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300213,
+      "onset": 82,
+      "strength": 0.9281153099739607,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300214,
+      "onset": 109,
+      "strength": 1.1173789051385539,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300215,
+      "onset": 87,
+      "strength": 0.7490770447619093,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300216,
+      "onset": 107,
+      "strength": 1.1839092565681633,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300217,
+      "onset": 100,
+      "strength": 0.9737223466416016,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300218,
+      "onset": 114,
+      "strength": 0.7766924910495893,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300219,
+      "onset": 97,
+      "strength": 0.7205653149456227,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300220,
+      "onset": 97,
+      "strength": 1.0687649312532197,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300221,
+      "onset": 76,
+      "strength": 0.9043399673398973,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300222,
+      "onset": 85,
+      "strength": 0.8338429991313326,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300223,
+      "onset": 90,
+      "strength": 0.9339914448560438,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300224,
+      "onset": 120,
+      "strength": 0.9708676063499571,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300225,
+      "onset": 78,
+      "strength": 0.7777578850817384,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300226,
+      "onset": 111,
+      "strength": 0.7932994371156366,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300227,
+      "onset": 82,
+      "strength": 1.01943943304589,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300228,
+      "onset": 83,
+      "strength": 0.8299431900542343,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300229,
+      "onset": 87,
+      "strength": 0.7298538607321049,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300230,
+      "onset": 117,
+      "strength": 1.011461300451752,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300231,
+      "onset": 81,
+      "strength": 1.0293768203814955,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300232,
+      "onset": 85,
+      "strength": 1.1866976797540916,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300233,
+      "onset": 121,
+      "strength": 1.1058734625378484,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300234,
+      "onset": 120,
+      "strength": 0.869160855687199,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300235,
+      "onset": 102,
+      "strength": 0.7394379069871613,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300236,
+      "onset": 86,
+      "strength": 0.8432230839159731,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300237,
+      "onset": 120,
+      "strength": 0.9018646348957715,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300238,
+      "onset": 82,
+      "strength": 0.9395126362697761,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 300239,
+      "onset": 85,
+      "strength": 0.7222642105772942,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300300,
+      "onset": 98,
+      "strength": 0.7463262984781653,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300301,
+      "onset": 95,
+      "strength": 0.7192600641188729,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300302,
+      "onset": 79,
+      "strength": 1.121116144752005,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300303,
+      "onset": 127,
+      "strength": 0.8425984233752761,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300304,
+      "onset": 124,
+      "strength": 0.7385860733846292,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300305,
+      "onset": 77,
+      "strength": 0.9155765313283847,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300306,
+      "onset": 116,
+      "strength": 1.1272906672696763,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300307,
+      "onset": 98,
+      "strength": 0.9216013399439102,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300308,
+      "onset": 87,
+      "strength": 0.7740662306556334,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300309,
+      "onset": 96,
+      "strength": 0.9838677982913047,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300310,
+      "onset": 85,
+      "strength": 0.9183545463655074,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300311,
+      "onset": 102,
+      "strength": 1.0457755131696578,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300312,
+      "onset": 85,
+      "strength": 1.1581622520939634,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300313,
+      "onset": 97,
+      "strength": 1.0030153560368165,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300314,
+      "onset": 108,
+      "strength": 1.1366859261010738,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300315,
+      "onset": 115,
+      "strength": 1.1851204060514555,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300316,
+      "onset": 129,
+      "strength": 1.0973326552136666,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300317,
+      "onset": 96,
+      "strength": 1.0389901287302168,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300318,
+      "onset": 100,
+      "strength": 0.7765184013664406,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300319,
+      "onset": 118,
+      "strength": 1.1060336369990234,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300320,
+      "onset": 118,
+      "strength": 1.0253718008622472,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300321,
+      "onset": 122,
+      "strength": 1.1565721297007923,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300322,
+      "onset": 106,
+      "strength": 0.7021462749255637,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300323,
+      "onset": 122,
+      "strength": 0.9919580422387968,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300324,
+      "onset": 103,
+      "strength": 0.9907678298543559,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300325,
+      "onset": 118,
+      "strength": 1.1287672252676897,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300326,
+      "onset": 113,
+      "strength": 1.1967386054125773,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300327,
+      "onset": 104,
+      "strength": 1.0800092877898262,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300328,
+      "onset": 127,
+      "strength": 1.0442988037992968,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300329,
+      "onset": 129,
+      "strength": 0.9720575356836276,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300330,
+      "onset": 126,
+      "strength": 0.7603036045956415,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300331,
+      "onset": 101,
+      "strength": 0.8731382233603462,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300332,
+      "onset": 89,
+      "strength": 0.9124891831997026,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300333,
+      "onset": 75,
+      "strength": 1.175455840676703,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300334,
+      "onset": 88,
+      "strength": 0.7081313365152013,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300335,
+      "onset": 88,
+      "strength": 1.1433436492525968,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300336,
+      "onset": 91,
+      "strength": 0.9648444979084314,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300337,
+      "onset": 100,
+      "strength": 1.0122729592330213,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300338,
+      "onset": 126,
+      "strength": 1.0523160879611666,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 300339,
+      "onset": 101,
+      "strength": 1.1867991266875797,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300400,
+      "onset": 93,
+      "strength": 1.0706496705410022,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300401,
+      "onset": 100,
+      "strength": 0.792359639004691,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300402,
+      "onset": 81,
+      "strength": 0.8777662245972693,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300403,
+      "onset": 119,
+      "strength": 1.1212925043839124,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300404,
+      "onset": 122,
+      "strength": 0.8377261995914345,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300405,
+      "onset": 80,
+      "strength": 0.9076027905148016,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300406,
+      "onset": 88,
+      "strength": 0.8986150079045527,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300407,
+      "onset": 113,
+      "strength": 1.0776380905722487,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300408,
+      "onset": 75,
+      "strength": 0.8076016761423617,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300409,
+      "onset": 126,
+      "strength": 1.1322491297314894,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300410,
+      "onset": 110,
+      "strength": 0.787849838386634,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300411,
+      "onset": 118,
+      "strength": 0.776130387446935,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300412,
+      "onset": 123,
+      "strength": 0.7801657326906095,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300413,
+      "onset": 85,
+      "strength": 1.0503622160520343,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300414,
+      "onset": 85,
+      "strength": 0.9627395691858813,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300415,
+      "onset": 110,
+      "strength": 1.0186087631164196,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300416,
+      "onset": 101,
+      "strength": 1.1459560548306027,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300417,
+      "onset": 120,
+      "strength": 0.8597041091418748,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300418,
+      "onset": 112,
+      "strength": 1.14400790074755,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300419,
+      "onset": 128,
+      "strength": 1.055735980053743,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300420,
+      "onset": 85,
+      "strength": 0.7233337330665188,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300421,
+      "onset": 93,
+      "strength": 0.9688453120087908,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300422,
+      "onset": 127,
+      "strength": 0.9834779123239337,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300423,
+      "onset": 79,
+      "strength": 0.9467235483991137,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300424,
+      "onset": 117,
+      "strength": 0.7269524650227059,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300425,
+      "onset": 84,
+      "strength": 1.0266764140159301,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300426,
+      "onset": 101,
+      "strength": 1.0546511833407648,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300427,
+      "onset": 113,
+      "strength": 0.8112173701070707,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300428,
+      "onset": 129,
+      "strength": 0.9289061357853,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300429,
+      "onset": 103,
+      "strength": 1.1062544890353398,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300430,
+      "onset": 94,
+      "strength": 1.0226181276094632,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300431,
+      "onset": 121,
+      "strength": 1.0338544852461913,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300432,
+      "onset": 84,
+      "strength": 1.1750121530168283,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300433,
+      "onset": 116,
+      "strength": 0.7856080985415539,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300434,
+      "onset": 103,
+      "strength": 0.8545394778373709,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300435,
+      "onset": 121,
+      "strength": 1.039535410136443,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300436,
+      "onset": 116,
+      "strength": 0.7713215850898654,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300437,
+      "onset": 108,
+      "strength": 1.0378329906965522,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300438,
+      "onset": 96,
+      "strength": 0.7449176205920992,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 300439,
+      "onset": 109,
+      "strength": 0.9074010645694179,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300500,
+      "onset": 94,
+      "strength": 0.7064597488742417,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300501,
+      "onset": 122,
+      "strength": 0.9201064642883998,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300502,
+      "onset": 82,
+      "strength": 0.8874602257973265,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300503,
+      "onset": 78,
+      "strength": 1.0377972586314743,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300504,
+      "onset": 123,
+      "strength": 1.099781609659925,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300505,
+      "onset": 81,
+      "strength": 1.165830425296638,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300506,
+      "onset": 105,
+      "strength": 0.9284961644622305,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300507,
+      "onset": 102,
+      "strength": 1.0029736888643677,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300508,
+      "onset": 81,
+      "strength": 0.9394514209245352,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300509,
+      "onset": 86,
+      "strength": 1.0032259439945859,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300510,
+      "onset": 82,
+      "strength": 0.9614014277206714,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300511,
+      "onset": 93,
+      "strength": 1.0171746074413686,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300512,
+      "onset": 114,
+      "strength": 0.9882863116982004,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300513,
+      "onset": 121,
+      "strength": 1.0855365539112898,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300514,
+      "onset": 118,
+      "strength": 0.7513912015144972,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300515,
+      "onset": 111,
+      "strength": 0.7495602536209081,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300516,
+      "onset": 80,
+      "strength": 0.8332709391341675,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300517,
+      "onset": 98,
+      "strength": 1.1002495638224428,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300518,
+      "onset": 100,
+      "strength": 0.8277526498039186,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300519,
+      "onset": 99,
+      "strength": 0.7298562496057608,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300520,
+      "onset": 91,
+      "strength": 1.0983593625303751,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300521,
+      "onset": 121,
+      "strength": 0.7161968701750647,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300522,
+      "onset": 91,
+      "strength": 0.9820396000912567,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300523,
+      "onset": 98,
+      "strength": 1.1615323296740572,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300524,
+      "onset": 96,
+      "strength": 1.1314503653443762,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300525,
+      "onset": 128,
+      "strength": 1.1311779718159003,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300526,
+      "onset": 111,
+      "strength": 0.9362523879738919,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300527,
+      "onset": 105,
+      "strength": 0.9866813066840423,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300528,
+      "onset": 110,
+      "strength": 0.7647223182808582,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300529,
+      "onset": 122,
+      "strength": 0.8504992545208843,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300530,
+      "onset": 120,
+      "strength": 1.0343428188983874,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300531,
+      "onset": 105,
+      "strength": 0.9676952024671674,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300532,
+      "onset": 101,
+      "strength": 0.7032752956549091,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300533,
+      "onset": 129,
+      "strength": 0.8286140688635545,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300534,
+      "onset": 82,
+      "strength": 0.9911667220661606,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300535,
+      "onset": 121,
+      "strength": 0.8372132294706578,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300536,
+      "onset": 78,
+      "strength": 1.0559998526345074,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300537,
+      "onset": 93,
+      "strength": 0.98067235534652,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300538,
+      "onset": 102,
+      "strength": 0.9420692585244006,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 300539,
+      "onset": 108,
+      "strength": 0.9062230310762502,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    }
+  ],
+  "calibration": [
+    {
+      "scenario": "healthy",
+      "seed": 310000,
+      "onset": 118,
+      "strength": 0.7293313799245864,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 310001,
+      "onset": 82,
+      "strength": 0.9571180332377346,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 310002,
+      "onset": 75,
+      "strength": 1.1659906401613367,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 310003,
+      "onset": 109,
+      "strength": 0.7133531616671338,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 310004,
+      "onset": 108,
+      "strength": 1.0568780756316078,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 310005,
+      "onset": 97,
+      "strength": 1.1237202066666514,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 310006,
+      "onset": 127,
+      "strength": 1.1575790001145827,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 310007,
+      "onset": 80,
+      "strength": 0.8224718883633847,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 310008,
+      "onset": 105,
+      "strength": 1.0779212548848784,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 310009,
+      "onset": 80,
+      "strength": 0.7094090527915984,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 310100,
+      "onset": 101,
+      "strength": 0.9015354657545459,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 310101,
+      "onset": 110,
+      "strength": 0.7702940595502065,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 310102,
+      "onset": 88,
+      "strength": 0.8990288857289872,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 310103,
+      "onset": 82,
+      "strength": 1.0968104289485472,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 310104,
+      "onset": 86,
+      "strength": 0.8659345955859516,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 310105,
+      "onset": 128,
+      "strength": 1.0964522167656277,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 310106,
+      "onset": 106,
+      "strength": 0.9651578766781739,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 310107,
+      "onset": 85,
+      "strength": 0.8746892196027684,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 310108,
+      "onset": 106,
+      "strength": 1.0927748189834636,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 310109,
+      "onset": 100,
+      "strength": 1.0103779561248931,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 310200,
+      "onset": 112,
+      "strength": 0.7130637644863624,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 310201,
+      "onset": 106,
+      "strength": 0.754546413091396,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 310202,
+      "onset": 108,
+      "strength": 0.8770290384097865,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 310203,
+      "onset": 104,
+      "strength": 1.011537592566187,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 310204,
+      "onset": 124,
+      "strength": 0.7534432594386105,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 310205,
+      "onset": 125,
+      "strength": 0.880197546169905,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 310206,
+      "onset": 123,
+      "strength": 1.1676456558311528,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 310207,
+      "onset": 100,
+      "strength": 0.7399262763069442,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 310208,
+      "onset": 85,
+      "strength": 0.7785762638197198,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 310209,
+      "onset": 125,
+      "strength": 0.8009967569112337,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 310300,
+      "onset": 111,
+      "strength": 0.8911680646502009,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 310301,
+      "onset": 76,
+      "strength": 0.9746475845618456,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 310302,
+      "onset": 82,
+      "strength": 0.7450599933077511,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 310303,
+      "onset": 92,
+      "strength": 0.8645774196409894,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 310304,
+      "onset": 120,
+      "strength": 0.9809414107820329,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 310305,
+      "onset": 109,
+      "strength": 0.7006284394084152,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 310306,
+      "onset": 75,
+      "strength": 1.082719413430413,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 310307,
+      "onset": 112,
+      "strength": 1.1398824442532638,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 310308,
+      "onset": 114,
+      "strength": 1.0385358980765453,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 310309,
+      "onset": 80,
+      "strength": 0.7990551984233012,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 310400,
+      "onset": 91,
+      "strength": 1.1803292781400923,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 310401,
+      "onset": 83,
+      "strength": 0.926067612330463,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 310402,
+      "onset": 98,
+      "strength": 0.7819991429319398,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 310403,
+      "onset": 93,
+      "strength": 0.8310295906302407,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 310404,
+      "onset": 103,
+      "strength": 0.9404105865733845,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 310405,
+      "onset": 85,
+      "strength": 1.135759668761936,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 310406,
+      "onset": 120,
+      "strength": 0.8154237852389723,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 310407,
+      "onset": 112,
+      "strength": 0.8388668267829267,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 310408,
+      "onset": 100,
+      "strength": 0.9350033890163096,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 310409,
+      "onset": 78,
+      "strength": 1.0644224517566991,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 310500,
+      "onset": 93,
+      "strength": 1.1347824665607606,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 310501,
+      "onset": 84,
+      "strength": 0.9856985056945071,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 310502,
+      "onset": 77,
+      "strength": 1.0367504719025293,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 310503,
+      "onset": 88,
+      "strength": 0.7580649884403505,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 310504,
+      "onset": 110,
+      "strength": 1.1499751038165227,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 310505,
+      "onset": 95,
+      "strength": 0.8129717859093246,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 310506,
+      "onset": 82,
+      "strength": 0.7187110820932985,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 310507,
+      "onset": 119,
+      "strength": 1.1327660086434728,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 310508,
+      "onset": 122,
+      "strength": 0.990918337221883,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 310509,
+      "onset": 90,
+      "strength": 0.911301530409286,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    }
+  ],
+  "validation": [
+    {
+      "scenario": "healthy",
+      "seed": 320000,
+      "onset": 83,
+      "strength": 0.9901719367108918,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320001,
+      "onset": 122,
+      "strength": 1.1461084410282552,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320002,
+      "onset": 91,
+      "strength": 0.9953219096188918,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320003,
+      "onset": 76,
+      "strength": 1.0517134351653588,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320004,
+      "onset": 75,
+      "strength": 1.0554721728449519,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320005,
+      "onset": 90,
+      "strength": 0.813100074246899,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320006,
+      "onset": 83,
+      "strength": 0.872048787346593,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320007,
+      "onset": 75,
+      "strength": 0.9897832987447819,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320008,
+      "onset": 95,
+      "strength": 1.1354049295436024,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320009,
+      "onset": 106,
+      "strength": 0.9024538052172032,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320010,
+      "onset": 102,
+      "strength": 0.7291899743258687,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320011,
+      "onset": 122,
+      "strength": 0.9695842375542159,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320012,
+      "onset": 87,
+      "strength": 0.8397913078618386,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320013,
+      "onset": 97,
+      "strength": 0.7820151601104517,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320014,
+      "onset": 98,
+      "strength": 0.8411713637143118,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320015,
+      "onset": 120,
+      "strength": 0.8490640149774318,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320016,
+      "onset": 81,
+      "strength": 1.1611658110338017,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320017,
+      "onset": 128,
+      "strength": 0.7652571101594532,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320018,
+      "onset": 107,
+      "strength": 1.0132771118871708,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 320019,
+      "onset": 87,
+      "strength": 0.8124285262082842,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320100,
+      "onset": 77,
+      "strength": 0.8484524298002818,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320101,
+      "onset": 113,
+      "strength": 0.7844945745418537,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320102,
+      "onset": 104,
+      "strength": 1.0257171410029604,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320103,
+      "onset": 79,
+      "strength": 1.043594414108116,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320104,
+      "onset": 78,
+      "strength": 0.7141235015276624,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320105,
+      "onset": 91,
+      "strength": 0.9194844740891424,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320106,
+      "onset": 129,
+      "strength": 1.1495846860930197,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320107,
+      "onset": 123,
+      "strength": 0.7222938587648011,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320108,
+      "onset": 108,
+      "strength": 0.880274255158593,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320109,
+      "onset": 122,
+      "strength": 0.7069000024027888,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320110,
+      "onset": 83,
+      "strength": 0.7809570688428229,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320111,
+      "onset": 86,
+      "strength": 0.8098429246329468,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320112,
+      "onset": 87,
+      "strength": 0.8715087804516807,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320113,
+      "onset": 93,
+      "strength": 0.9028490233434205,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320114,
+      "onset": 108,
+      "strength": 0.7594047198221221,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320115,
+      "onset": 104,
+      "strength": 1.0859711899134663,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320116,
+      "onset": 92,
+      "strength": 1.0472627262324339,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320117,
+      "onset": 80,
+      "strength": 0.8163397940951913,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320118,
+      "onset": 80,
+      "strength": 0.7753281712515863,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 320119,
+      "onset": 113,
+      "strength": 1.017680060202573,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320200,
+      "onset": 114,
+      "strength": 1.0895960871862473,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320201,
+      "onset": 127,
+      "strength": 1.033194112222683,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320202,
+      "onset": 100,
+      "strength": 0.9959650332692604,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320203,
+      "onset": 78,
+      "strength": 0.8097406446085572,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320204,
+      "onset": 97,
+      "strength": 0.7507938038166275,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320205,
+      "onset": 94,
+      "strength": 1.1560217165197677,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320206,
+      "onset": 119,
+      "strength": 1.1622145551216763,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320207,
+      "onset": 92,
+      "strength": 0.8691260846813376,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320208,
+      "onset": 89,
+      "strength": 1.0981489772013986,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320209,
+      "onset": 105,
+      "strength": 0.7455263291854566,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320210,
+      "onset": 117,
+      "strength": 1.1950294388363771,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320211,
+      "onset": 88,
+      "strength": 1.0636946581967972,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320212,
+      "onset": 89,
+      "strength": 1.1108999745953183,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320213,
+      "onset": 111,
+      "strength": 0.831726763296917,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320214,
+      "onset": 116,
+      "strength": 1.1864646754417898,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320215,
+      "onset": 112,
+      "strength": 0.7739697005778556,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320216,
+      "onset": 96,
+      "strength": 1.1352018002276003,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320217,
+      "onset": 108,
+      "strength": 1.1866598819224523,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320218,
+      "onset": 90,
+      "strength": 1.1289051687893914,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 320219,
+      "onset": 100,
+      "strength": 1.0365297012223744,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320300,
+      "onset": 75,
+      "strength": 1.072472801395961,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320301,
+      "onset": 128,
+      "strength": 0.9805180231046325,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320302,
+      "onset": 103,
+      "strength": 0.987218963902445,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320303,
+      "onset": 84,
+      "strength": 0.8839572806760995,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320304,
+      "onset": 97,
+      "strength": 0.968016662310214,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320305,
+      "onset": 79,
+      "strength": 0.8929196519310434,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320306,
+      "onset": 77,
+      "strength": 0.70595215000157,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320307,
+      "onset": 79,
+      "strength": 0.7262857964502181,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320308,
+      "onset": 79,
+      "strength": 1.0360549837404602,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320309,
+      "onset": 88,
+      "strength": 1.1244001352999806,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320310,
+      "onset": 95,
+      "strength": 1.060017921421937,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320311,
+      "onset": 118,
+      "strength": 1.1462136504376812,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320312,
+      "onset": 75,
+      "strength": 1.0089873990280804,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320313,
+      "onset": 93,
+      "strength": 0.9448057323343222,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320314,
+      "onset": 128,
+      "strength": 1.1889407360618804,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320315,
+      "onset": 99,
+      "strength": 0.7359989966527558,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320316,
+      "onset": 79,
+      "strength": 1.0576172090707132,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320317,
+      "onset": 75,
+      "strength": 1.1220645507164169,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320318,
+      "onset": 92,
+      "strength": 0.7710649784751712,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 320319,
+      "onset": 88,
+      "strength": 0.7981104686937033,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320400,
+      "onset": 97,
+      "strength": 0.7508119978094208,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320401,
+      "onset": 104,
+      "strength": 1.1740905976163338,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320402,
+      "onset": 87,
+      "strength": 0.9614277478352912,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320403,
+      "onset": 127,
+      "strength": 0.7392028230103083,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320404,
+      "onset": 84,
+      "strength": 0.9909157183858268,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320405,
+      "onset": 96,
+      "strength": 1.0043387395949948,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320406,
+      "onset": 96,
+      "strength": 0.9710937068363128,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320407,
+      "onset": 121,
+      "strength": 0.8612869864115045,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320408,
+      "onset": 98,
+      "strength": 0.7306274831871427,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320409,
+      "onset": 124,
+      "strength": 0.866161126100059,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320410,
+      "onset": 118,
+      "strength": 0.9111497937758105,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320411,
+      "onset": 85,
+      "strength": 0.7528377719159214,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320412,
+      "onset": 115,
+      "strength": 0.8214680764816689,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320413,
+      "onset": 82,
+      "strength": 0.8264184864381181,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320414,
+      "onset": 87,
+      "strength": 0.7889036056150855,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320415,
+      "onset": 121,
+      "strength": 0.7269737384860736,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320416,
+      "onset": 92,
+      "strength": 0.8172105854331891,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320417,
+      "onset": 126,
+      "strength": 1.005100936883781,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320418,
+      "onset": 111,
+      "strength": 1.1374797572452944,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 320419,
+      "onset": 100,
+      "strength": 1.0378677316242642,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320500,
+      "onset": 101,
+      "strength": 1.185498370430989,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320501,
+      "onset": 104,
+      "strength": 1.0992926578708224,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320502,
+      "onset": 75,
+      "strength": 1.1408638524029677,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320503,
+      "onset": 125,
+      "strength": 0.9536952928981821,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320504,
+      "onset": 113,
+      "strength": 0.917194483191363,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320505,
+      "onset": 101,
+      "strength": 0.756073762893774,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320506,
+      "onset": 79,
+      "strength": 0.9140183541773308,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320507,
+      "onset": 88,
+      "strength": 0.9628603129918265,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320508,
+      "onset": 89,
+      "strength": 0.9379148319458999,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320509,
+      "onset": 85,
+      "strength": 0.8450104318471621,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320510,
+      "onset": 79,
+      "strength": 0.7063318972675765,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320511,
+      "onset": 121,
+      "strength": 0.8910908560585584,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320512,
+      "onset": 76,
+      "strength": 1.1916056139677247,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320513,
+      "onset": 114,
+      "strength": 0.9833232384814563,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320514,
+      "onset": 85,
+      "strength": 0.823831663961168,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320515,
+      "onset": 104,
+      "strength": 0.9173967640922263,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320516,
+      "onset": 95,
+      "strength": 1.0898213284021407,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320517,
+      "onset": 110,
+      "strength": 1.0655255193232744,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320518,
+      "onset": 98,
+      "strength": 0.8679573687449025,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 320519,
+      "onset": 97,
+      "strength": 0.8301394924643121,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    }
+  ],
+  "test": [
+    {
+      "scenario": "healthy",
+      "seed": 400000,
+      "onset": 99,
+      "strength": 0.8916734775936541,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400001,
+      "onset": 90,
+      "strength": 1.1163969459011716,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400002,
+      "onset": 116,
+      "strength": 0.7239032778926819,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400003,
+      "onset": 93,
+      "strength": 1.1247059352554278,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400004,
+      "onset": 81,
+      "strength": 1.0889708205992719,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400005,
+      "onset": 83,
+      "strength": 0.8821146883243242,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400006,
+      "onset": 100,
+      "strength": 0.9635001504985787,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400007,
+      "onset": 93,
+      "strength": 1.1965950143657949,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400008,
+      "onset": 75,
+      "strength": 0.9773947719518514,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400009,
+      "onset": 114,
+      "strength": 0.8120874650062884,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400010,
+      "onset": 90,
+      "strength": 0.9039536084977648,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400011,
+      "onset": 115,
+      "strength": 0.7804066638350482,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400012,
+      "onset": 119,
+      "strength": 0.8908546612367282,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400013,
+      "onset": 81,
+      "strength": 1.0913881776573977,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400014,
+      "onset": 79,
+      "strength": 1.1897476583135176,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400015,
+      "onset": 122,
+      "strength": 1.10823691400513,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400016,
+      "onset": 119,
+      "strength": 0.9307632432543764,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400017,
+      "onset": 108,
+      "strength": 0.9537954510054417,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400018,
+      "onset": 77,
+      "strength": 1.1409648664499152,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400019,
+      "onset": 96,
+      "strength": 1.1631642347966582,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400020,
+      "onset": 109,
+      "strength": 0.8067374226931958,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400021,
+      "onset": 107,
+      "strength": 0.9183691415512814,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400022,
+      "onset": 108,
+      "strength": 1.024155509013692,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400023,
+      "onset": 90,
+      "strength": 1.148698215586092,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400024,
+      "onset": 103,
+      "strength": 1.0885409036914548,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400025,
+      "onset": 94,
+      "strength": 0.7282773370794361,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400026,
+      "onset": 104,
+      "strength": 0.7173340902258224,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400027,
+      "onset": 79,
+      "strength": 0.9413352035388552,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400028,
+      "onset": 128,
+      "strength": 1.137233509437621,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy",
+      "seed": 400029,
+      "onset": 116,
+      "strength": 0.7449212517550953,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400100,
+      "onset": 90,
+      "strength": 0.8611697345438021,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400101,
+      "onset": 79,
+      "strength": 0.9471157652861533,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400102,
+      "onset": 126,
+      "strength": 0.9876685002411895,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400103,
+      "onset": 83,
+      "strength": 0.9382753319088621,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400104,
+      "onset": 119,
+      "strength": 1.0718852979985989,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400105,
+      "onset": 85,
+      "strength": 0.7444096712560768,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400106,
+      "onset": 86,
+      "strength": 1.1979213357556666,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400107,
+      "onset": 84,
+      "strength": 0.76673392809238,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400108,
+      "onset": 111,
+      "strength": 1.1379659974629655,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400109,
+      "onset": 109,
+      "strength": 0.7336849146559856,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400110,
+      "onset": 128,
+      "strength": 0.9348707621368699,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400111,
+      "onset": 102,
+      "strength": 1.0329008690293149,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400112,
+      "onset": 87,
+      "strength": 1.076071354327849,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400113,
+      "onset": 123,
+      "strength": 1.0001588891157596,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400114,
+      "onset": 100,
+      "strength": 1.0834191408546594,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400115,
+      "onset": 86,
+      "strength": 1.1226670891454105,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400116,
+      "onset": 103,
+      "strength": 0.937978737031888,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400117,
+      "onset": 110,
+      "strength": 1.010899951595281,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400118,
+      "onset": 108,
+      "strength": 0.837801926685266,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400119,
+      "onset": 107,
+      "strength": 0.79151437301457,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400120,
+      "onset": 124,
+      "strength": 0.9638685358501962,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400121,
+      "onset": 108,
+      "strength": 0.991021905097079,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400122,
+      "onset": 86,
+      "strength": 0.8575585860182053,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400123,
+      "onset": 77,
+      "strength": 1.0749067346782362,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400124,
+      "onset": 106,
+      "strength": 0.8533664007401034,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400125,
+      "onset": 104,
+      "strength": 1.0161857023224488,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400126,
+      "onset": 86,
+      "strength": 1.163959084169004,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400127,
+      "onset": 100,
+      "strength": 0.8334917957052406,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400128,
+      "onset": 106,
+      "strength": 0.812379048170587,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 400129,
+      "onset": 88,
+      "strength": 1.0778707400845098,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400200,
+      "onset": 90,
+      "strength": 1.0276265276228855,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400201,
+      "onset": 77,
+      "strength": 0.8869624816646026,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400202,
+      "onset": 96,
+      "strength": 0.7714276719001019,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400203,
+      "onset": 124,
+      "strength": 1.0853007956053664,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400204,
+      "onset": 83,
+      "strength": 0.8048499077757163,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400205,
+      "onset": 78,
+      "strength": 1.0823453863366588,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400206,
+      "onset": 99,
+      "strength": 1.07450303037732,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400207,
+      "onset": 109,
+      "strength": 1.1776399963841633,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400208,
+      "onset": 124,
+      "strength": 0.9433186516892204,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400209,
+      "onset": 80,
+      "strength": 1.0880073115039357,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400210,
+      "onset": 128,
+      "strength": 1.0282742870705142,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400211,
+      "onset": 128,
+      "strength": 1.1560244971404092,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400212,
+      "onset": 117,
+      "strength": 1.049896418093685,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400213,
+      "onset": 77,
+      "strength": 0.8786297582724472,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400214,
+      "onset": 75,
+      "strength": 1.0724054858602878,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400215,
+      "onset": 91,
+      "strength": 0.9038727822512385,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400216,
+      "onset": 99,
+      "strength": 0.810381554240607,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400217,
+      "onset": 103,
+      "strength": 0.8823207478823222,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400218,
+      "onset": 116,
+      "strength": 0.7492326128940592,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400219,
+      "onset": 79,
+      "strength": 0.9339687869460318,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400220,
+      "onset": 123,
+      "strength": 1.1897817501070151,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400221,
+      "onset": 84,
+      "strength": 0.8349131806862808,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400222,
+      "onset": 112,
+      "strength": 1.1781830139247298,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400223,
+      "onset": 88,
+      "strength": 0.735733904653447,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400224,
+      "onset": 79,
+      "strength": 1.1717508927550973,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400225,
+      "onset": 85,
+      "strength": 1.0248028720823612,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400226,
+      "onset": 76,
+      "strength": 1.067952800168079,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400227,
+      "onset": 91,
+      "strength": 0.7222014673099499,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400228,
+      "onset": 103,
+      "strength": 0.8529829320665221,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 400229,
+      "onset": 100,
+      "strength": 0.9204631429907963,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400300,
+      "onset": 78,
+      "strength": 0.7178368236549645,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400301,
+      "onset": 128,
+      "strength": 1.0516542408701817,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400302,
+      "onset": 112,
+      "strength": 0.917743600041059,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400303,
+      "onset": 98,
+      "strength": 0.9212895854789702,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400304,
+      "onset": 112,
+      "strength": 1.0962717664997275,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400305,
+      "onset": 124,
+      "strength": 1.122490177021081,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400306,
+      "onset": 103,
+      "strength": 1.163180904446909,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400307,
+      "onset": 81,
+      "strength": 0.9505441265066479,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400308,
+      "onset": 105,
+      "strength": 0.7249120337401114,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400309,
+      "onset": 108,
+      "strength": 1.0565890582846078,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400310,
+      "onset": 111,
+      "strength": 1.13972285290539,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400311,
+      "onset": 84,
+      "strength": 0.764787249595779,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400312,
+      "onset": 76,
+      "strength": 0.8217470860421423,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400313,
+      "onset": 91,
+      "strength": 0.7484498289793948,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400314,
+      "onset": 89,
+      "strength": 0.7580533437458019,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400315,
+      "onset": 117,
+      "strength": 0.7588863277864453,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400316,
+      "onset": 122,
+      "strength": 0.7024498803703418,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400317,
+      "onset": 114,
+      "strength": 1.0944486671046447,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400318,
+      "onset": 106,
+      "strength": 1.0403300992859124,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400319,
+      "onset": 95,
+      "strength": 0.933180216949498,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400320,
+      "onset": 107,
+      "strength": 1.0635631142861077,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400321,
+      "onset": 124,
+      "strength": 0.8848877982138657,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400322,
+      "onset": 103,
+      "strength": 0.8469716410475936,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400323,
+      "onset": 91,
+      "strength": 1.044423246101541,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400324,
+      "onset": 129,
+      "strength": 0.7645686747309837,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400325,
+      "onset": 127,
+      "strength": 0.9385335026213452,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400326,
+      "onset": 113,
+      "strength": 1.1483654112698172,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400327,
+      "onset": 88,
+      "strength": 0.9642778923657231,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400328,
+      "onset": 127,
+      "strength": 0.7675289068767293,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 400329,
+      "onset": 85,
+      "strength": 0.9757593481829507,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400400,
+      "onset": 123,
+      "strength": 0.7449081889802998,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400401,
+      "onset": 91,
+      "strength": 0.9128244735598645,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400402,
+      "onset": 106,
+      "strength": 0.7530612792179354,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400403,
+      "onset": 113,
+      "strength": 0.8202359059349751,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400404,
+      "onset": 120,
+      "strength": 1.068613603194253,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400405,
+      "onset": 94,
+      "strength": 0.9564089689814839,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400406,
+      "onset": 112,
+      "strength": 1.0356779318305103,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400407,
+      "onset": 118,
+      "strength": 1.0869918745377811,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400408,
+      "onset": 78,
+      "strength": 0.935283190768105,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400409,
+      "onset": 113,
+      "strength": 0.8889110304958365,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400410,
+      "onset": 99,
+      "strength": 0.7493013988492816,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400411,
+      "onset": 85,
+      "strength": 0.8631237936702589,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400412,
+      "onset": 78,
+      "strength": 1.0679424947365987,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400413,
+      "onset": 118,
+      "strength": 1.0742930129403956,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400414,
+      "onset": 112,
+      "strength": 1.1538167394098584,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400415,
+      "onset": 118,
+      "strength": 1.1751015054136837,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400416,
+      "onset": 118,
+      "strength": 0.9095262415378615,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400417,
+      "onset": 95,
+      "strength": 1.039500434600503,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400418,
+      "onset": 105,
+      "strength": 0.719964326055339,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400419,
+      "onset": 126,
+      "strength": 0.9635621226265233,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400420,
+      "onset": 120,
+      "strength": 0.8854161459270233,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400421,
+      "onset": 129,
+      "strength": 0.7339198728145523,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400422,
+      "onset": 92,
+      "strength": 0.9426211326577167,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400423,
+      "onset": 99,
+      "strength": 1.1715304668959554,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400424,
+      "onset": 125,
+      "strength": 1.0789972430972674,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400425,
+      "onset": 119,
+      "strength": 1.1807590597011732,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400426,
+      "onset": 109,
+      "strength": 0.9936798757074553,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400427,
+      "onset": 104,
+      "strength": 0.7365265302510786,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400428,
+      "onset": 87,
+      "strength": 0.9176154485845025,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 400429,
+      "onset": 100,
+      "strength": 0.9498307072772192,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400500,
+      "onset": 77,
+      "strength": 0.8410352411425783,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400501,
+      "onset": 115,
+      "strength": 0.9918586728602818,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400502,
+      "onset": 83,
+      "strength": 1.0198395915988532,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400503,
+      "onset": 112,
+      "strength": 1.1082927440600123,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400504,
+      "onset": 93,
+      "strength": 1.1789284833953178,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400505,
+      "onset": 88,
+      "strength": 1.1415346815572518,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400506,
+      "onset": 110,
+      "strength": 0.7021333408530122,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400507,
+      "onset": 127,
+      "strength": 0.7412958954027519,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400508,
+      "onset": 113,
+      "strength": 0.8532485050942566,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400509,
+      "onset": 106,
+      "strength": 1.050903475811816,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400510,
+      "onset": 115,
+      "strength": 1.0256882293354697,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400511,
+      "onset": 90,
+      "strength": 0.9289868777892609,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400512,
+      "onset": 90,
+      "strength": 0.7849818862766439,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400513,
+      "onset": 121,
+      "strength": 1.0409350436863622,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400514,
+      "onset": 93,
+      "strength": 1.180929806386822,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400515,
+      "onset": 120,
+      "strength": 0.9702120465879411,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400516,
+      "onset": 104,
+      "strength": 1.1873475206224795,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400517,
+      "onset": 108,
+      "strength": 0.9104995497574855,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400518,
+      "onset": 85,
+      "strength": 0.9771122039431255,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400519,
+      "onset": 98,
+      "strength": 1.0033113376362177,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400520,
+      "onset": 99,
+      "strength": 1.1173398060832729,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400521,
+      "onset": 115,
+      "strength": 0.8204968645954398,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400522,
+      "onset": 83,
+      "strength": 1.029425154964073,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400523,
+      "onset": 96,
+      "strength": 1.0245106591472697,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400524,
+      "onset": 129,
+      "strength": 0.911890750042534,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400525,
+      "onset": 78,
+      "strength": 1.0761245999944529,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400526,
+      "onset": 77,
+      "strength": 0.8387214148301654,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400527,
+      "onset": 95,
+      "strength": 1.198067033567537,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400528,
+      "onset": 108,
+      "strength": 0.9696390724774029,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 400529,
+      "onset": 115,
+      "strength": 0.8775315918096582,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    }
+  ],
+  "stress": [
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420000,
+      "onset": 77,
+      "strength": 0.8232334518762368,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420001,
+      "onset": 103,
+      "strength": 0.8218781920141751,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420002,
+      "onset": 88,
+      "strength": 1.0143103491456766,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420003,
+      "onset": 128,
+      "strength": 0.7876911676023988,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420004,
+      "onset": 107,
+      "strength": 0.9636513841338885,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420005,
+      "onset": 85,
+      "strength": 1.1179701512371762,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420006,
+      "onset": 107,
+      "strength": 0.8577587974780501,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420007,
+      "onset": 105,
+      "strength": 1.1930552334758833,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420008,
+      "onset": 119,
+      "strength": 0.9947781131772037,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420009,
+      "onset": 113,
+      "strength": 0.823259965915081,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420010,
+      "onset": 124,
+      "strength": 0.8565912134270781,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 420011,
+      "onset": 128,
+      "strength": 0.7146903117893089,
+      "seconds": 300,
+      "action": "none",
+      "action_at": null,
+      "data_scope": "controlled synthetic service simulator; not hospital production telemetry"
+    }
+  ]
+}

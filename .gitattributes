@@ -12,3 +12,4 @@
 *.mp4 binary
 *.onnx binary
 *.csv -text
+*.zip binary

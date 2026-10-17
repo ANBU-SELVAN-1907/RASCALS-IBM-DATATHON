@@ -1,19 +1,19 @@
 {
-  "verified_utc": "2026-10-17T11:47:53.888402+00:00",
+  "verified_utc": "2026-10-17T13:16:33.201668+00:00",
   "before_restart": {
     "valid": true,
-    "records": 117,
-    "head": "67da6e2b38cf4f676592f24833500cfce0b230ff3dd65b119b4b1f479cd68f0a",
+    "records": 131,
+    "head": "161a5f8e8774ff67c7a5e95bf925bf1afcb50cdd87aaadaef65b656d31d466c7",
     "scope": "local hash chain; externally retain head to detect full-history replacement"
   },
   "after_restart": {
     "valid": true,
-    "records": 119,
-    "head": "db352ded87c14c1d27cd11b2df80444eb9a019a23b4cff0cde2dfc28bdc90146",
+    "records": 133,
+    "head": "7f57b184dbca6f22172bbde0a4f46ee90140dc81dd11b380ac75b286425b6a6f",
     "scope": "local hash chain; externally retain head to detect full-history replacement"
   },
   "original_prefix_retained": true,
-  "restart_seconds_with_active_sse_client": 3.501,
+  "restart_seconds_with_active_sse_client": 3.427,
   "forced_kill_warning": false,
   "stderr": "",
   "scope": "Actual application restart with an open SSE connection. SQLite history persists; feature windows and sessions reset."

@@ -1,21 +1,23 @@
 {
   "normalization": "CRLF to LF",
   "sha256": {
+    "continuityguard/alert_policy.py": "3f4c32733f523b6cc65c9d89e983f687df0aab429d2bf8b7f5513ab81d380649",
     "continuityguard/benchmark.py": "624e0955a149eebf6505ca0bfef76f213564bb71b8c6ec8c8bb4480e8d3ebd3c",
-    "continuityguard/evaluation.py": "55743230b71dd8c77eed7993039983e773bd0d5cfe4bcebea4727a4ce90051b7",
+    "continuityguard/evaluation.py": "1e90d62d71a67e9a86232b489ed248a2d975bbd7cdad5aa65daade6cd3a07d8d",
     "continuityguard/explain.py": "704c2460367b6462a6765cb74c31026ca81bbd2215ebebcda991d5f5b6ba9851",
     "continuityguard/features.py": "b18d1f49c0750339f2978275316ecf18c7ddc860956127e5a2acc2bdce400b6e",
     "continuityguard/http_benchmark.py": "c882da1a6b4f671d4e9dce647f94c7a57df24df05a3d55a065460a643d0f6fe1",
     "continuityguard/measured_workload.py": "51f86a43103583a37eb2e6e48ed16babdd4b4f6c099279af015a781b7f2a3c0a",
-    "continuityguard/models.py": "b3fc6895227e23589e3c5d36c92af20b97ee9a0d1ae17cc67190711e1d0a5171",
-    "continuityguard/runtime.py": "2f413a33a248993669783faa09ba68d17be87571f56da10739d3ee30dd691d18",
+    "continuityguard/models.py": "da3c7a27902d1b8e09a2976c0064d043b1fb492b6bad653559ca6fed3b3cc7cf",
+    "continuityguard/runtime.py": "e9aa3cb5b20319d9e0072105b303b1bc27459a9832c5de16f33b3a9b0b566284",
     "continuityguard/simulation.py": "7a51a4659eda2c2fb946bc838200059376de4c5ecad0ef5d69d59fdb18b7879d",
-    "continuityguard/train.py": "0ae47cbf67ba57b3dbea6072d02901f55fe3ac53b346da9cc01bef502b2a1978",
+    "continuityguard/train.py": "ec7987e9e55a25d5897c28c1d7985aade24f7c25f166f03bc9fece191fd85816",
+    "continuityguard/upgrade.py": "e0452530b63887722b370de9543c21aa6e21152151e8266d1607df5fbfb32d4b",
     "continuityguard/web.py": "fbc10bff2799e301fa16166c321109f860eb71174b971a50d65cea71fb01a86b",
     "continuityguard/__init__.py": "1cdadbc9ec324560b1f868a8467ae3809178599aed88a9983f3008b82f2fa5e5",
     "continuityguard/static/app.js": "78e072740da83f2a3ab9d52897da5653a792a8b802a86466201ee730c28238aa",
     "continuityguard/static/index.html": "8aa222c5f5b4bfd6681ec314ed1d26bfe71d8e19f9a9493c97cdf4cc0d5117fb",
     "continuityguard/static/style.css": "22bcc82c926b7109ed8eb8a61e76c49fd892520610b9ca55cd8325bfb1733732",
-    "tests/test_system.py": "76657e8dd7216f0868749709e73221d8df73a727a73b39e2e26c6968ef5d253b"
+    "tests/test_system.py": "cda394d2f46177487266002c1254498940c4761a7e4929a6d9b778293390d3b0"
   }
 }

@@ -38,7 +38,7 @@ def dataset(offset, repetitions, kinds=KINDS):
                 b = breaches[event["service"]]
                 eligible[i] = bool(ready[i] and not b[t] and t < len(b)-HORIZON)
                 y[i] = bool(b[t+1:t+1+HORIZON].any() and not b[t])
-            runs.append({"events": events, "manifest": manifest, "x": x, "ready": ready, "eligible": eligible, "y": y})
+            runs.append({"events": events, "manifest": manifest, "x": x, "ready": ready, "eligible": eligible, "y": y, "breaches":breaches})
     return runs
 
 def stack(runs):
@@ -93,7 +93,7 @@ def write_plots(out, report, runs, forecasts):
     fig.savefig(out / "example-timeline.png", dpi=160)
     plt.close(fig)
 
-def main(output):
+def legacy_v3_main(output):
     started = time.perf_counter()
     out = Path(output)
     out.mkdir(parents=True, exist_ok=True)
@@ -200,6 +200,10 @@ def main(output):
     (out/"split-manifest.json").write_text(json.dumps({name: [r["manifest"] for r in runs] for name,runs in [("train",train),("calibration",calibration),("validation",validation),("test",test),("stress",unseen)]}, indent=2))
     write_plots(out, report, test, forecasts)
     print(json.dumps({"selected": choice, "policy": policy, "final_test": {k:v for k,v in systems["ContinuityGuard"].items() if k!="incident_details"}, "elapsed_seconds": report["training_and_evaluation_seconds"]}, indent=2), flush=True)
+
+def main(output):
+    from .upgrade import main as upgrade_main
+    return upgrade_main(output)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

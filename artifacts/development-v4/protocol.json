@@ -1,0 +1,51 @@
+{
+  "version": "cg-2026-10-17-v4",
+  "splits": {
+    "train": [
+      300000,
+      40
+    ],
+    "calibration": [
+      310000,
+      10
+    ],
+    "validation": [
+      320000,
+      20
+    ],
+    "test": [
+      400000,
+      30
+    ],
+    "stress": [
+      420000,
+      12
+    ]
+  },
+  "forecast_thresholds": [
+    0.5,
+    0.7,
+    0.85,
+    0.95,
+    0.98,
+    1.01
+  ],
+  "warning_gates": [
+    0,
+    0.05,
+    0.1,
+    0.2,
+    0.35,
+    0.5,
+    0.65,
+    0.8,
+    0.9,
+    0.97
+  ],
+  "selection": "Prefer validation precision and early recall both >= corrected static baseline; maximize 0.65 early recall + 0.35 precision with healthy false-alarm penalty; report if no strict improvement.",
+  "alert_lifecycle": "Every detector uses 3-of-5 persistence, 30-second cooldown and a 60-second persistent-episode recheck. No past alert can suppress notifications forever.",
+  "matching": "Unchanged: one alert per incident, from 60 seconds before onset through 15 seconds after incident end.",
+  "risk_policy": "Learned forecast OR (static warning AND learned risk gate) OR observed latency/error breach. Observed limits bypass filtering.",
+  "history": "v1/v2/v3 tests were inspected development history. V4 final seeds are predeclared and are generated only after the model/policy hash is frozen.",
+  "declared_utc": "2026-10-17T13:00:24.290285+00:00"
+}

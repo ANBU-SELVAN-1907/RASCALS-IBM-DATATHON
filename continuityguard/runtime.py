@@ -13,6 +13,7 @@ from .features import FeatureWindow, timestamp
 from .models import ModelBundle, evidence, diagnosis
 from .simulation import SERVICES, DEPENDENCIES, PRIORITIES
 from .evaluation import static_flags
+from .alert_policy import AlertTracker
 
 def now():
     return datetime.now(timezone.utc).isoformat()
@@ -73,10 +74,11 @@ class Engine:
         with self.lock:
             self.window = FeatureWindow()
             self.seen = OrderedDict()
-            self.votes = {s: deque(maxlen=5) for s in SERVICES}
+            self.alerts=AlertTracker()
+            self.votes = self.alerts.windows
             self.slo = {s: deque(maxlen=3) for s in SERVICES}
-            self.latched = {s: False for s in SERVICES}
-            self.last_alert = {s: -float('inf') for s in SERVICES}
+            self.latched = self.alerts.latched
+            self.last_alert = self.alerts.last
             self.services = {}
             self.incidents = deque(maxlen=100)
             self.chart = deque(maxlen=180)
@@ -115,16 +117,18 @@ class Engine:
                 if any(np.shape(a) != (len(x),) or not np.isfinite(a).all() for a in (probabilities,novelty,percentiles)) or np.any((probabilities < 0) | (probabilities > 1)):
                     raise ValueError('Invalid model output')
                 flags = self.bundle.decision_flags(probabilities, novelty, x)
+                refresh_allowed=self.bundle.refresh_flags(probabilities,x)
                 self.model_status = 'ready'
             except Exception:
                 probabilities = percentiles = np.full(len(x), np.nan)
                 flags = static_flags(x)
+                refresh_allowed=np.ones(len(x),dtype=bool)
                 self.model_status = 'degraded: static threshold fallback'
             created = []
             for i, event in enumerate(accepted):
                 service = event['service']
                 if gaps[i] is not None:
-                    self.votes[service].clear()
+                    self.alerts.reset_service(service)
                     self.slo[service].clear()
                     self.latched[service] = False
                     self.journal.append('telemetry_gap', {'service':service,'seconds':gaps[i],'action':'reset feature and persistence windows'})
@@ -134,11 +138,9 @@ class Engine:
                 breached = len(self.slo[service]) == 3 and all(self.slo[service])
                 probability = float(probabilities[i]) if np.isfinite(probabilities[i]) else None
                 percentile = float(percentiles[i]) if np.isfinite(percentiles[i]) else None
-                self.votes[service].append(bool(flags[i] and warm[i]))
-                if not any(self.votes[service]):
-                    self.latched[service] = False
+                notify=self.alerts.push(service,t,flags[i],warm[i],refresh_allowed[i])
                 self.services[service] = {**event, 'forecast_risk': probability, 'novelty_percentile': percentile, 'warm': bool(warm[i]), 'breached': breached, 'flagged': bool(flags[i] and warm[i])}
-                if sum(self.votes[service]) >= 3 and not self.latched[service] and t-self.last_alert[service] >= 30:
+                if notify:
                     category, book = diagnosis(event)
                     affected = list(SERVICES[1:]) if service == 'database' else [service]
                     priority = sorted(affected, key=lambda s: PRIORITIES[s], reverse=True)

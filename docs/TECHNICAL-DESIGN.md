@@ -6,7 +6,7 @@ The problem is operational: identify abnormal system activity as telemetry arriv
 flowchart LR
   subgraph VM[IBM LinuxONE Community Cloud - s390x VM]
     subgraph J[Jupyter container]
-      D[Whole-run synthetic datasets] --> T[Fit three forecasting candidates]
+      D[Whole-run synthetic datasets] --> T[Fit five risk candidates]
       T --> C[Separate calibration and validation]
       C --> M[Hashed model bundle and fresh test report]
       V[Correctness + real HTTP integration checks]
@@ -14,7 +14,7 @@ flowchart LR
     subgraph A[Resource-limited application container]
       S[Isolated simulator OR external session] --> Q[Schema validation and bounded queue]
       Q --> F[Causal per-service windows]
-      F --> P[Calibrated boosted tree + threshold guard]
+      F --> P[Calibrated risk + repeat triage]
       F --> N[Isolation Forest novelty]
       P --> I[Persistence and incident evidence]
       N --> I
@@ -37,13 +37,13 @@ The organizer supplies a native s390x Python/Jupyter ML image. We use open-sourc
 
 ## Why Jupyter
 
-Notebook 01 executes fitting, calibration, selection, final evaluation and plots through a native LinuxONE kernel. Notebook 02 runs tests and a direct-engine benchmark. Notebook 03 reruns the engineering suite, creates a separate real HTTP service for integration measurement, and verifies local predictive plus generative execution. Executed outputs, success records, model hashes and machine architecture remain available to judges. These are reproducible experiments, not screenshots of unexecuted code.
+Notebook 06 executes current V5 fitting, calibration, validation selection, hash freeze and fresh final evaluation. Notebook 01 reviews the unchanged artifacts; 02 tests and times the engine; 03 verifies the suite, actual HTTP path and native Granite; 04 collects separate original service measurements; 05 retains optional ONNX preparation. Saved outputs and records remain public. Earlier V3/V4 outputs are labeled history.
 
 ## Why these models and structures
 
-- **Seven-leaf histogram gradient boosting:** handles nonlinear relationships among only 26 tabular inputs with small trees. It won the declared validation objective among logistic regression and two boosting candidates. It is not claimed universally best. A separate sigmoid calibrator reduces raw-score distortion but does not establish production probability accuracy.
+- **Calibrated logistic risk:** standardization and LogisticRegression(C=0.1), selected among five candidates by the declared validation notification objective. Separate sigmoid calibration uses different runs. Higher point PR-AUC alone does not decide notification policy; production calibration remains unproven.
 - **Isolation Forest:** independent novelty reference trained on healthy workload variation. Its percentile is not an outage probability; it does not independently page in the selected policy.
-- **Threshold guard:** the selected v3 policy ORs learned risk at its validated threshold with static operational limits. This protects obvious danger while preserving an explicit model-failure fallback. Predictive performance must be judged against the threshold baseline, including metrics that did not improve.
+- **Initial warning preservation:** fixed thresholds retain their first 3-of-5 warning. The learned score can filter only persistent repeats; observed breach limits bypass the filter. Shared 60-second rechecks correct permanent suppression. Independent forecast paging is disabled.
 - **Bounded deques and OrderedDict:** causal rolling state and bounded recent event IDs. A telemetry gap resets warmup and persistence. This is bounded in-memory deduplication, not exactly-once replay across restarts.
 - **Async bounded queue:** at most 128 batches of at most 128 schema-validated events; overload returns 429. Consumer failures are counted and make health degraded rather than silently killing processing.
 - **SQLite WAL and streaming audit verification:** durable local records and hash-link checks. Event retention is 5,000 rows. Audit history persists and grows; retention/rotation of that history is an operational task. External anchoring is needed against whole-history replacement.
@@ -51,6 +51,6 @@ Notebook 01 executes fitting, calibration, selection, final evaluation and plots
 
 ## Boundaries that prevent misleading decisions
 
-Forecast target and early incident matching both use 60 event-time seconds in v3. Every detector shares persistence, cooldown and matching rules. No retroactive point adjustment is used. Synthetic and external sessions are mutually exclusive; API callers cannot grant themselves synthetic provenance or enable a counterfactual preview for external data. Stale receipt age is visible. A finished replay cannot be resumed as if its producer still existed. Shutdown bounds long-lived streams and waits for explanation work before closing its journal.
+Forecast target and early incident matching both use 60 event-time seconds. Every detector uses the shared scheduler and matching rules; V5 applies learned triage only to repeats. No retroactive point adjustment is used. Synthetic and external sessions are mutually exclusive; API callers cannot grant themselves synthetic provenance or enable a counterfactual preview for external data. Stale receipt age is visible. A finished replay cannot be resumed as if its producer still existed. Shutdown bounds long-lived streams and waits for explanation work before closing its journal.
 
 The external adapter accepts already-aggregated service windows with known service identities; it is not a universal telemetry collector. Real deployment needs an authorized metrics exporter, stable one-second aggregation semantics, domain validation/calibration, operational response review and reliability testing. This prototype demonstrates the complete detection-to-decision path on the supplied VM within those stated boundaries.

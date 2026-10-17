@@ -75,33 +75,34 @@ end()
 
 start(3,'Solution: a warning-to-decision pipeline','The browser uses TLS or SSH. Telemetry, inference, local generation and the journal stay in the LinuxONE VM.')
 rect(36,165,888,83,PALE);text(53,176,'JUPYTER CONTAINER / NATIVE s390x',12,GREEN,True)
-text(53,204,'Fit candidates > separate calibration > validation policy > fresh final test > hashed model',17,INK)
-for i,(a,b) in enumerate([('Ingest','Validated queue'),('Observe','Causal features'),('Score','Forecast + guard'),('Decide','Evidence + runbook')]):
+text(53,204,'Fit 5 candidates > separate calibration > freeze policy > fresh final test > hashed model',17,INK)
+for i,(a,b) in enumerate([('Ingest','Validated queue'),('Observe','Causal features'),('Score','Risk + repeat triage'),('Decide','Evidence + runbook')]):
     x=36+224*i;rect(x,282,210,79,INK);text(x+13,295,a,19,'#F7F9F3',True);text(x+13,326,b,12,'#D4E4D5')
 for x,title,body in [(36,'ISOLATION FOREST','Separate novelty score; not a probability or independent page trigger.'),(344,'LOCAL GRANITE','Verified evidence wording; complete IDs and labeled fallback.'),(652,'RESPONSE PREVIEW','Same-workload action/no-action branches in the simulator only.')]:
     text(x,394,title,11,GREEN,True);wrap(x,417,body,260,13)
 end()
 
 start(4,'A small model, selected for the actual task','Predict a new sustained service-objective breach within 60 event-time seconds using current and past observations.')
-for i,(value,label) in enumerate([(60,'Train runs'),(18,'Calibration'),(24,'Validation'),(60,'Fresh test runs')]):
+for i,(value,label) in enumerate([(R['split']['training_runs'],'Train runs'),(R['split']['calibration_runs'],'Calibration'),(R['split']['validation_runs'],'Validation'),(R['split']['test_runs'],'Fresh test runs')]):
     x=36+i*224;text(x,165,value,43,GREEN,True);text(x,220,label,15,INK)
-card(36,275,430,'Calibrated boosted trees','Seven-leaf histogram boosting won the validation objective. Current policy: forecast >= 0.97 OR explicit operational thresholds.')
+card(36,275,430,'Calibrated logistic risk','Scaled logistic regression won validation. Initial warnings stay intact; learned risk or observed breach permits repeats. Independent forecast paging is disabled.')
 card(490,275,434,'Evidence of separation','26 causal features; whole runs and disjoint seeds. No scenario, onset, future values or fault labels enter the predictors.')
 text(36,449,f"Forecast PR-AUC {R['forecast_test']['pr_auc']:.3f} / prevalence {pct(R['forecast_test']['positive_prevalence'])} / Brier {R['forecast_test']['brier_score']:.5f}",13,INK)
-text(36,475,'v3 aligns incident matching to 60 s. Earlier v1/v2 reports are retained as development history.',10,MUTED)
+text(36,475,'V5: matched 60-second horizon; shared alert scheduler; earlier V1-V4 results retained.',10,MUTED)
 end()
 
-start(5,'A working operator console, not a mockup','Actual deployed s390x application. Scenario telemetry and response effects are synthetic.')
-shot('evidence/dashboard.png',36,159,570,300,crop=(230,470,845,815))
+start(5,'From incoming telemetry to retained warning evidence','Actual frozen-model scenario output. The deployed dashboard processes the same controlled synthetic service telemetry.')
+shot('artifacts/scenarios/pool-example.png',36,159,570,300)
 text(644,166,'Retained warning evidence',18,GREEN,True)
 for i,e in enumerate(DEMO['incident']['evidence']):
     text(644,214+i*58,e['label'],12,MUTED)
     text(644,234+i*58,str(e['value'])+' '+e['unit'],20,INK,True)
 wrap(644,407,'Actual selected incident; measurements are evidence, not causal attribution.',275,12)
+wrap(36,435,'The breach marker also includes error fraction above 10%; the latency curve alone need not cross 1,000 ms.',570,10)
 text(36,469,'Streaming services > persistent warning > measurements > declared dependency and runbook',13,GREEN,True)
 end()
 
-start(6,'Measure usefulness without hiding the misses','Fresh v3 test: 60 synthetic runs; correlated service incidents within a run. No production hospital validation.')
+start(6,'Higher precision with retained early detection',f"Frozen V5 test: {R['split']['test_runs']} synthetic runs; correlated services within a run. No production hospital validation.")
 xs=[36,281,428,568,731,834]
 for x,label in zip(xs,['Detector','Early recall','Precision','Median lead*','Late','Missed']):text(x,163,label,12,MUTED,True)
 for index,(name,m) in enumerate(R['systems'].items()):
@@ -109,10 +110,11 @@ for index,(name,m) in enumerate(R['systems'].items()):
     if name=='ContinuityGuard':rect(29,y-6,895,37,PALE)
     vals=[name,pct(m['early_warning_recall']),pct(m['incident_precision']),str(m['median_early_lead_seconds'])+' s',m['late_detections'],m['missed']]
     for x,value in zip(xs,vals):text(x,y,value,15,INK,name=='ContinuityGuard')
-wrap(36,382,f"Both methods warned before {M['early_detections']}/{M['incidents']} incidents. Median lead: {M['median_early_lead_seconds']:g} s vs {B['median_early_lead_seconds']:g} s; model precision was slightly lower. This does not establish consistent ML superiority.",882,14,INK)
+wrap(36,382,f"Early warnings: {M['early_detections']}/{M['incidents']} vs {B['early_detections']}/{B['incidents']}. Precision: {pct(M['incident_precision'])} vs {pct(B['incident_precision'])}. Unmatched notifications: {M['unmatched_alerts_all_runs']} vs {B['unmatched_alerts_all_runs']}. Lead and misses are equal in this test.",882,14,INK)
 ci=R['run_bootstrap']['systems']['ContinuityGuard']
-text(36,445,f"Run-bootstrap 95% interval for early recall: {pct(ci['early_recall_percentile_95'][0])}-{pct(ci['early_recall_percentile_95'][1])}. 500 resamples; simulator-conditional.",11,MUTED)
-text(36,472,'*Among early detections only. Zero healthy-run alerts in 10 service-hours is not proof of zero real false alarms.',10,MUTED)
+delta=R['paired_bootstrap']['precision_delta_95']
+text(36,445,f"Paired 95% interval for precision gain: {100*delta[0]:.2f} to {100*delta[1]:.2f} percentage points. 500 whole-run resamples; simulator-conditional.",10,MUTED)
+text(36,472,f"*Among early detections. Zero healthy alerts in {M['healthy_service_hours']:g} service-hours does not prove zero real false alarms.",10,MUTED)
 end()
 
 start(7,'The response is inspectable and bounded','Evidence, service priorities, approved investigation steps and a reproducible response preview form one decision workflow.')
@@ -135,18 +137,20 @@ wrap(36,269,'Checks cover leakage, online/offline parity, time gaps, invalid inp
 text(36,379,f"{HTTP['processed_events']}/{HTTP['offered_events']} events processed",22,GREEN,True)
 wrap(36,416,f"Real local HTTP path: 100 offered events/s for 10 s. Queue-ack p95 {HTTP['p95_http_queue_ack_ms']:g} ms; queue wait and inference are distinct boundaries.",405,13)
 card(490,163,434,'Application containment','UID 1000 / read-only root / capabilities dropped / no-new-privileges / 2 GiB memory / 1.5 CPU quota / Authenticated TLS / SSH')
-shot('evidence/evaluation.png',490,322,434,126,crop=(250,995,850,1170))
-wrap(505,458,'Actual live proof excerpt. Full screenshot and model hash are in evidence/. No accelerator claim.',400,10)
+proof=read('evidence/linuxone-verification.json')['platform_proof']
+rect(490,322,434,126,PALE)
+for i,line in enumerate(['ACTUAL DEPLOYED API PROOF',f"Architecture: {proof['architecture']} / process UID: {proof['process_uid']}",f"Read-only root: {proof['root_filesystem_readonly']}",f"Model: {proof['model']['version']}",f"SHA-256: {proof['model']['sha256'][:32]}..."]):text(505,332+i*21,line,10,INK,i==0)
+wrap(505,458,'Saved API values; full model hash and container verification in evidence/. No accelerator claim.',400,10)
 end()
 
-start(9,'Scenarios: normal change is not always failure','Fixed seed 101 / severity 1.12 / frozen v3 model. These are synthetic illustrations, not a new independent test.')
-for x,label in zip([36,400,620,775],['Scenario','All-service alerts','Urgent warning','Urgent breach']):text(x,164,label,12,MUTED,True)
+start(9,'Scenarios: normal change is not always failure','Fixed seed 101 / severity 1.12 / frozen V5 model. These are synthetic illustrations, not a new independent test.')
+for x,label in zip([36,400,620,775],['Scenario','Notifications','First urgent alert','Urgent breach']):text(x,164,label,12,MUTED,True)
 for i,row in enumerate(SCENARIOS):
     y=198+i*34
     if i%2==0:rect(30,y-4,894,31,PALE)
-    vals=[row['scenario'].replace('_',' '),row['all_service_alerts'],', '.join(str(t)+' s' for t in row['urgent_alert_seconds']) or 'None',str(row['first_urgent_sustained_breach_second'])+' s' if row['first_urgent_sustained_breach_second'] is not None else 'None']
+    vals=[row['scenario'].replace('_',' '),row['all_service_alerts'],str(row['urgent_alert_seconds'][0])+' s' if row['urgent_alert_seconds'] else 'None',str(row['first_urgent_sustained_breach_second'])+' s' if row['first_urgent_sustained_breach_second'] is not None else 'None']
     for x,v in zip([36,400,620,775],vals):text(x,y,v,15,INK)
-wrap(36,453,'Pool and retry examples warn before sustained breach. Abrupt failure is detected at onset. The memory example alerts another service; it does not invent an urgent-service breach.',875,12)
+wrap(36,453,'Counts include episode rechecks, not unique outages. Pool/retry examples warn before breach. The abrupt example is detected at onset, without an early-warning claim.',875,12)
 end()
 
 start(10,'Original data: measured on this LinuxONE VM','64 actual service observations / bounded request computation / raw CSV, timestamps and SHA-256 retained. No patient or hospital data.')
@@ -167,12 +171,12 @@ text(36,457,'Established algorithms; original project integration. No world-firs
 end()
 
 start(12,'Learnings during the datathon','Changes we can explain from actual implementation, tests and corrected evidence.')
-lessons=[('Platform reality','RHEL, Podman and native s390x packages required different setup from Ubuntu examples.'),('Evaluation alignment','A 60-second prediction needs a matching horizon; correcting it reduced the headline.'),('Timing boundaries','Queue acceptance, inference and completed processing are different measurements.'),('Grounded generation','Every evidence reference must match the generated wording; fallback must be labeled.'),('Data provenance','Measured request behavior, controlled simulation and production hospital data are different.')]
+lessons=[('Native model selection','A smaller calibrated model won the notification objective; model size alone did not decide it.'),('Alert lifecycles','Old alerts need bounded rechecks. Preserve first warnings before filtering repeats.'),('Fair evaluation','Freeze before fresh tests, apply the same scheduler, and retain rejected results.'),('Grounded generation','Every evidence reference must match generated wording; fallback must be labeled.'),('Data provenance','Measured service behavior, controlled simulation and hospital data are different evidence.')]
 for i,(title,body) in enumerate(lessons):
     y=163+i*60;text(36,y,str(i+1).zfill(2),20,GREEN,True);text(82,y,title,17,INK,True);wrap(82,y+25,body,827,13)
 end()
 
-start(13,'Implementation and IBM Toolkit fit','Five native Jupyter notebooks, a deployed service, and a documented optional serving path.')
+start(13,'Implementation and IBM Toolkit fit','Six native Jupyter notebooks, a deployed service, and a documented optional serving path.')
 steps=[('01 / Prepare','Provision the VM, complete assigned labs and retain persistent Jupyter storage.'),('02 / Train and verify','Fit/calibrate/select, then review fresh final results and engineering tests.'),('03 / Measure and deploy','Collect original service measurements; build the resource-limited app and verify its journal.'),('04 / Demonstrate','Open authenticated TLS by IP, inspect an alert and explain/preview the next step.')]
 for i,(title,body) in enumerate(steps):
     y=164+i*72;text(36,y,title,16,GREEN,True);wrap(36,y+26,body,440,14)

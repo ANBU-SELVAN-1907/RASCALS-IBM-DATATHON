@@ -10,27 +10,27 @@
 
 5. **Is this IBM Machine Learning for z/OS?** No. This is open-source AI on LinuxONE Community Cloud Linux. We do not claim z/OS integration, z/OS transactions, Telum/Spyre acceleration or certification.
 
-6. **What does Jupyter prove?** Five native notebooks retain fitting, calibration, selection, evaluation, tests, actual HTTP integration and local generation. Their executed copies, success records and architecture/model outputs are in the repository.
+6. **What does Jupyter prove?** Six native notebooks retain fitting, calibration, selection, evaluation, tests, actual HTTP integration and local generation. Their executed copies, success records and architecture/model outputs are in the repository.
 
 7. **Have both mandatory labs been completed?** The Churn multi-model and Loan predictive/generative sample notebooks executed before original project work. Their timestamps and source commit are recorded. The organizer must confirm the exact mapping to its assigned prerequisites; execution alone is not a course-completion certificate.
 
-8. **What is learned?** boosted_trees_7_leaves forecasts a new sustained breach within 60 event-time seconds. Isolation Forest learns healthy variation for a separate novelty score. Sigmoid calibration uses separate runs; production calibration is unproven.
+8. **What is learned?** logistic_C0.1 forecasts a new sustained breach within 60 event-time seconds. Isolation Forest learns healthy variation for a separate novelty score. Sigmoid calibration uses separate runs; production calibration is unproven.
 
-9. **Why this model?** Three candidates and alert-policy variants compete on a declared validation objective. Small tabular boosted trees fit nonlinear relationships without requiring a large sequence model. We do not call them universally best.
+9. **Why this model?** Five candidates and alert-policy variants compete on a declared validation objective. Scaled logistic regression supplies a compact, calibratable score; other candidates include three boosted-tree sizes. We do not call them universally best.
 
-10. **What triggers an alert?** In v3, learned forecast >=0.97 OR static operational thresholds feeds 3-of-5 persistence after 15-observation warmup, with cooldown. A warning may therefore have a learned score below .97. Novelty does not independently trigger pages in this policy.
+10. **What triggers an alert?** Initial static warnings use 3-of-5 persistence after warmup. A 60-second episode recheck prevents permanent suppression. ML confirms whether a persistent repeat merits notification; observed breach limits bypass the learned filter. Independent forecast paging is disabled. Novelty remains separate.
 
-11. **How much better is it?** On 60 fresh synthetic runs, both ContinuityGuard and static thresholds warned before 31/43 service incidents. Median early lead was 13 seconds versus 10. Precision was 59.3% versus 60.0%; missed incidents were 11 versus 10. This does not establish consistent ML superiority. Report confidence intervals; do not claim a statistically established general advantage.
+11. **How much better is it?** On 180 predeclared fresh synthetic runs, ContinuityGuard warned early for 130/135 service incidents versus 130/135 for static thresholds. Precision was 45.3% versus 43.5%; median early lead was 11s versus 11s; misses were 1 versus 1. Unmatched notifications were 162 versus 174. This is a modest measured precision gain within one simulator family, not universal superiority. Report confidence intervals; do not claim a statistically established general advantage.
 
 12. **Why retain AI if thresholds are competitive?** The model supplies a learned, calibratable score and novelty context, while the integration makes decisions inspectable. Current experiments do not justify replacing thresholds. More diverse authorized data and operational validation are needed to establish incremental ML value.
 
 13. **What is new?** This original implementation connects causal warning features, software dependency priorities, evidence receipts, constrained local wording and a same-workload response preview. Algorithms are established; no world-first claim or prior-team code reuse.
 
-14. **How is leakage controlled?** Whole runs and disjoint train/calibration/validation/test seeds; past/current features only; no fault metadata; separate calibration. v1/v2 inspected reports are development history. The corrected v3 protocol uses a fresh test range.
+14. **How is leakage controlled?** Whole runs and disjoint train/calibration/validation/test seeds; past/current features only; no fault metadata; separate calibration. V1-V4 inspected reports are development history. V5 freezes its protocol and model before new final runs.
 
-15. **Why did the headline change?** The audit aligned the early incident-matching window with the 60-second model target. Policy selection was repeated on validation, and a fresh final test was used. We retained the earlier results instead of hiding the correction.
+15. **Why did the headline change?** V3 aligned the horizon. V4 filtering improved precision but lost early recall and was rejected. V5 preserves first threshold warnings and filters repeats. It freezes selection before new final evaluation; prior results remain published.
 
-16. **Why zero healthy false alerts but low precision?** The zero applies only to 10 healthy service-hours. Overall precision also counts repeat, unmatched and non-breaching fault-run alerts. There were 22 unmatched v3 alerts overall.
+16. **Why zero healthy false alerts but low precision?** The zero applies only to 30 healthy service-hours. Overall precision also counts repeat, unmatched and non-breaching fault-run alerts. There were 162 unmatched V5 notifications overall.
 
 17. **Can sudden faults be predicted?** The unseen abrupt stress test detected every tested service incident but warned before none. No precursor means no promised early warning.
 
@@ -48,11 +48,11 @@
 
 24. **Is the journal tamper-proof?** No. It checks hash links and retains history across restart; externally retain a trusted head to detect whole-history replacement. Signed provenance and external anchoring would be production work.
 
-25. **What do the latency numbers include?** The actual local HTTP test processed 1000/1000 synthetic fixture events at 100 offered events/s over 10 seconds. Queue-ack p95 8.006 ms excludes later processing; engine-batch p95 8.89 ms excludes queue wait. Client/server share the VM; no WAN/browser or maximum sustained-capacity claim.
+25. **What do the latency numbers include?** The actual local HTTP test processed 1000/1000 synthetic fixture events at 100 offered events/s over 10 seconds. Queue-ack p95 7.982 ms excludes later processing; engine-batch p95 9.1 ms excludes queue wait. Client/server share the VM; no WAN/browser or maximum sustained-capacity claim.
 
 26. **What security controls were verified?** UID 1000, read-only root, CPU/memory/PID caps, dropped capabilities, no-new-privileges, loopback/SSH, schema/actual body limits, authentication and origin checks. Host networking and single-token access remain explicit prototype limits.
 
-27. **How do you know the implementation works?** 37 native tests pass; inspect the actual test names/output. Additional HTTP, real Granite, container, restart and browser checks retain measured evidence. Passing tests does not prove absence of every bug.
+27. **How do you know the implementation works?** 43 native tests pass; inspect the actual test names/output. Additional HTTP, real Granite, container, restart and browser checks retain measured evidence. Passing tests does not prove absence of every bug.
 
 28. **What remains before adoption/submission?** Production adoption needs authorized real telemetry, domain evaluation/calibration, reviewed response steps, identity/operations hardening and reliability trials. Event submission still needs prerequisite mapping confirmation, reviewed YouTube/Vimeo hosting and manual portal entry.
 

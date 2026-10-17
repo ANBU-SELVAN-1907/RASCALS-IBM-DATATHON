@@ -1,5 +1,5 @@
 {
-  "model_version": "cg-2026-10-17-v3",
+  "model_version": "cg-2026-10-17-v5",
   "scenarios": [
     {
       "scenario": "healthy",
@@ -32,9 +32,11 @@
       "scenario": "pool_exhaustion",
       "seed": 101,
       "strength": 1.12,
-      "all_service_alerts": 4,
+      "all_service_alerts": 12,
       "urgent_alert_seconds": [
-        167
+        177,
+        237,
+        297
       ],
       "first_urgent_sustained_breach_second": 188,
       "scope": "Fixed-seed synthetic illustration, not new independent validation"
@@ -43,9 +45,11 @@
       "scenario": "retry_storm",
       "seed": 101,
       "strength": 1.12,
-      "all_service_alerts": 5,
+      "all_service_alerts": 9,
       "urgent_alert_seconds": [
-        182
+        196,
+        226,
+        286
       ],
       "first_urgent_sustained_breach_second": 219,
       "scope": "Fixed-seed synthetic illustration, not new independent validation"

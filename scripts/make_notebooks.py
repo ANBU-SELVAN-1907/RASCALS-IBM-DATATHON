@@ -52,6 +52,31 @@ print('Scope:', report['scope'])
 print('Limitations:', *report['limitations'], sep='\\n- ')
 """),
 ]
+# The frozen fit/selection/fresh evaluation is retained in notebook 06. This
+# review notebook avoids silently retraining after the final results are known.
+training = [
+    md('# ContinuityGuard / RASCALS\n## 01 - Current frozen model review\n\nActual fitting, validation selection and the first fresh V5 evaluation ran in `06_detector_upgrade.executed.ipynb`. V3 training outputs are retained under `history/v3`. This review loads the frozen artifacts without changing them. Repeating final seeds is reproduction, not another independent evaluation.'),
+    intro,
+    code("""from continuityguard.models import ModelBundle
+bundle=ModelBundle(ROOT/'artifacts')
+report=json.loads((ROOT/'artifacts/report.json').read_text())
+freeze=json.loads((ROOT/'artifacts/freeze.json').read_text())
+assert freeze['model_sha256']==bundle.manifest['sha256']
+print('Frozen model:',bundle.manifest)
+print('Policy:',bundle.state['policy'])
+print('Original training/evaluation notebook: 06_detector_upgrade.executed.ipynb')
+print('Frozen before final evaluation:',freeze)
+"""),
+    code("""import pandas as pd
+from IPython.display import display,Image
+columns=['incidents','early_warning_recall','incident_precision','median_early_lead_seconds','late_detections','missed']
+display(pd.DataFrame(report['systems']).T[columns])
+print('Paired whole-run uncertainty:',report['paired_bootstrap'])
+print('Model comparison on validation:',report['candidate_models'])
+"""),
+    code("display(Image(filename=str(ROOT/'artifacts/benchmark.png')))\nprint('Split sizes:',report['split'])\nprint('Method:',report['method'])\nprint('Scope:',report['scope'])"),
+]
+
 testing = [
     md("# ContinuityGuard · RASCALS\n## 02 — Correctness and inference benchmark\n\nRun after 01. These tests exercise causal features, scenario reproducibility, deduplication, bounded storage, incident timing, model integrity, authentication, and the live sandbox. The benchmark measures inference processing, not source-to-browser delay or production capacity."),
     intro,
