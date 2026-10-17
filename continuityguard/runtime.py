@@ -50,13 +50,13 @@ class Journal:
 
     def verify(self):
         with self.lock:
-            rows = self.db.execute('SELECT body,previous,digest FROM audit ORDER BY id').fetchall()
-        previous = '0'*64
-        for body, linked, digest in rows:
-            if linked != previous or hashlib.sha256((previous+body).encode()).hexdigest() != digest:
-                return {'valid': False, 'records': len(rows), 'scope': 'local hash chain; not immutable or externally signed'}
-            previous = digest
-        return {'valid': True, 'records': len(rows), 'head': previous, 'scope': 'local hash chain; externally retain head to detect full-history replacement'}
+            previous, count = '0'*64, 0
+            for body, linked, digest in self.db.execute('SELECT body,previous,digest FROM audit ORDER BY id'):
+                count += 1
+                if linked != previous or hashlib.sha256((previous+body).encode()).hexdigest() != digest:
+                    return {'valid': False, 'records': count, 'scope': 'local hash chain; not immutable or externally signed'}
+                previous = digest
+            return {'valid': True, 'records': count, 'head': previous, 'scope': 'local hash chain; externally retain head to detect full-history replacement'}
 
     def close(self):
         self.db.close()
@@ -88,27 +88,32 @@ class Engine:
     def ingest(self, events):
         started = time.perf_counter()
         with self.lock:
-            accepted, rows, warm = [], [], []
+            accepted, rows, warm, gaps = [], [], [], []
             for event in events:
                 if event['event_id'] in self.seen:
                     self.duplicates += 1
                     continue
                 try:
+                    previous_time = self.window.last.get(event['service'])
                     row, ready = self.window.push(event)
-                except (ValueError, KeyError):
+                except (ValueError, KeyError, TypeError, OverflowError):
                     self.rejected += 1
                     continue
+                gap = timestamp(event['event_time']) - previous_time if previous_time is not None else 0
                 self.seen[event['event_id']] = True
                 if len(self.seen) > 5000:
                     self.seen.popitem(last=False)
                 accepted.append(event)
                 rows.append(row)
                 warm.append(ready)
+                gaps.append(gap if gap>5 else None)
             if not accepted:
                 return []
             x = np.asarray(rows)
             try:
                 probabilities, novelty, percentiles = self.bundle.predict(x)
+                if any(np.shape(a) != (len(x),) or not np.isfinite(a).all() for a in (probabilities,novelty,percentiles)) or np.any((probabilities < 0) | (probabilities > 1)):
+                    raise ValueError('Invalid model output')
                 flags = self.bundle.decision_flags(probabilities, novelty, x)
                 self.model_status = 'ready'
             except Exception:
@@ -118,6 +123,11 @@ class Engine:
             created = []
             for i, event in enumerate(accepted):
                 service = event['service']
+                if gaps[i] is not None:
+                    self.votes[service].clear()
+                    self.slo[service].clear()
+                    self.latched[service] = False
+                    self.journal.append('telemetry_gap', {'service':service,'seconds':gaps[i],'action':'reset feature and persistence windows'})
                 t = timestamp(event['event_time'])
                 breach = event['latency_p95_ms'] > 1000 or event['failures']/event['requests'] > .10
                 self.slo[service].append(breach)

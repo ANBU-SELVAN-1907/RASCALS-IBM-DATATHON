@@ -1,0 +1,80 @@
+{
+  "verified_utc": "2026-10-17T09:26:49.624913+00:00",
+  "model_version": "cg-2026-10-17-v3",
+  "incident": {
+    "id": "003a18bd93e7",
+    "created_at": "2026-10-17T09:26:20.875329+00:00",
+    "event_time": "2026-10-17T09:28:22.883833+00:00",
+    "service": "database",
+    "suspected_source": "database",
+    "category": "pool",
+    "risk": 0.9797103478275777,
+    "novelty_percentile": 1.0,
+    "already_breached": false,
+    "affected_services": [
+      "urgent-results",
+      "appointments",
+      "batch-reporting"
+    ],
+    "evidence": [
+      {
+        "id": "E1",
+        "label": "Connection pool occupancy",
+        "value": 83.3,
+        "unit": "%"
+      },
+      {
+        "id": "E3",
+        "label": "Waiting queue",
+        "value": 12.3,
+        "unit": "requests"
+      },
+      {
+        "id": "E4",
+        "label": "Memory occupancy",
+        "value": 37.3,
+        "unit": "%"
+      }
+    ],
+    "runbook": {
+      "id": "RB-POOL",
+      "title": "Investigate database connection pressure",
+      "action": "defer_batch",
+      "steps": [
+        "Inspect connection occupancy and queue growth.",
+        "Check for stuck or long-running database requests.",
+        "Preview deferring optional sandbox reporting work.",
+        "Preserve urgent-results traffic and review recovery measurements."
+      ]
+    },
+    "source_mode": "synthetic",
+    "diagnosis_scope": "heuristic hypothesis from observed signals and declared topology"
+  },
+  "explanation": {
+    "status": "complete",
+    "mode": "local Granite \u00b7 constrained generation",
+    "summary": "database needs operator investigation. Investigate database connection pressure. Supporting measurements: Connection pool occupancy 83.3 % (E1); Waiting queue 12.3 requests (E3); Memory occupancy 37.3 % (E4).",
+    "evidence_ids": [
+      "E1",
+      "E3",
+      "E4"
+    ],
+    "runbook_id": "RB-POOL",
+    "completion_tokens": 97,
+    "elapsed_seconds": 27.96,
+    "scope": "Generation selects a verified wording under a strict evidence schema; no autonomous action."
+  },
+  "response_preview": {
+    "scope": "paired synthetic experiment; effects are simulator assumptions",
+    "action": "defer_batch",
+    "action_at_second": 163,
+    "urgent_success_without": 1936,
+    "urgent_success_with": 2251,
+    "urgent_success_difference": 315,
+    "urgent_breach_seconds_without": 104,
+    "urgent_breach_seconds_with": 0,
+    "deferred_batch_requests": 1238,
+    "same_exogenous_seed": 101
+  },
+  "scope": "Actual application actions on controlled synthetic telemetry; no real service modified."
+}

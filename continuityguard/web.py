@@ -19,8 +19,37 @@ from .runtime import Engine
 from .simulation import SERVICES, SCENARIOS, Experiment, simulate, paired_response
 from .explain import Explainer
 
+class BodyLimit:
+    """Bound actual POST bytes, including requests without Content-Length."""
+    def __init__(self, app, limit=1_000_000):
+        self.app, self.limit = app, limit
+
+    async def __call__(self, scope, receive, send):
+        if scope['type'] != 'http' or scope['method'] != 'POST':
+            return await self.app(scope,receive,send)
+        chunks, size = [], 0
+        while True:
+            message = await receive()
+            if message['type'] == 'http.disconnect':
+                return
+            chunk = message.get('body',b'')
+            size += len(chunk)
+            if size > self.limit:
+                return await JSONResponse({'detail':'Request too large'},413)(scope,receive,send)
+            chunks.append(chunk)
+            if not message.get('more_body',False):
+                break
+        body, delivered = b''.join(chunks), False
+        async def bounded_receive():
+            nonlocal delivered
+            if not delivered:
+                delivered = True
+                return {'type':'http.request','body':body,'more_body':False}
+            return await receive()
+        await self.app(scope,bounded_receive,send)
+
 class Telemetry(BaseModel):
-    model_config = ConfigDict(extra='forbid', allow_inf_nan=False)
+    model_config = ConfigDict(extra='forbid', allow_inf_nan=False, strict=True)
     event_id: str = Field(min_length=1, max_length=120)
     event_time: str = Field(max_length=60)
     service: Literal['database','urgent-results','appointments','batch-reporting']
@@ -75,17 +104,26 @@ class Service:
         self.producer = None
         self.consumer = None
         self.base = None
+        self.mode = 'external'
+        self.transition = asyncio.Lock()
+        self.processing_error = None
+        self.failed_batches = 0
 
     async def consume(self):
         while True:
             generation, batch = await self.queue.get()
             try:
                 if generation == self.generation:
-                    await asyncio.to_thread(self.engine.ingest, batch)
+                    try:
+                        await asyncio.to_thread(self.engine.ingest, batch)
+                        self.processing_error = None
+                    except Exception as exc:
+                        self.processing_error = type(exc).__name__
+                        self.failed_batches += 1
             finally:
                 self.queue.task_done()
 
-    async def start(self, params):
+    async def stop_producer(self):
         if self.producer:
             self.producer.cancel()
             try:
@@ -93,9 +131,29 @@ class Service:
             except asyncio.CancelledError:
                 pass
         await self.queue.join()
+
+    async def external(self):
+        async with self.transition:
+            self.mode = 'transition'
+            await self.stop_producer()
+            self.generation += 1
+            self.engine.reset()
+            self.mode, self.scenario = 'external','external'
+            self.spec, self.base, self.producer = None,None,None
+            self.second, self.running = 0,False
+            self.engine.journal.append('external_session_started',{'scope':'unvalidated external distribution; no paired simulator actions'})
+
+    async def start(self, params):
+        async with self.transition:
+            await self._start(params)
+
+    async def _start(self, params):
+        self.mode = 'transition'
+        await self.stop_producer()
         self.generation += 1
         self.engine.reset()
         self.scenario, self.speed = params.name, params.speed
+        self.mode = 'synthetic'
         self.spec = Experiment(params.name, params.seed, strength=1.12)
         self.base = datetime.now(timezone.utc)
         self.second = 0
@@ -121,7 +179,7 @@ class Service:
 
     def snapshot(self):
         data = self.engine.snapshot()
-        data.update({'team':'RASCALS','source_label':'Controlled synthetic service telemetry','scenario':self.scenario,'second':self.second,'speed':self.speed,'running':self.running,'queue_batches':self.queue.qsize(),'queue_capacity':128,'rejected_batches':self.rejected_batches,'host': {'architecture':platform.machine(),'logical_cpus':psutil.cpu_count(),'cpu_percent':psutil.cpu_percent(),'memory_percent':psutil.virtual_memory().percent}, 'demo_strength':1.12})
+        data.update({'team':'RASCALS','source_label':'Controlled synthetic service telemetry' if self.mode=='synthetic' else 'External input; model not validated for this distribution','mode':self.mode,'generation':self.generation,'scenario':self.scenario,'second':self.second,'speed':self.speed,'running':self.running,'finished':self.mode=='synthetic' and self.producer is not None and self.producer.done(),'queue_batches':self.queue.qsize(),'queue_capacity':128,'rejected_batches':self.rejected_batches,'failed_batches':self.failed_batches,'processing_error':self.processing_error,'host': {'architecture':platform.machine(),'logical_cpus':psutil.cpu_count(),'cpu_percent':psutil.cpu_percent(),'memory_percent':psutil.virtual_memory().percent}, 'demo_strength':1.12})
         return data
 
     def incident(self, value):
@@ -160,10 +218,11 @@ def create_app(root=None, token_file=None, auto_start=True):
             await service.consumer
         except asyncio.CancelledError:
             pass
-        service.explainer.close()
+        await asyncio.to_thread(service.explainer.close)
         service.engine.close()
 
     app = FastAPI(title='ContinuityGuard · RASCALS',lifespan=lifespan,docs_url=None,redoc_url=None)
+    app.add_middleware(BodyLimit)
 
     @app.middleware('http')
     async def security(request, call_next):
@@ -179,7 +238,7 @@ def create_app(root=None, token_file=None, auto_start=True):
         if request.url.path.startswith('/api/') and request.url.path not in {'/api/login','/api/health'}:
             service = request.app.state.service
             value = request.cookies.get('cg_session') or request.headers.get('authorization','').removeprefix('Bearer ')
-            authorized = secrets.compare_digest(value,service.token) if value else False
+            authorized = secrets.compare_digest(value.encode('utf-8'),service.token.encode('utf-8')) if value else False
             authorized = authorized or (value in service.sessions and service.sessions[value] > time.time())
             if not authorized:
                 return JSONResponse({'detail':'Login required'},status_code=401)
@@ -196,12 +255,13 @@ def create_app(root=None, token_file=None, auto_start=True):
 
     @app.get('/api/health')
     async def health(request:Request):
-        return {'status':'ready','architecture':platform.machine(),'model_version':request.app.state.service.engine.bundle.manifest['version']}
+        service=request.app.state.service
+        return JSONResponse({'status':'degraded' if service.processing_error else 'ready','architecture':platform.machine(),'model_version':service.engine.bundle.manifest['version']},status_code=503 if service.processing_error else 200)
 
     @app.post('/api/login')
     async def login(params:Login,request:Request):
         service=request.app.state.service
-        if not secrets.compare_digest(params.token,service.token):
+        if not secrets.compare_digest(params.token.encode('utf-8'),service.token.encode('utf-8')):
             raise HTTPException(401,'Invalid access token')
         service.sessions={k:v for k,v in service.sessions.items() if v>time.time()}
         if len(service.sessions)>=20:
@@ -219,7 +279,10 @@ def create_app(root=None, token_file=None, auto_start=True):
     @app.get('/api/stream')
     async def stream(request:Request):
         async def events():
-            while not await request.is_disconnected():
+            # Periodic reconnect also bounds session authorization lifetime.
+            for _ in range(30):
+                if await request.is_disconnected():
+                    break
                 snapshot=await asyncio.to_thread(request.app.state.service.snapshot)
                 yield 'data: '+json.dumps(snapshot,allow_nan=False)+'\n\n'
                 await asyncio.sleep(1)
@@ -228,7 +291,12 @@ def create_app(root=None, token_file=None, auto_start=True):
     @app.post('/api/events',status_code=202)
     async def ingest(params:Batch,request:Request):
         service=request.app.state.service
+        if service.mode!='external':
+            raise HTTPException(409,'Start an external session before ingesting external telemetry')
         batch=[e.model_dump() for e in params.events]
+        for event in batch:
+            event['source_mode']='external'
+            event['deferred_requests']=0
         if any(e['failures']>e['requests'] for e in batch):
             raise HTTPException(422,'Failures cannot exceed requests')
         try:
@@ -238,6 +306,11 @@ def create_app(root=None, token_file=None, auto_start=True):
             raise HTTPException(429,'Bounded ingestion queue is full; retry with backoff')
         return {'accepted_into_queue':len(batch),'queue_batches':service.queue.qsize()}
 
+    @app.post('/api/external-session')
+    async def external(request:Request):
+        await request.app.state.service.external()
+        return {'mode':'external','scope':'Isolated external stream. Forecasts require validation on the deployment distribution.'}
+
     @app.post('/api/scenario')
     async def scenario(params:Scenario,request:Request):
         await request.app.state.service.start(params)
@@ -246,6 +319,8 @@ def create_app(root=None, token_file=None, auto_start=True):
     @app.post('/api/pause')
     async def pause(request:Request):
         service=request.app.state.service
+        if service.mode!='synthetic' or not service.producer or service.producer.done():
+            raise HTTPException(409,'No active replay; start a new scenario')
         service.running=not service.running
         return {'running':service.running}
 
@@ -277,6 +352,15 @@ def create_app(root=None, token_file=None, auto_start=True):
     async def report():
         return json.loads((root/'artifacts'/'report.json').read_text())
 
+    @app.get('/api/platform-proof')
+    async def platform_proof(request:Request):
+        service=request.app.state.service
+        def read(path):
+            try:return Path(path).read_text().strip()
+            except OSError:return 'unavailable'
+        status={line.split(':',1)[0]:line.split(':',1)[1].strip() for line in read('/proc/self/status').splitlines() if ':' in line}
+        return {'project_title':'RASCALS_IBM Z Datathon 2026 Project','architecture':platform.machine(),'python':platform.python_version(),'process_uid':os.getuid() if hasattr(os,'getuid') else None,'cgroup_memory_max':read('/sys/fs/cgroup/memory.max'),'cgroup_cpu_max':read('/sys/fs/cgroup/cpu.max'),'effective_capabilities_hex':status.get('CapEff'),'no_new_privileges':status.get('NoNewPrivs'),'root_filesystem_readonly':bool(os.statvfs('/').f_flag & os.ST_RDONLY) if hasattr(os,'statvfs') else None,'model':service.engine.bundle.manifest,'novelty_estimator':type(service.engine.bundle.state['novelty']).__name__,'granite_model_available':service.explainer.path.is_file(),'platform_scope':'Observed process and container properties; no z/OS or hardware accelerator claim.'}
+
     @app.get('/api/audit')
     async def audit(request:Request):
         return request.app.state.service.engine.journal.verify()
@@ -286,4 +370,4 @@ def create_app(root=None, token_file=None, auto_start=True):
 
 if __name__=='__main__':
     import uvicorn
-    uvicorn.run(create_app(),host='127.0.0.1',port=int(os.environ.get('CG_PORT','8080')),log_level='warning')
+    uvicorn.run(create_app(auto_start=os.environ.get('CG_AUTOSTART','1')=='1'),host='127.0.0.1',port=int(os.environ.get('CG_PORT','8080')),log_level='warning',timeout_graceful_shutdown=3)

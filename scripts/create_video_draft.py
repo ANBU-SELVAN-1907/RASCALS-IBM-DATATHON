@@ -18,15 +18,7 @@ ROOT=Path(__file__).resolve().parents[1]
 TMP=ROOT/'tmp/video'
 TMP.mkdir(parents=True,exist_ok=True)
 FFMPEG=imageio_ffmpeg.get_ffmpeg_exe()
-scenes=[
-('Protect time-critical digital services', 'We are RASCALS. ContinuityGuard detects developing failures in hospital digital-service infrastructure. A shared database bottleneck can disrupt several dependent services. We give operators earlier warning, measured evidence and an inspectable next step. This walkthrough uses actual saved application screenshots and synthetic narration. All telemetry is simulated.', ('pdf',0)),
-('Prediction stays on LinuxONE', 'Training and testing executed through Jupyter on IBM LinuxONE, using native s390x Python. A calibrated boosted-tree model forecasts a service-objective breach within sixty seconds. Isolation Forest separately reports novelty. A bounded queue, causal rolling features and persistent incident policy connect incoming telemetry to operator decisions.', ('pdf',2)),
-('Watch a developing dependency fault', 'This screenshot comes from the deployed application after a controlled database-pressure replay. Four software services share a database dependency. Forecast scores, latency and service state update as events arrive. The dashboard distinguishes simulated service measurements from observed host resources. A persistent warning creates an evidence-linked incident.', ('shot',(220,90,1250,825))),
-('Review evidence before choosing a response', 'The selected incident retains the measurements at warning time. It links connection-pool occupancy, memory and latency to a declared runbook and affected software services. The suspected database source is a heuristic hypothesis, not proof of causality. Operators can inspect the evidence before deciding what to investigate.', ('shot',(870,475,1235,1030))),
-('Explain and preview, with explicit tradeoffs', 'Local IBM Granite generated the displayed constrained explanation on LinuxONE. It took twenty-two seconds and cited verified evidence and a runbook. A paired sandbox preview compared deferring optional batch work with taking no action under the same workload. These benefits follow simulator assumptions; no real system was modified.', ('shot',(870,1025,1235,1390))),
-('Measure the gain and the cost', 'On sixty final synthetic runs, ContinuityGuard warned before forty-three of forty-seven service incidents. Median early lead was thirty-seven seconds, versus nine for static thresholds. Precision was lower: sixty-one point four percent versus sixty-eight point three. Both missed four incidents. These results are not hospital production validation.', ('pdf',4)),
-('Reproducible, inspectable, ready for review', 'Twenty correctness tests passed in Jupyter. Deployment evidence records a non-root container, resource limits and a read-only filesystem. The repository includes code, executed notebooks, model hashes, both runtime measurements and documented limits. Our next step is authorized real telemetry and operator feedback. RASCALS presents ContinuityGuard: useful warning time with accountable decisions.', ('pdf',6)),
-]
+scenes=json.loads((ROOT/'submission/video-scenes.json').read_text())
 font_path=Path('C:/Windows/Fonts/segoeui.ttf')
 bold_path=Path('C:/Windows/Fonts/segoeuib.ttf')
 def font(size,bold=False):return ImageFont.truetype(str(bold_path if bold else font_path),size)
@@ -63,5 +55,5 @@ out=ROOT/'submission/RASCALS-ContinuityGuard-Walkthrough.mp4'
 subprocess.run([FFMPEG,'-y','-loglevel','error','-f','concat','-safe','0','-i',str(concat),'-c','copy','-movflags','+faststart',str(out)],check=True)
 total=sum(r['seconds'] for r in records)
 assert total<180, f'Video exceeds three minutes: {total}'
-(ROOT/'submission/video-manifest.json').write_text(json.dumps({'duration_seconds':round(total,2),'resolution':'1280x720','format':'H.264/AAC MP4','presentation':'Saved-evidence walkthrough, not continuous live capture','voice':'Microsoft Zira synthetic narration; no person impersonated','scenes':records},indent=2))
+(ROOT/'submission/video-manifest.json').write_text(json.dumps({'duration_seconds':round(total,2),'model_version':json.loads((ROOT/'artifacts/manifest.json').read_text())['version'],'resolution':'1280x720','format':'H.264/AAC MP4','presentation':'Saved-evidence walkthrough, not continuous live capture','voice':'Microsoft Zira synthetic narration; no person impersonated','scenes':records},indent=2))
 print(out,total,out.stat().st_size)

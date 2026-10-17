@@ -51,6 +51,22 @@ def calibrated(model, calibrator, x):
     p = np.clip(raw_probability(model, x), 1e-6, 1-1e-6)
     return calibrator.predict_proba(logit(p).reshape(-1, 1))[:, 1]
 
+def run_bootstrap(test, systems):
+    """Resample whole runs, retaining correlated services within each run."""
+    seeds=[r['manifest']['seed'] for r in test]
+    draws=np.random.default_rng(97531).integers(0,len(seeds),(500,len(seeds)))
+    results={}
+    for name,metrics in systems.items():
+        groups=[[d for d in metrics['incident_details'] if d['seed']==seed] for seed in seeds]
+        recalls,leads=[],[]
+        for draw in draws:
+            rows=[d for index in draw for d in groups[index]]
+            early=[d['lead_seconds'] for d in rows if d['lead_seconds'] is not None and d['lead_seconds']>0]
+            if rows:recalls.append(len(early)/len(rows))
+            if early:leads.append(float(np.median(early)))
+        results[name]={'early_recall_percentile_95':np.percentile(recalls,[2.5,97.5]).tolist(),'median_early_lead_percentile_95_seconds':np.percentile(leads,[2.5,97.5]).tolist()}
+    return {'replicates':500,'seed':97531,'unit':'whole run; services within a run stay together','scope':'Uncertainty conditional on this synthetic simulator family, not production generalization. Lead intervals condition on early detections.','systems':results}
+
 def write_plots(out, report, runs, forecasts):
     import matplotlib
     matplotlib.use("Agg")
@@ -87,10 +103,10 @@ def main(output):
     train = dataset(1000, 10)
     calibration = dataset(10000, 3)
     validation = dataset(20000, 4)
-    # The 30000-series report was inspected during development. Final evaluation
-    # uses a new seed range and is retained separately from that development run.
-    test = dataset(50000, 10)
-    unseen = dataset(60000, 6, ("abrupt_failure",))
+    # v1/v2 reports were inspected; v3 aligns matching with the 60-second horizon.
+    # Model/policy selection uses validation; this final seed range is fresh.
+    test = dataset(70000, 10)
+    unseen = dataset(80000, 6, ("abrupt_failure",))
     x, y = stack(train)
     xc, yc = stack(calibration)
     xv, yv = stack(validation)
@@ -133,7 +149,7 @@ def main(output):
     robust_threshold = max(robust_options)[1]
     state = {"feature_names": FEATURE_NAMES, "forecast": model, "calibrator": calibrator, "novelty": novelty, "normal_novelty": normal_reference, "policy": policy, "robust_center": center, "robust_scale": scale, "robust_threshold": robust_threshold}
     joblib.dump(state, out / "models.joblib", compress=3)
-    manifest = {"version": "cg-2026-10-17-v2", "trained_utc": datetime.now(timezone.utc).isoformat(), "architecture": platform.machine(), "model": choice, "forecast_horizon_seconds": HORIZON, "feature_count": len(FEATURE_NAMES), "sha256": hashlib.sha256((out/"models.joblib").read_bytes()).hexdigest(), "packages": {p: importlib.metadata.version(p) for p in ("numpy", "scikit-learn", "scipy", "joblib")}}
+    manifest = {"version": "cg-2026-10-17-v3", "trained_utc": datetime.now(timezone.utc).isoformat(), "architecture": platform.machine(), "model": choice, "forecast_horizon_seconds": HORIZON, "feature_count": len(FEATURE_NAMES), "sha256": hashlib.sha256((out/"models.joblib").read_bytes()).hexdigest(), "packages": {p: importlib.metadata.version(p) for p in ("numpy", "scikit-learn", "scipy", "joblib")}}
     (out/"manifest.json").write_text(json.dumps(manifest, indent=2))
     bundle = ModelBundle(out)
     forecasts, novelty_scores, final_flags = [], [], []
@@ -174,8 +190,9 @@ def main(output):
         "manifest": manifest, "candidate_models": comparisons, "selected_model": choice, "policy": policy,
         "validation_policy_metrics": validation_metrics, "systems": systems,
         "forecast_test": {"pr_auc": float(average_precision_score(yt, pt)), "brier_score": float(brier_score_loss(yt, pt)), "positive_prevalence": float(yt.mean()), "reliability_bins": reliability},
+        "run_bootstrap":run_bootstrap(test,systems),
         "unseen_abrupt_failures": evaluate_runs(unseen, stress_flags), "paired_responses": responses,
-        "method": {"slo": "p95 >1000 ms or failures/requests >0.10, sustained for three 1-second windows", "persistence": "3 of last 5 flagged windows; 30-second re-alert cooldown", "matching": "one alert per incident, from 90 seconds before onset through 15 seconds after incident end", "healthy_exposure": "healthy, healthy_surge and healthy_shift service-seconds", "selection": "joint model/policy validation: 0.65 early-warning recall + 0.35 precision; penalize false alarms above 0.5/healthy service-hour", "novelty_is_probability": False, "development_history": "30000-series test was inspected during v1 development; v2 final test uses 50000-series seeds"},
+        "method": {"slo": "p95 >1000 ms or failures/requests >0.10, sustained for three 1-second windows", "persistence": "3 of last 5 flagged windows; 30-second re-alert cooldown", "matching": "one alert per incident, from 60 seconds before onset through 15 seconds after incident end", "healthy_exposure": "healthy, healthy_surge and healthy_shift service-seconds", "selection": "joint model/policy validation: 0.65 early-warning recall + 0.35 precision; penalize false alarms above 0.5/healthy service-hour", "novelty_is_probability": False, "development_history": "v1 30000-series and v2 50000-series were inspected; v3 aligns incident matching to 60 seconds, reselects on validation and tests fresh 70000-series seeds"},
         "limitations": ["Synthetic data and simulator intervention assumptions", "Declared topology and heuristic suspected cause, not causal proof", "Calibrated model output is conditional on the synthetic distribution", "Abrupt incidents can have no observable warning precursor", "No production hospital, z/OS or accelerator validation"],
         "training_and_evaluation_seconds": round(time.perf_counter()-started, 2),
     }

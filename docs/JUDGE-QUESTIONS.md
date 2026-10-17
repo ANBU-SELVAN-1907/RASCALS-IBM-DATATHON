@@ -1,22 +1,60 @@
-# Explain the implementation in your own words
+# Defend the implementation in your own words
 
-1. **What is the problem?** Developing faults in shared infrastructure can delay essential software services. We help operators investigate earlier, with a hospital-service availability scenario. We do not make clinical decisions.
-2. **What runs on LinuxONE?** The synthetic stream, causal features, learned forecasts, Isolation Forest, incident policy, SQLite journal, local Granite explanation and API. The laptop displays the interface through SSH. Show `uname -m`, container details and a model output.
-3. **What does the model predict?** A new declared service-objective breach in the next 60 event-time seconds. A three-window rule defines breach. The score is calibrated on synthetic data; it is not a proven hospital outage probability.
-4. **Why this model?** We evaluated logistic regression and two boosted-tree candidates jointly with alert policies on separate validation runs. Seven-leaf boosting won the defined validation objective in v2. Model size was not the selection criterion.
-5. **Why two predictive models?** Forecasting estimates a defined future outcome; Isolation Forest indicates multivariate novelty. Novelty can flag unfamiliar behavior but created more noise in validation. It is displayed separately, not used to trigger the selected paging policy.
-6. **What is original?** The team's specific implementation connects early-warning evidence, downstream service priorities and a paired operator-response preview, with one causal pipeline shared between notebook evaluation and online execution. The underlying algorithms are established.
-7. **How much better is it?** In the final synthetic test: 43/47 early detections, 37-second median early lead versus 9 seconds for static thresholds. Precision is lower: 61.4% versus 68.3%. Both missed four incidents. Explain the complete tradeoff, not just the best number.
-8. **How can precision be 61.4% with zero healthy false alarms?** The zero applies to 10 healthy service-hours only. All-run precision also counts unmatched alerts on fault runs, repeat alerts and faults that never become breaches. The model produced 27 unmatched alerts overall.
-9. **Is the dataset real?** No. It is a controlled synthetic service-window simulator with randomized demand, fault onset, severity and noise. Runtime ML is real, but the hospital-service telemetry and intervention effects are simulated. We need authorized production data to establish real-world performance.
-10. **How did you avoid leakage?** Whole independent runs and distinct seeds for train/calibration/validation/test; no future features or fault metadata; separate calibration; only validation selects the model/policy. The earlier inspected test is labeled development and a fresh seed range is used for v2.
-11. **What happens on a sudden fault?** The unseen abrupt-failure stress test detected 24/24 service incidents and produced zero early warnings. Without a precursor, warning in advance cannot be promised.
-12. **Does the dependency map prove root cause?** No. It supports a suspected-source hypothesis and impact ordering. Operators verify the cause. Criticality values are declared policy, not learned clinical risk.
-13. **Does the action preview prove prevention?** It compares two deterministic simulator branches with the same future demand/noise. It demonstrates implementation and simulator-conditional effects; it does not prove a production counterfactual.
-14. **What does GenAI do?** Local Granite selects a valid, concise wording from incident evidence under a strict JSON grammar. Evidence IDs, wording and runbook ID are checked. It has no shell tools and cannot execute actions. Invalid output is replaced by a labeled deterministic summary.
-15. **What is the latency claim?** At 100 synthetic window events/s, the short paced direct-engine test observed 9–54 ms p95 across two runs per four-event batch. It excludes HTTP, queue waiting and browser rendering. It is not a benchmark of millions of transactions or hardware acceleration.
-16. **What if the model stops working?** The status becomes degraded and static thresholds take over; no forecast percentage is fabricated. Missing recent receipts are stale, not healthy. The bounded queue rejects overload explicitly.
-17. **Is the audit chain tamper-proof?** It detects changes if its trusted previous head is retained. An attacker with full database control could rewrite the entire chain. Production would require external signing/anchoring and stronger operational controls.
-18. **Was AI assistance used?** Yes; Codex assisted implementation and verification. Explain your own contributions and understanding. Do not present assisted work as unaided. Follow organizer guidance on permitted assistance.
+1. **What problem does this solve?** Developing system faults can disrupt dependent essential software services. We support IT operators with streaming risk, retained measurements, runbooks and a response preview; no clinical decisions.
 
-Before recording, each team member should run the demo and explain one source file, one model input, one test, one observed limitation and one result denominator.
+2. **What is the exact title and team?** RASCALS_IBM Z Datathon 2026 Project / ContinuityGuard. ANBU SELVAN T; SAHANA G; DHARSHINI E; POOJA V. Hindustan Institute of Technology and Science.
+
+3. **What actually runs on LinuxONE?** The native Jupyter training/test kernels, simulator, causal features, forecast, novelty estimator, API, SQLite journal and local Granite. The browser is a client through SSH. Show the live platform proof, model hash and executed notebooks.
+
+4. **Why LinuxONE rather than a logo in the slides?** Prediction and local generation execute on s390x beside the prototype telemetry/journal, without exporting telemetry to a remote model API. Containers and verified resource/security controls are applied to this actual runtime. No comparative speed superiority is claimed.
+
+5. **Is this IBM Machine Learning for z/OS?** No. This is open-source AI on LinuxONE Community Cloud Linux. We do not claim z/OS integration, z/OS transactions, Telum/Spyre acceleration or certification.
+
+6. **What does Jupyter prove?** Three native notebooks retain fitting, calibration, selection, evaluation, tests, actual HTTP integration and local generation. Their executed copies, success records and architecture/model outputs are in the repository.
+
+7. **Have both mandatory labs been completed?** The Churn multi-model and Loan predictive/generative sample notebooks executed before original project work. Their timestamps and source commit are recorded. The organizer must confirm the exact mapping to its assigned prerequisites; execution alone is not a course-completion certificate.
+
+8. **What is learned?** boosted_trees_7_leaves forecasts a new sustained breach within 60 event-time seconds. Isolation Forest learns healthy variation for a separate novelty score. Sigmoid calibration uses separate runs; production calibration is unproven.
+
+9. **Why this model?** Three candidates and alert-policy variants compete on a declared validation objective. Small tabular boosted trees fit nonlinear relationships without requiring a large sequence model. We do not call them universally best.
+
+10. **What triggers an alert?** In v3, learned forecast >=0.97 OR static operational thresholds feeds 3-of-5 persistence after 15-observation warmup, with cooldown. A warning may therefore have a learned score below .97. Novelty does not independently trigger pages in this policy.
+
+11. **How much better is it?** On 60 fresh synthetic runs, both ContinuityGuard and static thresholds warned before 31/43 service incidents. Median early lead was 13 seconds versus 10. Precision was 59.3% versus 60.0%; missed incidents were 11 versus 10. This does not establish consistent ML superiority. Report confidence intervals; do not claim a statistically established general advantage.
+
+12. **Why retain AI if thresholds are competitive?** The model supplies a learned, calibratable score and novelty context, while the integration makes decisions inspectable. Current experiments do not justify replacing thresholds. More diverse authorized data and operational validation are needed to establish incremental ML value.
+
+13. **What is new?** This original implementation connects causal warning features, software dependency priorities, evidence receipts, constrained local wording and a same-workload response preview. Algorithms are established; no world-first claim or prior-team code reuse.
+
+14. **How is leakage controlled?** Whole runs and disjoint train/calibration/validation/test seeds; past/current features only; no fault metadata; separate calibration. v1/v2 inspected reports are development history. The corrected v3 protocol uses a fresh test range.
+
+15. **Why did the headline change?** The audit aligned the early incident-matching window with the 60-second model target. Policy selection was repeated on validation, and a fresh final test was used. We retained the earlier results instead of hiding the correction.
+
+16. **Why zero healthy false alerts but low precision?** The zero applies only to 10 healthy service-hours. Overall precision also counts repeat, unmatched and non-breaching fault-run alerts. There were 22 unmatched v3 alerts overall.
+
+17. **Can sudden faults be predicted?** The unseen abrupt stress test detected every tested service incident but warned before none. No precursor means no promised early warning.
+
+18. **Does the diagnosis prove root cause?** No. A declared dependency map and heuristic measured-signal rules propose a suspected source. Service criticality is declared software policy, not learned clinical risk or causal proof.
+
+19. **Does the preview prove outage prevention?** No. Paired branches share exogenous demand/noise and history until an allowlisted simulator action. Benefits follow intervention assumptions. No real host or service is modified.
+
+20. **What does Granite add?** Local constrained wording tied to verified measurements and a runbook. Every evidence ID cited in the text is required. It has no shell tools and cannot execute remediation. Invalid/unavailable generation gets a labeled deterministic fallback.
+
+21. **What happens when inference or storage fails?** Inference exceptions/nonfinite outputs enter explicit degraded static fallback. Consumer exceptions increment failed batches, preserve queue progress and make health degraded. No prediction percentage is invented. Reconcile upstream events after storage failure; this is not exactly-once delivery.
+
+22. **What happens on missing or reordered data?** Receipt age shows stale status. A >5-second event gap resets per-service warmup and persistence. Old/out-of-order/nonfinite events are rejected without poisoning future state. Windows are bounded.
+
+23. **Can external callers spoof a simulator result?** External input requires a separate session, cannot mix with the sandbox and has its provenance overwritten by the server. Paired previews are disabled for external incidents. Real deployment still requires authorized data and domain calibration.
+
+24. **Is the journal tamper-proof?** No. It checks hash links and retains history across restart; externally retain a trusted head to detect whole-history replacement. Signed provenance and external anchoring would be production work.
+
+25. **What do the latency numbers include?** The actual local HTTP test processed 1000/1000 synthetic fixture events at 100 offered events/s over 10 seconds. Queue-ack p95 8.032 ms excludes later processing; engine-batch p95 29.31 ms excludes queue wait. Client/server share the VM; no WAN/browser or maximum sustained-capacity claim.
+
+26. **What security controls were verified?** UID 1000, read-only root, CPU/memory/PID caps, dropped capabilities, no-new-privileges, loopback/SSH, schema/actual body limits, authentication and origin checks. Host networking and single-token access remain explicit prototype limits.
+
+27. **How do you know the implementation works?** 36 native tests pass; inspect the actual test names/output. Additional HTTP, real Granite, container, restart and browser checks retain measured evidence. Passing tests does not prove absence of every bug.
+
+28. **What remains before adoption/submission?** Production adoption needs authorized real telemetry, domain evaluation/calibration, reviewed response steps, identity/operations hardening and reliability trials. Event submission still needs prerequisite mapping confirmation, reviewed YouTube/Vimeo hosting and manual portal entry.
+
+29. **Was AI assistance used?** Yes. Codex assisted architecture, coding, orchestration, tests and submission preparation. The team must understand and disclose its work under organizer guidance. Do not claim unaided development or invent member contributions.
+

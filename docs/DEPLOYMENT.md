@@ -22,10 +22,14 @@ An initial temporary notebook demo occupied port 8080 during deployment. It was 
 
 `evidence/restart-check.json` records the audit count/head before and after restarting the application container. Persistent audit history survives; live feature windows and browser sessions restart empty. This is a journal-persistence test, not uninterrupted failover or high availability. After restart, run a fresh scenario and sign in again.
 
-An open SSE connection delayed shutdown beyond Podman's ten-second grace period, so Podman terminated the process. SQLite recovered successfully and the original audit prefix remained intact. Graceful draining of long-lived clients is a production-hardening task; the restart is not represented as seamless service continuity.
+The first implementation exceeded a ten-second stop timeout with an open SSE connection. The audit fixed stream/server shutdown bounds and worker/journal cleanup. The latest actual restart with an active SSE client took 3.441 seconds with no forced-kill warning, and retained the original audit prefix. This is a restart/persistence check, not seamless failover.
 
 `evidence/dashboard.png` shows actual local Granite generation and a paired synthetic response preview. `evidence/evaluation.png` shows saved evaluation results. Token-bearing URLs, private keys and patient data are excluded. A local hash chain is not externally signed or tamper-proof: retain its head independently to detect whole-history replacement.
 
 ## Performance boundary
 
 Both direct-engine benchmark runs are published. At 100 synthetic service-window events/s, p95 processing per four-event batch was 9.03 ms initially and 53.60 ms in a repeat under competing VM work. Each trial lasted eight seconds with generation off in the benchmark process. Other workloads on the shared VM were not controlled. This excludes HTTP, queue and browser latency and does not establish peak capacity. The actual local Granite explanation took 21.73 seconds; generation is asynchronous and separate from prediction.
+
+
+## Audited v3 update
+Use `--replace` for a deliberate deployment update: build completes first, the prior named app stops, and a stopped rollback container is retained while its state volume is preserved. The latest model version is cg-2026-10-17-v3. `scripts/verify_linuxone.py PROJECT --restart --demo` records actual container properties, an active-client restart and a complete local explanation/response preview without exporting credentials. Host exports from Podman may carry container UID ownership: ensure the host project directories belong to the authorized host user before saving verification files.

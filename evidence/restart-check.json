@@ -1,14 +1,20 @@
 {
-  "verified_utc": "2026-10-17T08:39:15.860262+00:00",
+  "verified_utc": "2026-10-17T09:25:39.850460+00:00",
   "before_restart": {
     "valid": true,
-    "records": 84,
-    "head": "c27a59d158e83abc131fc53ab5b868660d727766ae4f11a14307f21f1acf3199",
+    "records": 98,
+    "head": "d760fd1b3737f76baa7661c15448f7512b89c4d81634ea2be5a478695ea568bb",
     "scope": "local hash chain; externally retain head to detect full-history replacement"
   },
-  "after_restart_records": 86,
-  "retained_prefix_head": "c27a59d158e83abc131fc53ab5b868660d727766ae4f11a14307f21f1acf3199",
-  "persisted": true,
-  "scope": "Original audit prefix retained. Model load adds a new record on restart. Live feature windows and browser sessions reset.",
-  "shutdown_note": "An open SSE connection exceeded Podman 10-second stop timeout; Podman forced termination. SQLite journal recovered and prefix survived."
+  "after_restart": {
+    "valid": true,
+    "records": 100,
+    "head": "eca668b9253a9f3b5a484230b92710de3d140c7e4fe6b3ac5ef1b8df2952e542",
+    "scope": "local hash chain; externally retain head to detect full-history replacement"
+  },
+  "original_prefix_retained": true,
+  "restart_seconds_with_active_sse_client": 3.441,
+  "forced_kill_warning": false,
+  "stderr": "",
+  "scope": "Actual application restart with an open SSE connection. SQLite history persists; feature windows and sessions reset."
 }

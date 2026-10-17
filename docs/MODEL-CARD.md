@@ -1,23 +1,17 @@
-# Model card
+# Model card: cg-2026-10-17-v3
 
-**Version:** cg-2026-10-17-v2. Integrity and package details: [manifest](../artifacts/manifest.json).
+**Purpose:** operational support for a new service-objective breach within 60 event-time seconds, in the controlled simulator. Not a clinical system or validated real hospital risk score.
 
-**Purpose:** rank risk of a new declared software-service breach in the next 60 event-time seconds in a controlled synthetic workload. Operational decision support; not a clinical system.
+**Chosen model:** boosted_trees_7_leaves; HistGradientBoostingClassifier with maximum 7 leaves, 120 iterations, learning rate .06 and L2=1. Sigmoid calibration fits separate runs. Isolation Forest has 100 trees and max_samples=256. The selected policy is `{'mode': 'guarded_forecast', 'forecast_threshold': 0.97, 'novelty_threshold': 0.6049514944657695, 'novelty_quantile': 0.995}`. In guarded_forecast mode, forecast >=0.97 OR static thresholds feeds shared persistence; novelty stays separately visible.
 
-**Models:** scikit-learn HistGradientBoostingClassifier, 120 boosting iterations, maximum seven leaves per tree, learning rate 0.06, L2=1; a separate sigmoid calibrator; Isolation Forest with 100 trees and 256-sample subsampling for novelty. The source defines exact parameters. The final alert policy uses calibrated forecast score >=0.8 with persistence, selected on validation. Novelty remains separately visible.
+**Features:** 26 causal values: eight measurements; two normalized ratios; six 15-observation slopes; six means; four service indicators. Warmup is 15 observations. A gap exceeding five event-time seconds resets the affected service's feature and persistence windows. Out-of-order/nonfinite data is rejected without advancing valid state.
 
-**Inputs:** 26 causal numerical features: eight current measurements; queue/request and latency/request ratios; six 15-observation slopes; six means; four service-identity values. At least 15 observations are needed to issue model alerts. Older/out-of-order events are rejected rather than rewriting past decisions.
+**Environment:** native s390x Jupyter, Python 3.12.15. Exact package versions, SHA-256 and fitting timestamp are in the manifest. Train/calibration/validation/final test use 60/18/24/60 separate runs. Final seeds are 70000-series; v1/v2 inspected results are development history.
 
-**Training environment:** Python 3.12.15, scikit-learn 1.9.0, NumPy 2.0.2, SciPy 1.13.1, joblib 1.6.0 on LinuxONE s390x. Full run manifests and executed Jupyter notebooks are included.
+**Measured result:** On 60 fresh synthetic runs, both ContinuityGuard and static thresholds warned before 31/43 service incidents. Median early lead was 13 seconds versus 10. Precision was 59.3% versus 60.0%; missed incidents were 11 versus 10. This does not establish consistent ML superiority. See `RESULTS.md` for complete denominators, precision, misses, all-run unmatched alerts and whole-run bootstrap intervals. Calibration still shows overconfidence. Do not claim statistically established model superiority or interpret scores as production outage probabilities.
 
-**Results:** 43/47 early detections, 4 missed, 61.4% incident precision, 37-second median early lead; zero observed alerts in 10 synthetic healthy service-hours. PR-AUC 0.8499, positive prevalence 0.05022, Brier score 0.01665. Calibration bins show remaining overconfidence, especially in intermediate/high scores. Do not interpret a displayed score as a hospital-specific outage probability.
+**Failure handling:** missing receipts show stale status; a gap rewarms; model failure or nonfinite output uses explicit degraded static fallback. Consumer exceptions are counted and health becomes degraded. Sudden unseen incidents had no early warnings. External distributions require authorization, validation and calibration.
 
-**Failure modes:** sudden faults may have no precursor; novel workloads can shift the feature distribution; domain adaptation is untested; false alerts may burden operators. The independent abrupt stress set detected all 24 service incidents but warned before none.
+**Explanation:** Granite 4.0 H 350M base via the supplied llama.cpp runtime generates one of two verified wordings under a JSON grammar. Every evidence ID in the summary is required. This is constrained wording, not unrestricted causal reasoning. A labeled deterministic fallback covers invalid/unavailable generation. No real action executes.
 
-**Interpretability:** the interface exposes current signals, score, novelty percentile and a declared dependency hypothesis. These displayed signals are operator evidence, not SHAP values or proven causal feature attribution. Service priorities are configured policy choices.
-
-**Runtime fallback:** failed model inference is explicitly shown as degraded mode and uses static thresholds. No forecast percentage is fabricated when the model fails. Missing recent receipts show stale telemetry.
-
-**Local generation:** IBM Granite 4.0 H 350M base, bundled in the organizer image, through llama.cpp. JSON grammar constrains generation to two evidence-grounded wording options and valid evidence/runbook IDs; these are validated again before display. This is deliberately limited generation, not unrestricted reasoning or autonomous remediation. Failure uses a labeled deterministic fallback. Model weights are not redistributed in this repository.
-
-**Deployment restriction:** load only trusted joblib artifacts. SHA-256 checks detect mismatch against the manifest, but do not authenticate an attacker-replaced model and manifest pair. The application image supplies both. Production would need signed provenance, authorization, broader validation and monitored drift/retraining policies.
+**Security:** trusted joblib artifacts only. The hash detects mismatch, not replacement of both manifest and artifact. Native image provenance and external audit anchoring are future hardening work. Measurements shown in an incident are evidence, not SHAP attribution or proven root cause. Declared service priorities are software policy, not learned clinical risk.

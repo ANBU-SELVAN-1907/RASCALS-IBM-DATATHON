@@ -1,39 +1,35 @@
-# Record a real 2:50 demonstration
+# Team recording script
 
-Maximum allowed: 3 minutes including transitions and credits. Use 1080p if readable. Do not show tokens, authentication URLs, account emails, private keys or unrelated windows. All demo telemetry is synthetic and the page must retain that label. Team members should explain the parts they understand; do not invent identities or voice another person without consent.
+Project: RASCALS_IBM Z Datathon 2026 Project. Team members: ANBU SELVAN T; SAHANA G; DHARSHINI E; POOJA V.
 
-## 0:00-0:20 - Problem
+Keep the final video below three minutes. Use these seven concise segments, show the actual app and LinuxONE evidence, and retain synthetic-data labels. The provided video uses synthetic voice; preferably let team members explain their own work. Do not invent individual contributions.
 
-"We are RASCALS. ContinuityGuard investigates developing failures in the infrastructure behind hospital digital services. A slow shared dependency can delay several services. Our goal is to give operators useful warning time and clear evidence before a service objective is breached."
+## RASCALS presents ContinuityGuard
 
-Show the title and a small dependency map. If citing the NHS incident, use its exact source and clarify that this prototype was not tested on or shown to prevent that incident.
+We are RASCALS from Hindustan Institute of Technology and Science. ContinuityGuard investigates developing system failures behind essential digital services. We connect streaming warning, retained evidence and an inspectable response preview. This recorded walkthrough uses actual application screenshots, synthetic telemetry and labeled synthetic narration.
 
-## 0:20-0:40 - LinuxONE evidence
+## AI really runs on LinuxONE
 
-"Our training and testing run through Jupyter on LinuxONE, and the runtime is native s390x. This saved notebook shows the data split, model selection and final evaluation. The application keeps inference and incident processing on the same VM as the demo stream."
+Our training, testing, prediction, novelty scoring and local Granite generation run natively on LinuxONE. Three executed Jupyter notebooks retain reproducible outputs. The application uses a calibrated boosted-tree forecast with an operational threshold guard. Isolation Forest reports novelty separately. Telemetry is not sent to a remote model API.
 
-Show the actual s390x output, executed notebook and redacted container/resource evidence. Do not imply that a CPU flag or library file proves AI accelerator use.
+## From an incoming window to an incident
 
-## 0:40-1:30 - Controlled live demo
+The deployed console processes a controlled database-pressure replay. Four software services share a dependency. After warmup, persistent risk raises an incident linked to observed measurements, affected services and an investigation runbook. Service priorities are declared policy. The suspected source is a hypothesis, not proven root cause.
 
-"This is a controlled database-pressure scenario at four-times event-time replay. The system tracks pool occupancy, queues, retries and service latency. After the feature window warms, persistent forecast risk produces an incident. Here are the actual measurements, affected services and suspected dependency. The source is a hypothesis, not proven causality."
+## Inspect the evidence and the tradeoff
 
-Start the demo just before recording this segment or use a clearly labeled continuous replay capture. Keep source event time, replay speed and synthetic labels visible. Do not edit the alert timing to make it appear earlier.
+Local Granite produces strictly constrained wording and complete evidence references. The operator can compare a sandbox response with taking no action under identical future workload. The preview reports modeled benefit together with deferred optional work. These effects follow simulator assumptions; no real service or host is modified.
 
-## 1:30-1:55 - Decision support
+## Report all results, including misses
 
-"The operator can inspect a runbook and compare the modeled response with taking no action under the same future demand. The preview reports successful urgent-results transactions, breach duration and the cost of deferred optional work. It acts only in the simulator. Local Granite can explain the evidence under a strict output schema; invalid output falls back explicitly."
+On sixty fresh synthetic runs, both our system and static thresholds warned before 31 of 43 service incidents. Median early lead was 13 seconds versus 10. Our precision was slightly lower and misses remain. The strict sixty-second scoring and uncertainty intervals do not establish consistent model superiority. We publish that limitation.
 
-Show a real response preview and actual completed explanation. If generation used fallback, say so; do not label fallback text as generated.
+## Verify the platform and the actual pipeline
 
-## 1:55-2:30 - Results and tradeoff
+36 native regression tests passed. The actual authenticated HTTP path processed all one thousand events at one hundred offered events per second during a ten-second test. This includes queueing, inference and journaling. Queue acknowledgement and processing have separate latency boundaries. Container controls and restart evidence are public.
 
-"On sixty independent final synthetic runs, ContinuityGuard warned before forty-three of forty-seven service incidents. Median lead among early warnings was thirty-seven seconds, compared with nine for static thresholds. Precision was sixty-one point four percent, lower than the threshold baseline's sixty-eight point three percent. Both missed four incidents. No alerts occurred in ten healthy service-hours. These are simulator results, not hospital production performance."
+## A reviewable path to real adoption
 
-Show the table including precision and misses. Add the short engine benchmark only if time remains: 100 synthetic window events per second, 9–54 ms p95 across two runs per four-event engine batch; excludes HTTP, queue and browser delay.
+Our contribution is an accountable detection-to-decision workflow on LinuxONE. The repository contains code, model hashes, executed notebooks, measured reports and source credits. Real adoption needs authorized telemetry, operator feedback and domain validation. RASCALS presents ContinuityGuard: warning evidence and decisions that can be challenged, reproduced and understood.
 
-## 2:30-2:50 - Contribution and next step
-
-"Our contribution connects early-warning evidence, service priorities and a repeatable response preview. The code, model manifest and executed notebooks are in our repository. Next we need authorized real telemetry and operator feedback to test adoption. Thank you."
-
-Show repository URL and team name. Include assistance/source credits without obscuring the demo. Export and verify final duration before upload; a video script is not itself a submitted video.
+Upload the reviewed final video to an accessible YouTube/Vimeo URL. A local MP4 is not a submitted portal video.

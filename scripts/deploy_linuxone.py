@@ -6,7 +6,7 @@ No inbound firewall port is opened. Preserve the state volume on redeployment.
 from pathlib import Path
 import argparse
 import json
-import secrets
+from datetime import datetime,timezone
 import socket
 import subprocess
 import time
@@ -18,12 +18,15 @@ def run(*args, check=True):
         raise RuntimeError(result.stderr[-4000:])
     return result
 
-def main(project):
+def main(project, replace=False):
     project=Path(project).resolve()
     if not (project/'artifacts/manifest.json').exists():
         raise SystemExit('Run and export the training notebook before deployment.')
+    exists=run('container','exists','continuityguard',check=False).returncode==0
+    if exists and not replace:
+        raise SystemExit('Container exists. Use --replace for a deliberate redeployment; its state volume is preserved.')
     with socket.socket() as probe:
-        if probe.connect_ex(('127.0.0.1',8080)) == 0:
+        if probe.connect_ex(('127.0.0.1',8080)) == 0 and not (exists and replace):
             raise SystemExit('Port 8080 is occupied. Inspect the existing process before deploying; use a separate port for development.')
     build=['build','--format','docker','-t','localhost/continuityguard:2026','-f',str(project/'Containerfile'),str(project)]
     result=run(*build,check=False)
@@ -49,11 +52,17 @@ def main(project):
     if result.returncode:
         raise RuntimeError(result.stderr[-4000:])
     print(result.stdout[-2500:],flush=True)
-    if run('container','exists','continuityguard',check=False).returncode==0:
-        raise SystemExit('Container exists. Inspect it; stop/remove only that container before a deliberate redeployment. Keep its state volume.')
+    if exists:
+        backup='continuityguard-previous-'+datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S')
+        run('stop','--time','30','continuityguard')
+        run('rename','continuityguard',backup)
+        print('Retained stopped rollback container:',backup,flush=True)
+    with socket.socket() as probe:
+        if probe.connect_ex(('127.0.0.1',8080)) == 0:
+            raise SystemExit('Port remains occupied after stopping the previous app. Inspect it before continuing.')
     if run('volume','exists','continuityguard-state',check=False).returncode!=0:
         run('volume','create','continuityguard-state')
-    container=run('run','-d','--name','continuityguard','--network','host','--restart','unless-stopped','--memory','2g','--cpus','1.5','--pids-limit','256','--cap-drop','ALL','--security-opt','no-new-privileges','--read-only','--tmpfs','/tmp:rw,nosuid,nodev,size=128m','-v','continuityguard-state:/home/ibm-user/cg-state:Z','localhost/continuityguard:2026').stdout.strip()
+    container=run('run','-d','--name','continuityguard','--network','host','--restart','unless-stopped','--stop-timeout','30','--memory','2g','--cpus','1.5','--pids-limit','256','--cap-drop','ALL','--security-opt','no-new-privileges','--read-only','--tmpfs','/tmp:rw,nosuid,nodev,size=128m','-v','continuityguard-state:/home/ibm-user/cg-state:Z','localhost/continuityguard:2026').stdout.strip()
     for _ in range(30):
         try:
             with urllib.request.urlopen('http://127.0.0.1:8080/api/health',timeout=2) as response:
@@ -61,6 +70,8 @@ def main(project):
             state=json.loads(run('inspect',container).stdout)[0]['State']
             if not state['Running'] or state.get('Restarting'):
                 raise RuntimeError('Submitted container is not running steadily')
+            if health['model_version'] != json.loads((project/'artifacts/manifest.json').read_text())['version']:
+                raise RuntimeError('Health endpoint is serving a different model version')
             print(json.dumps({'container_id':container,'health':health,'access':'SSH tunnel to VM loopback port 8080','image':'localhost/continuityguard:2026'},indent=2))
             return
         except Exception:
@@ -70,4 +81,6 @@ def main(project):
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('project',nargs='?',default='.')
-    main(parser.parse_args().project)
+    parser.add_argument('--replace',action='store_true')
+    args=parser.parse_args()
+    main(args.project,args.replace)

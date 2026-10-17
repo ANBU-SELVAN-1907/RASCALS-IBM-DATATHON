@@ -40,12 +40,12 @@ class Explainer:
             from llama_cpp import Llama, LlamaGrammar
             if self.model is None:
                 self.model = Llama(model_path=str(self.path), n_ctx=2048, n_batch=128, n_threads=2, verbose=False)
-            schema = {'type':'object','properties': {'summary': {'type':'string','enum':summaries}, 'evidence_ids': {'type':'array','items': {'type':'string','enum':fallback['evidence_ids']}, 'minItems':1,'maxItems':3}, 'runbook_id': {'type':'string','enum':[book['id']]}}, 'required':['summary','evidence_ids','runbook_id'], 'additionalProperties':False}
+            schema = {'type':'object','properties': {'summary': {'type':'string','enum':summaries}, 'evidence_ids': {'enum':[fallback['evidence_ids']]}, 'runbook_id': {'type':'string','enum':[book['id']]}}, 'required':['summary','evidence_ids','runbook_id'], 'additionalProperties':False}
             grammar = LlamaGrammar.from_json_schema(json.dumps(schema), verbose=False)
             prompt = f"Choose a concise evidence-grounded incident explanation. Do not invent facts. Service: {service}. Verified observations: {facts}. Approved runbook: {book['id']} {book['title']}. Return JSON with summary, evidence_ids, runbook_id. Answer:"
             response = self.model.create_completion(prompt, max_tokens=220, temperature=0, grammar=grammar)
             value = json.loads(response['choices'][0]['text'])
-            if value['summary'] not in summaries or value['runbook_id'] != book['id'] or not value['evidence_ids'] or not set(value['evidence_ids']) <= set(fallback['evidence_ids']):
+            if value['summary'] not in summaries or value['runbook_id'] != book['id'] or value['evidence_ids'] != fallback['evidence_ids']:
                 raise ValueError('Generated output failed evidence validation')
             result = {'status':'complete','mode':'local Granite · constrained generation', **value, 'completion_tokens':response.get('usage',{}).get('completion_tokens')}
         except Exception as exc:
@@ -64,4 +64,4 @@ class Explainer:
             return self.cache.get(incident_id, {'status':'not_requested'})
 
     def close(self):
-        self.executor.shutdown(wait=False, cancel_futures=True)
+        self.executor.shutdown(wait=True, cancel_futures=True)

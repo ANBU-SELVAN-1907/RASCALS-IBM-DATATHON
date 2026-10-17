@@ -5,7 +5,7 @@ Prepared for team RASCALS. The project is a working LinuxONE prototype; no score
 - **Repository:** https://github.com/ANBU-SELVAN-1907/RASCALS-IBM-DATATHON
 - **Challenge:** Real-Time AI for Critical Decisions / System Anomaly Detection.
 - **Form text:** copy the five blocks in `FORM-ANSWERS.md`; each is below 1,024 characters.
-- **Pitch:** `RASCALS-ContinuityGuard-Pitch.pdf`, seven readable slides, below the 5 MB limit.
+- **Pitch:** `RASCALS-ContinuityGuard-Pitch.pdf`, nine readable slides, below the 5 MB limit.
 - **Video draft:** `RASCALS-ContinuityGuard-Walkthrough.mp4`, about 2:39, 1280x720, H.264/AAC. This is a narrated walkthrough of actual saved evidence, not continuous live recording. The voice is synthetic and labeled. Review it and preferably replace the narration with team members explaining their own work using `VIDEO-SCRIPT.md`.
 - **Supporting documentation:** link the repository's `docs/DEPLOYMENT.md`, `docs/METHODOLOGY.md` and `evidence/`.
 - **Resources:** the fifth form block contains direct resource links; fuller attribution is in `docs/ATTRIBUTIONS.md`.

@@ -1,0 +1,77 @@
+{
+  "architecture": "s390x",
+  "duration_seconds_per_trial": 10,
+  "batch_size": 4,
+  "scope": "Actual authenticated HTTP ingestion, bounded queue, model inference and SQLite journal on LinuxONE; controlled synthetic fixtures submitted in isolated external mode. Client and server share VM; GenAI off.",
+  "latency_boundaries": {
+    "http_queue_ack": "Client request through validation and enqueue; excludes later inference.",
+    "engine_batch": "Feature extraction through SQLite commit; excludes queue wait.",
+    "completion": "First request through final processed-count confirmation, including polling overhead. No event end-to-end p95 or browser latency is claimed."
+  },
+  "unauthenticated_access_rejected": true,
+  "trials": [
+    {
+      "offered_events_per_second": 10,
+      "offered_events": 100,
+      "queued_events": 100,
+      "http_backpressure_events": 0,
+      "processed_events": 100,
+      "rejected_processing_events": 0,
+      "duplicates": 0,
+      "failed_batches": 0,
+      "enqueue_seconds": 10.001,
+      "through_final_processing_confirmation_seconds": 10.004,
+      "processed_events_per_second": 10.0,
+      "p95_http_queue_ack_ms": 3.302,
+      "p95_engine_batch_ms": 32.32,
+      "audit": {
+        "valid": true,
+        "records": 2,
+        "head": "81977c4b75018ce131b0f9afec6857a4a2d95e6680fc50f7c91ae51c17466bae",
+        "scope": "local hash chain; externally retain head to detect full-history replacement"
+      }
+    },
+    {
+      "offered_events_per_second": 50,
+      "offered_events": 500,
+      "queued_events": 500,
+      "http_backpressure_events": 0,
+      "processed_events": 500,
+      "rejected_processing_events": 0,
+      "duplicates": 0,
+      "failed_batches": 0,
+      "enqueue_seconds": 10.001,
+      "through_final_processing_confirmation_seconds": 10.004,
+      "processed_events_per_second": 49.98,
+      "p95_http_queue_ack_ms": 8.672,
+      "p95_engine_batch_ms": 27.67,
+      "audit": {
+        "valid": true,
+        "records": 3,
+        "head": "dca74724f6dbde98394b74a6f8c54bb60ac1f4ceadb14b7c51dfcd383db5ff3f",
+        "scope": "local hash chain; externally retain head to detect full-history replacement"
+      }
+    },
+    {
+      "offered_events_per_second": 100,
+      "offered_events": 1000,
+      "queued_events": 1000,
+      "http_backpressure_events": 0,
+      "processed_events": 1000,
+      "rejected_processing_events": 0,
+      "duplicates": 0,
+      "failed_batches": 0,
+      "enqueue_seconds": 10.002,
+      "through_final_processing_confirmation_seconds": 10.007,
+      "processed_events_per_second": 99.93,
+      "p95_http_queue_ack_ms": 8.032,
+      "p95_engine_batch_ms": 29.31,
+      "audit": {
+        "valid": true,
+        "records": 9,
+        "head": "4f1c2cd4c5f97e9ea0741ace7e514e7ef197bb140965ca063a1b392831fe85bb",
+        "scope": "local hash chain; externally retain head to detect full-history replacement"
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+[
+  [
+    "RASCALS presents ContinuityGuard",
+    "We are RASCALS from Hindustan Institute of Technology and Science. ContinuityGuard investigates developing system failures behind essential digital services. We connect streaming warning, retained evidence and an inspectable response preview. This recorded walkthrough uses actual application screenshots, synthetic telemetry and labeled synthetic narration.",
+    [
+      "pdf",
+      0
+    ]
+  ],
+  [
+    "AI really runs on LinuxONE",
+    "Our training, testing, prediction, novelty scoring and local Granite generation run natively on LinuxONE. Three executed Jupyter notebooks retain reproducible outputs. The application uses a calibrated boosted-tree forecast with an operational threshold guard. Isolation Forest reports novelty separately. Telemetry is not sent to a remote model API.",
+    [
+      "pdf",
+      2
+    ]
+  ],
+  [
+    "From an incoming window to an incident",
+    "The deployed console processes a controlled database-pressure replay. Four software services share a dependency. After warmup, persistent risk raises an incident linked to observed measurements, affected services and an investigation runbook. Service priorities are declared policy. The suspected source is a hypothesis, not proven root cause.",
+    [
+      "shot",
+      [
+        220,
+        90,
+        1250,
+        825
+      ]
+    ]
+  ],
+  [
+    "Inspect the evidence and the tradeoff",
+    "Local Granite produces strictly constrained wording and complete evidence references. The operator can compare a sandbox response with taking no action under identical future workload. The preview reports modeled benefit together with deferred optional work. These effects follow simulator assumptions; no real service or host is modified.",
+    [
+      "shot",
+      [
+        870,
+        475,
+        1235,
+        1390
+      ]
+    ]
+  ],
+  [
+    "Report all results, including misses",
+    "On sixty fresh synthetic runs, both our system and static thresholds warned before 31 of 43 service incidents. Median early lead was 13 seconds versus 10. Our precision was slightly lower and misses remain. The strict sixty-second scoring and uncertainty intervals do not establish consistent model superiority. We publish that limitation.",
+    [
+      "pdf",
+      5
+    ]
+  ],
+  [
+    "Verify the platform and the actual pipeline",
+    "36 native regression tests passed. The actual authenticated HTTP path processed all one thousand events at one hundred offered events per second during a ten-second test. This includes queueing, inference and journaling. Queue acknowledgement and processing have separate latency boundaries. Container controls and restart evidence are public.",
+    [
+      "pdf",
+      7
+    ]
+  ],
+  [
+    "A reviewable path to real adoption",
+    "Our contribution is an accountable detection-to-decision workflow on LinuxONE. The repository contains code, model hashes, executed notebooks, measured reports and source credits. Real adoption needs authorized telemetry, operator feedback and domain validation. RASCALS presents ContinuityGuard: warning evidence and decisions that can be challenged, reproduced and understood.",
+    [
+      "pdf",
+      8
+    ]
+  ]
+]

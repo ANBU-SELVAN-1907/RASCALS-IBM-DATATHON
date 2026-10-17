@@ -1,53 +1,52 @@
 {
-  "verified_utc": "2026-10-17T08:37:49.340300+00:00",
-  "image_id": "5fd741ab33d22e4e66054a2683805f415aa0cc6f509d75d74241cda89cc2aeca",
-  "architecture": "s390x",
-  "user": "1000",
-  "state": "running",
-  "health": "healthy",
+  "verified_utc": "2026-10-17T09:25:39.881026+00:00",
+  "image_id": "5a7384373a6dbd89d136d7961f44b020962b94d959269b9bdaf49eafe6fcff3a",
+  "container_state": "running",
   "memory_limit_bytes": 2147483648,
   "cpu_quota": 150000,
   "cpu_period": 100000,
   "readonly_rootfs": true,
-  "cap_drop": [
-    "CAP_CHOWN",
-    "CAP_DAC_OVERRIDE",
-    "CAP_FOWNER",
-    "CAP_FSETID",
-    "CAP_KILL",
-    "CAP_NET_BIND_SERVICE",
-    "CAP_SETFCAP",
-    "CAP_SETGID",
-    "CAP_SETPCAP",
-    "CAP_SETUID",
-    "CAP_SYS_CHROOT"
-  ],
   "security_opt": [
     "no-new-privileges"
   ],
-  "network_mode": "host",
+  "platform_proof": {
+    "project_title": "RASCALS_IBM Z Datathon 2026 Project",
+    "architecture": "s390x",
+    "python": "3.12.15",
+    "process_uid": 1000,
+    "cgroup_memory_max": "2147483648",
+    "cgroup_cpu_max": "150000 100000",
+    "effective_capabilities_hex": "0000000000000000",
+    "no_new_privileges": "1",
+    "root_filesystem_readonly": true,
+    "model": {
+      "version": "cg-2026-10-17-v3",
+      "trained_utc": "2026-10-17T09:14:05.726376+00:00",
+      "architecture": "s390x",
+      "model": "boosted_trees_7_leaves",
+      "forecast_horizon_seconds": 60,
+      "feature_count": 26,
+      "sha256": "ef34fa93fb93f09197869c9f3563268307cc896cb856ab21ccbd6074f9edcb97",
+      "packages": {
+        "numpy": "2.0.2",
+        "scikit-learn": "1.9.0",
+        "scipy": "1.13.1",
+        "joblib": "1.6.0"
+      }
+    },
+    "novelty_estimator": "IsolationForest",
+    "granite_model_available": true,
+    "platform_scope": "Observed process and container properties; no z/OS or hardware accelerator claim."
+  },
   "health_response": {
     "status": "ready",
     "architecture": "s390x",
-    "model_version": "cg-2026-10-17-v2"
+    "model_version": "cg-2026-10-17-v3"
   },
   "audit": {
     "valid": true,
-    "records": 84,
-    "head": "c27a59d158e83abc131fc53ab5b868660d727766ae4f11a14307f21f1acf3199",
+    "records": 100,
+    "head": "eca668b9253a9f3b5a484230b92710de3d140c7e4fe6b3ac5ef1b8df2952e542",
     "scope": "local hash chain; externally retain head to detect full-history replacement"
-  },
-  "explanation": {
-    "status": "complete",
-    "mode": "local Granite \u00b7 constrained generation",
-    "summary": "Review RB-POOL for batch-reporting. Observed measurements: Connection pool occupancy 78.7 % (E1); Memory occupancy 36.9 % (E4); Latency p95 291.3 ms (E5).",
-    "evidence_ids": [
-      "E1",
-      "E4"
-    ],
-    "runbook_id": "RB-POOL",
-    "completion_tokens": 86,
-    "elapsed_seconds": 21.73,
-    "scope": "Generation selects a verified wording under a strict evidence schema; no autonomous action."
   }
 }

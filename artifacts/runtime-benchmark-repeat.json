@@ -1,0 +1,52 @@
+{
+  "architecture": "s390x",
+  "logical_cpus": 3,
+  "duration_per_trial_seconds": 8,
+  "scope": "Paced in-process engine with SQLite commits on the assigned LinuxONE VM. Source telemetry is synthetic service-window events; this is not an HTTP or source-to-browser load test. GenAI is off.",
+  "boundary": "Feature extraction, ML scoring, alert policy and journal commit; measured for batches of 4 events.",
+  "queue_scope": "Direct engine: ingestion queue is bypassed in this benchmark. Queue backpressure is checked separately by correctness tests.",
+  "trials": [
+    {
+      "offered_events_per_second": 10,
+      "accepted_events": 80,
+      "rejected_events": 0,
+      "duplicates": 0,
+      "measurement_seconds": 8.0,
+      "achieved_events_per_second": 10.0,
+      "batch_size": 4,
+      "p50_batch_processing_ms": 30.260364500236392,
+      "p95_batch_processing_ms": 49.3655803497859,
+      "p99_batch_processing_ms": 68.35634407007089,
+      "process_cpu_seconds": 0.42,
+      "process_rss_bytes": 181444608
+    },
+    {
+      "offered_events_per_second": 50,
+      "accepted_events": 400,
+      "rejected_events": 0,
+      "duplicates": 0,
+      "measurement_seconds": 8.0,
+      "achieved_events_per_second": 50.0,
+      "batch_size": 4,
+      "p50_batch_processing_ms": 29.77859299994634,
+      "p95_batch_processing_ms": 49.48876099992958,
+      "p99_batch_processing_ms": 59.830228040132226,
+      "process_cpu_seconds": 2.05,
+      "process_rss_bytes": 185155584
+    },
+    {
+      "offered_events_per_second": 100,
+      "accepted_events": 800,
+      "rejected_events": 0,
+      "duplicates": 0,
+      "measurement_seconds": 8.0,
+      "achieved_events_per_second": 100.0,
+      "batch_size": 4,
+      "p50_batch_processing_ms": 30.199997999716288,
+      "p95_batch_processing_ms": 53.60218684998013,
+      "p99_batch_processing_ms": 61.135381850208375,
+      "process_cpu_seconds": 4.67,
+      "process_rss_bytes": 186159104
+    }
+  ]
+}

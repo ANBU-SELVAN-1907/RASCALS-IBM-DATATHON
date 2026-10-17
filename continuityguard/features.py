@@ -8,7 +8,10 @@ RAW = ("latency_p95_ms", "pool_used", "queue_depth", "retry_rate", "cpu_used", "
 FEATURE_NAMES = list(RAW) + ["queue_per_request", "latency_per_request"] + [f"{x}_slope15" for x in RAW[:6]] + [f"{x}_mean15" for x in RAW[:6]] + [f"service_{s}" for s in SERVICES]
 
 def timestamp(value):
-    return datetime.fromisoformat(value.replace("Z", "+00:00")).timestamp()
+    stamp = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    if stamp.tzinfo is None:
+        raise ValueError('Timezone-aware event time required')
+    return stamp.timestamp()
 
 class FeatureWindow:
     def __init__(self):
@@ -20,8 +23,12 @@ class FeatureWindow:
         moment = timestamp(event["event_time"])
         if moment <= self.last.get(service, float('-inf')):
             raise ValueError("Event time must increase within each service")
-        self.last[service] = moment
         raw = np.array([event["latency_p95_ms"], event["pool_used"], event["queue_depth"], event["retry_rate"], event["cpu_used"], event["memory_used"], event["failures"] / max(1, event["requests"]), event["requests"]], dtype=np.float64)
+        if not np.isfinite(raw).all() or event['requests'] < 1 or not 0 <= event['failures'] <= event['requests']:
+            raise ValueError('Invalid finite telemetry')
+        if moment - self.last.get(service, moment) > 5:
+            self.history[service].clear()
+        self.last[service] = moment
         self.history[service].append((moment, raw))
         rows = list(self.history[service])
         last = rows[-15:]

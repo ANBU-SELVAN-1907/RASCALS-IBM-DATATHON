@@ -14,11 +14,11 @@
       "measurement_seconds": 8.0,
       "achieved_events_per_second": 10.0,
       "batch_size": 4,
-      "p50_batch_processing_ms": 30.260364500236392,
-      "p95_batch_processing_ms": 49.3655803497859,
-      "p99_batch_processing_ms": 68.35634407007089,
-      "process_cpu_seconds": 0.42,
-      "process_rss_bytes": 181444608
+      "p50_batch_processing_ms": 9.336454999811394,
+      "p95_batch_processing_ms": 11.756995049472616,
+      "p99_batch_processing_ms": 21.778249409653636,
+      "process_cpu_seconds": 0.2,
+      "process_rss_bytes": 181403648
     },
     {
       "offered_events_per_second": 50,
@@ -28,11 +28,11 @@
       "measurement_seconds": 8.0,
       "achieved_events_per_second": 50.0,
       "batch_size": 4,
-      "p50_batch_processing_ms": 29.77859299994634,
-      "p95_batch_processing_ms": 49.48876099992958,
-      "p99_batch_processing_ms": 59.830228040132226,
-      "process_cpu_seconds": 2.05,
-      "process_rss_bytes": 185155584
+      "p50_batch_processing_ms": 7.927484999527223,
+      "p95_batch_processing_ms": 8.549551099849849,
+      "p99_batch_processing_ms": 9.64896056071666,
+      "process_cpu_seconds": 0.8,
+      "process_rss_bytes": 185122816
     },
     {
       "offered_events_per_second": 100,
@@ -42,11 +42,11 @@
       "measurement_seconds": 8.0,
       "achieved_events_per_second": 100.0,
       "batch_size": 4,
-      "p50_batch_processing_ms": 30.199997999716288,
-      "p95_batch_processing_ms": 53.60218684998013,
-      "p99_batch_processing_ms": 61.135381850208375,
-      "process_cpu_seconds": 4.67,
-      "process_rss_bytes": 186159104
+      "p50_batch_processing_ms": 7.613862000198424,
+      "p95_batch_processing_ms": 21.23803075010059,
+      "p99_batch_processing_ms": 29.772961809912882,
+      "process_cpu_seconds": 1.74,
+      "process_rss_bytes": 186126336
     }
   ]
 }

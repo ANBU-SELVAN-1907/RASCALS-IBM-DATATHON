@@ -1,0 +1,16 @@
+name: Submission integrity
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m compileall -q continuityguard scripts tests
+      - run: python scripts/validate_submission.py
+      # ML/API tests are executed natively in LinuxONE Jupyter and committed
+      # as artifacts, not misrepresented as native execution on this runner.

@@ -1,0 +1,9 @@
+{
+  "project_title": "RASCALS_IBM Z Datathon 2026 Project",
+  "solution_name": "ContinuityGuard",
+  "team_name": "RASCALS",
+  "members": ["ANBU SELVAN T", "SAHANA G", "DHARSHINI E", "POOJA V"],
+  "institution": "Hindustan Institute of Technology and Science",
+  "theme": "Real-Time AI for Critical Decisions",
+  "problem_statement": "System Anomaly Detection - how can AI be used to identify abnormal system activity as it happens and alert organisations before it causes a major disruption?"
+}

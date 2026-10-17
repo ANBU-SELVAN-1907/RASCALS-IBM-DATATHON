@@ -29,7 +29,7 @@ def intervals(breaches):
             result.append([int(p), int(p)])
     return result
 
-def evaluate_runs(runs, flags_by_run):
+def evaluate_runs(runs, flags_by_run, early_window=60):
     incidents = detected = early = total_alerts = false_alerts = healthy_false = 0
     healthy_seconds = 0
     leads, late, details = [], [], []
@@ -46,7 +46,7 @@ def evaluate_runs(runs, flags_by_run):
                 healthy_false += len(remaining)
             for start, end in intervals(breaches[service]):
                 incidents += 1
-                matches = [a for a in remaining if start - 90 <= a <= end + 15]
+                matches = [a for a in remaining if start - early_window <= a <= end + 15]
                 first = min(matches) if matches else None
                 if first is not None:
                     remaining.remove(first)
