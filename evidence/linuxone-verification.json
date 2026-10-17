@@ -1,6 +1,6 @@
 {
-  "verified_utc": "2026-10-17T09:25:39.881026+00:00",
-  "image_id": "5a7384373a6dbd89d136d7961f44b020962b94d959269b9bdaf49eafe6fcff3a",
+  "verified_utc": "2026-10-17T11:47:53.924495+00:00",
+  "image_id": "cc1edd6cbc7dd5e6dd8ab8764371ff2d19a257c8283a594616a19f84db19f4fd",
   "container_state": "running",
   "memory_limit_bytes": 2147483648,
   "cpu_quota": 150000,
@@ -45,8 +45,8 @@
   },
   "audit": {
     "valid": true,
-    "records": 100,
-    "head": "eca668b9253a9f3b5a484230b92710de3d140c7e4fe6b3ac5ef1b8df2952e542",
+    "records": 119,
+    "head": "db352ded87c14c1d27cd11b2df80444eb9a019a23b4cff0cde2dfc28bdc90146",
     "scope": "local hash chain; externally retain head to detect full-history replacement"
   }
 }

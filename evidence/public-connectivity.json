@@ -1,0 +1,14 @@
+{
+  "dashboard": {
+    "status": 200,
+    "url": "https://148.100.99.173:8443/api/health",
+    "tls_certificate_verified": true,
+    "expected_service_received": true
+  },
+  "jupyter": {
+    "status": 200,
+    "url": "https://148.100.99.173:8888/login",
+    "tls_certificate_verified": true,
+    "expected_service_received": true
+  }
+}

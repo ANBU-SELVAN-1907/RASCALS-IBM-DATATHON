@@ -1,8 +1,9 @@
 {
   "continuityguard/models.py": "b3fc6895227e23589e3c5d36c92af20b97ee9a0d1ae17cc67190711e1d0a5171",
   "continuityguard/http_benchmark.py": "c882da1a6b4f671d4e9dce647f94c7a57df24df05a3d55a065460a643d0f6fe1",
-  "continuityguard/web.py": "7340f0705cf79a7377aee7f01f4224aefe8ae922c333d163c8e00405d7cfcc0f",
+  "continuityguard/web.py": "fbc10bff2799e301fa16166c321109f860eb71174b971a50d65cea71fb01a86b",
   "continuityguard/features.py": "b18d1f49c0750339f2978275316ecf18c7ddc860956127e5a2acc2bdce400b6e",
+  "continuityguard/measured_workload.py": "51f86a43103583a37eb2e6e48ed16babdd4b4f6c099279af015a781b7f2a3c0a",
   "continuityguard/train.py": "0ae47cbf67ba57b3dbea6072d02901f55fe3ac53b346da9cc01bef502b2a1978",
   "continuityguard/evaluation.py": "55743230b71dd8c77eed7993039983e773bd0d5cfe4bcebea4727a4ce90051b7",
   "continuityguard/explain.py": "704c2460367b6462a6765cb74c31026ca81bbd2215ebebcda991d5f5b6ba9851",
@@ -11,6 +12,6 @@
   "continuityguard/__init__.py": "1cdadbc9ec324560b1f868a8467ae3809178599aed88a9983f3008b82f2fa5e5",
   "continuityguard/benchmark.py": "624e0955a149eebf6505ca0bfef76f213564bb71b8c6ec8c8bb4480e8d3ebd3c",
   "continuityguard/static/style.css": "22bcc82c926b7109ed8eb8a61e76c49fd892520610b9ca55cd8325bfb1733732",
-  "continuityguard/static/index.html": "92ee6556bf00e292cc2b756c336a25c8d1d54983f278d97567410e5869291456",
+  "continuityguard/static/index.html": "8aa222c5f5b4bfd6681ec314ed1d26bfe71d8e19f9a9493c97cdf4cc0d5117fb",
   "continuityguard/static/app.js": "78e072740da83f2a3ab9d52897da5653a792a8b802a86466201ee730c28238aa"
 }

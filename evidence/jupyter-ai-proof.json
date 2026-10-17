@@ -16,8 +16,8 @@
     }
   },
   "predictive_incident": {
-    "id": "237468c80998",
-    "created_at": "2026-10-17T09:18:42.048487+00:00",
+    "id": "39aa47e4170a",
+    "created_at": "2026-10-17T11:46:59.977026+00:00",
     "event_time": "2026-10-17T00:02:43+00:00",
     "service": "database",
     "suspected_source": "database",
@@ -75,13 +75,13 @@
     ],
     "runbook_id": "RB-POOL",
     "completion_tokens": 97,
-    "elapsed_seconds": 16.03,
+    "elapsed_seconds": 15.81,
     "scope": "Generation selects a verified wording under a strict evidence schema; no autonomous action."
   },
   "audit": {
     "valid": true,
     "records": 3,
-    "head": "b998c2ab1e75f664555226e35393663b8189d4fe396259563eb48109490884c0",
+    "head": "3b0c0bc4ddfc60231dd591a5600a3e0c7ed505561b0b9812673b79d243a09476",
     "scope": "local hash chain; externally retain head to detect full-history replacement"
   },
   "scope": "Actual native s390x predictive and local generative execution; synthetic incident; constrained wording, not open-ended root-cause reasoning."

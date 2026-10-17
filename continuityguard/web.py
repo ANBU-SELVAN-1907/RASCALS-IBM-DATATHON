@@ -269,7 +269,7 @@ def create_app(root=None, token_file=None, auto_start=True):
         session=secrets.token_urlsafe(32)
         service.sessions[session]=time.time()+28800
         response=JSONResponse({'authenticated':True})
-        response.set_cookie('cg_session',session,httponly=True,samesite='strict',max_age=28800)
+        response.set_cookie('cg_session',session,httponly=True,samesite='strict',secure=request.url.scheme=='https',max_age=28800)
         return response
 
     @app.get('/api/state')

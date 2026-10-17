@@ -5,14 +5,14 @@ The project was trained and tested through Jupyter kernels in the supplied s390x
 ## Reproduce
 
 1. Complete the organizer's required labs and confirm the assigned notebook mapping.
-2. Place this repository in Jupyter's persistent `shared/continuityguard` directory. Run the two project notebooks, in order, using the supplied Python kernel.
+2. Place this repository in Jupyter's persistent `shared/continuityguard` directory. Run the five project notebooks, in order, using the supplied Python kernel.
 3. Export the repository including generated artifacts to a host directory. Keep private keys, tokens and SQLite state outside the repository.
 4. On the LinuxONE host, run `python3 scripts/deploy_linuxone.py /absolute/project/path`. This uses sudo Podman and needs the supplied image available. Port 8080 must be free.
 5. Forward VM loopback ports through SSH using the command in the README. Open the app on local port 8080 and Jupyter on 38888. Retrieve the separate application token using the documented Podman command.
 
 ## Verified configuration
 
-The application image runs as UID 1000, with 2 GiB memory, 1.5 CPU quota, 256 PID limit, a read-only root, a bounded temporary filesystem, dropped capabilities and no-new-privileges. SQLite and the access token persist in `continuityguard-state`. The app binds only 127.0.0.1:8080. Host networking is an explicit isolation tradeoff; no public application firewall rule was opened. Jupyter remains a separate container with its own limits.
+The application image runs as UID 1000, with 2 GiB memory, 1.5 CPU quota, 256 PID limit, a read-only root, a bounded temporary filesystem, dropped capabilities and no-new-privileges. SQLite and the access token persist in `continuityguard-state`. The app binds only 127.0.0.1:8080. Host networking is an explicit isolation tradeoff. The separately configured TLS proxy admits public 8443/8888 while backend ports remain loopback; see PUBLIC-ACCESS.md. Jupyter remains a separate container with its own limits.
 
 The supplied pinned image had mixed OCI-manifest/Docker-layer metadata that caused Podman build to reject its compression MIME type. The deployment script handles this by exporting an **untouched throwaway container** from the pinned image and importing its root filesystem as a local compatibility base, preserving environment/user/workdir. This excludes running lab volumes and credentials. The resulting application image ID is retained in deployment evidence. The compatibility import loses original image-layer provenance; the source digest and procedure remain recorded. Allow sufficient disk for the original image, temporary archive and imported base.
 
@@ -22,7 +22,7 @@ An initial temporary notebook demo occupied port 8080 during deployment. It was 
 
 `evidence/restart-check.json` records the audit count/head before and after restarting the application container. Persistent audit history survives; live feature windows and browser sessions restart empty. This is a journal-persistence test, not uninterrupted failover or high availability. After restart, run a fresh scenario and sign in again.
 
-The first implementation exceeded a ten-second stop timeout with an open SSE connection. The audit fixed stream/server shutdown bounds and worker/journal cleanup. The latest actual restart with an active SSE client took 3.441 seconds with no forced-kill warning, and retained the original audit prefix. This is a restart/persistence check, not seamless failover.
+The first implementation exceeded a ten-second stop timeout with an open SSE connection. The audit fixed stream/server shutdown bounds and worker/journal cleanup. The latest actual restart with an active SSE client took 3.501 seconds with no forced-kill warning, and retained the original audit prefix. This is a restart/persistence check, not seamless failover.
 
 `evidence/dashboard.png` shows actual local Granite generation and a paired synthetic response preview. `evidence/evaluation.png` shows saved evaluation results. Token-bearing URLs, private keys and patient data are excluded. A local hash chain is not externally signed or tamper-proof: retain its head independently to detect whole-history replacement.
 

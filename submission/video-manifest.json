@@ -1,53 +1,53 @@
 {
-  "duration_seconds": 157.52,
+  "duration_seconds": 164.47,
   "model_version": "cg-2026-10-17-v3",
-  "resolution": "1280x720",
+  "resolution": "1920x1080",
   "format": "H.264/AAC MP4",
-  "presentation": "Saved-evidence walkthrough, not continuous live capture",
-  "voice": "Microsoft Zira synthetic narration; no person impersonated",
+  "presentation": "Chaptered implementation/evidence guide, not continuous live screen recording",
+  "voice": "Windows System.Speech synthetic narration; no person impersonated",
   "scenes": [
     {
       "scene": 1,
-      "title": "RASCALS presents ContinuityGuard",
-      "seconds": 21.86,
-      "narration": "We are RASCALS from Hindustan Institute of Technology and Science. ContinuityGuard investigates developing system failures behind essential digital services. We connect streaming warning, retained evidence and an inspectable response preview. This recorded walkthrough uses actual application screenshots, synthetic telemetry and labeled synthetic narration."
+      "title": "Problem: developing failures in essential services",
+      "seconds": 22.88,
+      "narration": "We are RASCALS from Hindustan Institute of Technology and Science. ContinuityGuard identifies developing system faults and gives operators a reviewable warning before disruption. Our demonstration uses original controlled scenarios, with a separate experiment containing actual LinuxONE service measurements. This is a chaptered evidence walkthrough, with labeled synthetic narration."
     },
     {
       "scene": 2,
-      "title": "AI really runs on LinuxONE",
-      "seconds": 23.82,
-      "narration": "Our training, testing, prediction, novelty scoring and local Granite generation run natively on LinuxONE. Three executed Jupyter notebooks retain reproducible outputs. The application uses a calibrated boosted-tree forecast with an operational threshold guard. Isolation Forest reports novelty separately. Telemetry is not sent to a remote model API."
+      "title": "Solution: AI and the decision path stay on LinuxONE",
+      "seconds": 24.53,
+      "narration": "Native s390x Jupyter fits and tests the models. The deployed app combines calibrated boosted-tree forecasts, a threshold guard and separate novelty scores. Persistent signals create incidents with retained measurements, dependency priorities and runbooks. Local Granite generates constrained wording. The operator can inspect a paired simulator response before deciding what to investigate."
     },
     {
       "scene": 3,
-      "title": "From an incoming window to an incident",
-      "seconds": 22.45,
-      "narration": "The deployed console processes a controlled database-pressure replay. Four software services share a dependency. After warmup, persistent risk raises an incident linked to observed measurements, affected services and an investigation runbook. Service priorities are declared policy. The suspected source is a hypothesis, not proven root cause."
+      "title": "Working scenarios and actual operator output",
+      "seconds": 20.85,
+      "narration": "The actual dashboard runs on the assigned IBM VM. Pool pressure and retry-cascade examples warn before sustained service breach. A sudden failure is detected at onset, without a promised precursor. The action preview reports modeled benefit with deferred optional work. It executes no remediation against a real service."
     },
     {
       "scene": 4,
-      "title": "Inspect the evidence and the tradeoff",
-      "seconds": 20.51,
-      "narration": "Local Granite produces strictly constrained wording and complete evidence references. The operator can compare a sandbox response with taking no action under identical future workload. The preview reports modeled benefit together with deferred optional work. These effects follow simulator assumptions; no real service or host is modified."
+      "title": "Original measurements, with raw-data provenance",
+      "seconds": 23.58,
+      "narration": "We also collected real request timings and process counters from a bounded microservice on LinuxONE. Increased request computation raised measured latency. A separate baseline-trained novelty detector flagged the controlled pressure. The raw CSV, timestamps, recovery false alerts and hash are published. This experiment does not validate hospital outage prediction."
     },
     {
       "scene": 5,
-      "title": "Report all results, including misses",
-      "seconds": 22.6,
-      "narration": "On sixty fresh synthetic runs, both our system and static thresholds warned before 31 of 43 service incidents. Median early lead was 13 seconds versus 10. Our precision was slightly lower and misses remain. The strict sixty-second scoring and uncertainty intervals do not establish consistent model superiority. We publish that limitation."
+      "title": "Evaluation: report the misses and competitive baseline",
+      "seconds": 23.27,
+      "narration": "On sixty fresh synthetic runs, both ContinuityGuard and static thresholds warned before thirty-one of forty-three service incidents. Median early lead was thirteen seconds versus ten. Precision was fifty-nine point three percent versus sixty percent. These results and uncertainty do not establish consistent model superiority. Earlier development reports remain available."
     },
     {
       "scene": 6,
-      "title": "Verify the platform and the actual pipeline",
-      "seconds": 21.82,
-      "narration": "36 native regression tests passed. The actual authenticated HTTP path processed all one thousand events at one hundred offered events per second during a ten-second test. This includes queueing, inference and journaling. Queue acknowledgement and processing have separate latency boundaries. Container controls and restart evidence are public."
+      "title": "LinuxONE proof, tests and IBM Toolkit boundary",
+      "seconds": 23.72,
+      "narration": "37 native tests passed. Actual authenticated HTTP ingestion processed all one thousand offered events in the short test. Container controls, model hashes and restart evidence are public. IBM Toolkit deployment guidance was applied, and an optional Random Forest export was checked. Entitled Toolkit execution and hardware acceleration are not claimed."
     },
     {
       "scene": 7,
-      "title": "A reviewable path to real adoption",
-      "seconds": 24.36,
-      "narration": "Our contribution is an accountable detection-to-decision workflow on LinuxONE. The repository contains code, model hashes, executed notebooks, measured reports and source credits. Real adoption needs authorized telemetry, operator feedback and domain validation. RASCALS presents ContinuityGuard: warning evidence and decisions that can be challenged, reproduced and understood."
+      "title": "Learnings and a complete reproducible handoff",
+      "seconds": 25.64,
+      "narration": "We learned to align prediction and evaluation horizons, distinguish queue timing from inference, and separate measured data from simulation. The repository contains the summary, five executed notebooks, scenarios, source, outputs, deployment and access instructions. Review the short video, confirm required labs and submit manually. ContinuityGuard makes warning evidence and next steps inspectable."
     }
   ],
-  "full_audio_video_decode": "passed"
+  "container_duration_seconds": 164.6
 }

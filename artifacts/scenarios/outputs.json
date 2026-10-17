@@ -1,0 +1,74 @@
+{
+  "model_version": "cg-2026-10-17-v3",
+  "scenarios": [
+    {
+      "scenario": "healthy",
+      "seed": 101,
+      "strength": 1.12,
+      "all_service_alerts": 0,
+      "urgent_alert_seconds": [],
+      "first_urgent_sustained_breach_second": null,
+      "scope": "Fixed-seed synthetic illustration, not new independent validation"
+    },
+    {
+      "scenario": "healthy_surge",
+      "seed": 101,
+      "strength": 1.12,
+      "all_service_alerts": 0,
+      "urgent_alert_seconds": [],
+      "first_urgent_sustained_breach_second": null,
+      "scope": "Fixed-seed synthetic illustration, not new independent validation"
+    },
+    {
+      "scenario": "healthy_shift",
+      "seed": 101,
+      "strength": 1.12,
+      "all_service_alerts": 0,
+      "urgent_alert_seconds": [],
+      "first_urgent_sustained_breach_second": null,
+      "scope": "Fixed-seed synthetic illustration, not new independent validation"
+    },
+    {
+      "scenario": "pool_exhaustion",
+      "seed": 101,
+      "strength": 1.12,
+      "all_service_alerts": 4,
+      "urgent_alert_seconds": [
+        167
+      ],
+      "first_urgent_sustained_breach_second": 188,
+      "scope": "Fixed-seed synthetic illustration, not new independent validation"
+    },
+    {
+      "scenario": "retry_storm",
+      "seed": 101,
+      "strength": 1.12,
+      "all_service_alerts": 5,
+      "urgent_alert_seconds": [
+        182
+      ],
+      "first_urgent_sustained_breach_second": 219,
+      "scope": "Fixed-seed synthetic illustration, not new independent validation"
+    },
+    {
+      "scenario": "memory_pressure",
+      "seed": 101,
+      "strength": 1.12,
+      "all_service_alerts": 1,
+      "urgent_alert_seconds": [],
+      "first_urgent_sustained_breach_second": null,
+      "scope": "Fixed-seed synthetic illustration, not new independent validation"
+    },
+    {
+      "scenario": "abrupt_failure",
+      "seed": 101,
+      "strength": 1.12,
+      "all_service_alerts": 4,
+      "urgent_alert_seconds": [
+        94
+      ],
+      "first_urgent_sustained_breach_second": 94,
+      "scope": "Fixed-seed synthetic illustration, not new independent validation"
+    }
+  ]
+}

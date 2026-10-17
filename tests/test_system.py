@@ -176,6 +176,12 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(self.client.get('/api/state').status_code,401)
         self.assertEqual(self.client.get('/api/platform-proof').status_code,401)
 
+    def test_tls_login_sets_secure_session_cookie(self):
+        response=self.client.post('https://testserver/api/login',json={'token':'test-token-for-isolated-correctness-only'},headers={'X-ContinuityGuard':'operator'})
+        self.assertEqual(response.status_code,200)
+        self.assertIn('Secure',response.headers['set-cookie'])
+        self.assertIn('HttpOnly',response.headers['set-cookie'])
+
     def test_platform_proof_matches_loaded_model(self):
         self.auth()
         proof=self.client.get('/api/platform-proof').json()

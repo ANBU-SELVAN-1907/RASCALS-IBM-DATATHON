@@ -10,3 +10,4 @@
 *.png binary
 *.joblib binary
 *.mp4 binary
+*.onnx binary

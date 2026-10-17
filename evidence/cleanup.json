@@ -1,0 +1,8 @@
+{
+  "utc": "2026-10-17T11:54:01.447105+00:00",
+  "removed_reproducible_build_archive": "/home/linux1/ibm-lab-rootfs.tar",
+  "bytes_reclaimed": 4688116224,
+  "verified_compatibility_image_exists": true,
+  "verified_app_running_before_cleanup": true,
+  "preserved": "Notebook volumes, main model, supplied Granite, current image and rollback containers. No bulk prune or user-data deletion."
+}

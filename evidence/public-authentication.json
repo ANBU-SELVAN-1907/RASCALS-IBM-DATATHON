@@ -1,0 +1,8 @@
+{
+  "url": "https://148.100.99.173:8443",
+  "tls_certificate_verified": true,
+  "authenticated_login_status": 200,
+  "secure_httponly_strict_session_cookie": true,
+  "authenticated_state_status": 200,
+  "credentials_exported": false
+}

@@ -1,0 +1,89 @@
+{
+  "duration_seconds": 377.88,
+  "model_version": "cg-2026-10-17-v3",
+  "resolution": "1920x1080",
+  "format": "H.264/AAC MP4",
+  "presentation": "Chaptered implementation/evidence guide, not continuous live screen recording",
+  "voice": "Windows System.Speech synthetic narration; no person impersonated",
+  "scenes": [
+    {
+      "scene": 1,
+      "title": "01 / What the project does",
+      "seconds": 32.28,
+      "narration": "This implementation guide follows RASCALS ContinuityGuard from environment setup through model training, testing, actual measurements, deployment and operator output. The problem is system anomaly detection: identify developing abnormal activity and alert an organization before a major disruption. We use a hospital-software scenario to define service priorities. No patient data or clinical decisions are involved. The guide is chaptered, using actual saved evidence and reproducible commands; it is not a continuous recording of provisioning."
+    },
+    {
+      "scene": 2,
+      "title": "02 / Prepare the real IBM LinuxONE environment",
+      "seconds": 28.74,
+      "narration": "Start with your assigned LinuxONE Community Cloud VM and its private SSH key. Our host is RHEL nine point eight, with native s390x architecture and Podman. Confirm the operating system instead of applying Ubuntu commands blindly. Keep the key outside the repository. Complete both organizer-assigned labs before original project work; our sample execution evidence is retained, but the exact category mapping requires organizer confirmation."
+    },
+    {
+      "scene": 3,
+      "title": "03 / Open authenticated Jupyter on the IBM VM",
+      "seconds": 25.77,
+      "narration": "The assigned VM now provides Jupyter over TLS on port eight eight eight eight, and the dashboard over TLS on port eight four four three. Verify the published certificate fingerprint manually before entering either token. The certificate is short-lived and self-signed. Jupyter and the app use separate private tokens. An SSH tunnel is an alternative route to the same VM; localhost does not mean the models run on the laptop."
+    },
+    {
+      "scene": 4,
+      "title": "04 / Place and understand the source",
+      "seconds": 23.88,
+      "narration": "Clone the repository into persistent Jupyter shared storage and open its notebooks directory. Read SUMMARY dot m d and the model and data cards. The simulator, features, model training, streaming engine, explanation and API are separate source modules. The final model is frozen at version three. The raw original measurements are separate from the synthetic hospital-service scenarios."
+    },
+    {
+      "scene": 5,
+      "title": "05 / Train, calibrate, select and evaluate",
+      "seconds": 26.6,
+      "narration": "Run notebook zero one from top to bottom on the native kernel. It fits three tabular forecasting candidates on sixty training runs, fits calibration on eighteen separate runs, and selects the model and alert policy on twenty-four validation runs. Sixty fresh final runs are scored afterward. Current and historical features never contain future values or fault metadata. The target and early incident matching both use sixty seconds."
+    },
+    {
+      "scene": 6,
+      "title": "06 / Read the results before making claims",
+      "seconds": 29.68,
+      "narration": "The selected model is small histogram gradient boosting, with maximum seven leaves and a separate sigmoid calibrator. The selected policy combines a high learned score with explicit operational thresholds. Isolation Forest reports novelty separately. Both the submitted system and static baseline warned before thirty-one of forty-three final service incidents. Precision and misses remain competitive with the baseline, rather than demonstrating consistent learned-model superiority. Publish that tradeoff."
+    },
+    {
+      "scene": 7,
+      "title": "07 / Run the engineering checks",
+      "seconds": 28.8,
+      "narration": "Run notebooks zero two and zero three. The latter tests the final source, starts an isolated real HTTP service for ingestion checks and verifies local Granite output. Inspect actual test names, counts and failure records. The bounded queue rejects overload explicitly. Invalid inputs, gaps, source provenance and consumer errors have regression coverage. Queue acceptance is not completed inference; each timing boundary is labeled."
+    },
+    {
+      "scene": 8,
+      "title": "08 / Inspect original service measurements",
+      "seconds": 30.65,
+      "narration": "Notebook zero four collects actual timings and process counters from a bounded localhost computation service on LinuxONE. It observes baseline behavior, deliberately increases the real request computation, then records recovery. A separate Isolation Forest is fitted on baseline observations only. Here is the actual executed notebook with the architecture, source call and measured outputs. No latency values were invented. This small experiment is not a production hospital incident."
+    },
+    {
+      "scene": 9,
+      "title": "09 / Review IBM Toolkit preparation",
+      "seconds": 28.54,
+      "narration": "Notebook zero five trains a separate Random Forest challenger using the existing training and validation runs, exports ONNX and checks its structure. That family appears in IBM Snap ML import documentation. The participant has no configured registry entitlement, so the supported IBM container and acceleration have not run. Toolkit deployment guidance is applied to identity, filesystem and protected access, with remaining rootful and host-networking limits stated."
+    },
+    {
+      "scene": 10,
+      "title": "10 / Deploy without losing evidence",
+      "seconds": 29.48,
+      "narration": "Build the application on LinuxONE using the provided deployment script. Deliberate replacement preserves the state volume and a stopped rollback container. The application runs with limited CPU, memory and PIDs, a read-only root, non-root identity and dropped capabilities. Run verification to check model consistency, local generation and restart persistence. Public access uses a separate TLS proxy and a narrow SELinux policy; authentication stays enabled."
+    },
+    {
+      "scene": 11,
+      "title": "11 / Start a scenario and inspect the warning",
+      "seconds": 31.01,
+      "narration": "In the deployed dashboard, select database connection pressure and four-times replay. The interface labels synthetic event time and the fixed scenario severity. Wait for warmup and persistent risk. Select an incident and inspect its retained measurements, declared affected software services and runbook. Local Granite cites verified evidence and cannot run shell commands. The response preview compares the same future workload with and without a simulator action. It shows deferred optional work with the modeled benefit."
+    },
+    {
+      "scene": 12,
+      "title": "12 / Cover the remaining scenarios and external input",
+      "seconds": 29.76,
+      "narration": "Healthy load, surge and shift examples should not be equated with failures. The gallery also shows pool exhaustion, retry cascades, memory pressure and sudden failure. For authorized real telemetry, explicitly start an external session and send already-aggregated windows through the adapter. The server overrides synthetic provenance, and response previews are disabled. A model trained on our simulator requires validation and calibration before operational use on an organization\u2019s data."
+    },
+    {
+      "scene": 13,
+      "title": "13 / Learnings, cleanup and final submission",
+      "seconds": 32.69,
+      "narration": "The main lessons were native platform compatibility, consistent evaluation horizons, honest timing boundaries and complete evidence references. Keep required models, lab volumes, executed notebooks and source. Remove only verified reproducible build intermediates, never unreviewed data. Review the pitch, output gallery, summary and resource credits. Upload the compulsory video under three minutes to an accessible YouTube or Vimeo link. This longer guide is supporting material; submit the event form manually."
+    }
+  ],
+  "container_duration_seconds": 377.99
+}

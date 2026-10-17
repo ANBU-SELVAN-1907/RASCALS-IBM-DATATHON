@@ -1,0 +1,15 @@
+{
+  "architecture": "s390x",
+  "toolkit_registry_entitlement": "not configured",
+  "toolkit_container_executed": false,
+  "hardware_acceleration_verified": false,
+  "applied_use": "IBM deployment guidance and supported-family ONNX preparation",
+  "candidate": "RandomForestClassifier 40 trees, depth 7; validation only; not deployed",
+  "training_rows": 53106,
+  "fit_seconds": 3.027,
+  "validation_pr_auc": 0.6227634877700291,
+  "onnx_checker": "passed",
+  "onnx_sha256": "a43825a53d06241a1858aae5d7bd4e6623c52a4a7f7275263e219b081ba2c87a",
+  "source": "https://github.com/IBM/ai-toolkit-for-z-and-linuxone",
+  "scope": "Preparation is not Snap ML inference. Deployed HistGradientBoostingClassifier is not advertised as directly supported by Snap ML model import. Entitlement, model-import parity, calibration and policy validation are required before changing serving."
+}

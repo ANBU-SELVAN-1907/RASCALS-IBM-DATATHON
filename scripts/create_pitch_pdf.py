@@ -15,6 +15,8 @@ TEAM=read('submission/team.json');CHECK=read('artifacts/correctness-report.json'
 HTTP=read('artifacts/http-benchmark.json')['trials'][-1]
 GEN=read('evidence/jupyter-ai-proof.json')['generative_explanation']
 DEMO=read('evidence/demo-verification.json')
+OBS=read('artifacts/measured/report.json')
+SCENARIOS=read('artifacts/scenarios/outputs.json')['scenarios']
 W,H=960,540
 INK='#173E34';GREEN='#197762';MUTED='#60776C';PAPER='#F7F9F3';LINE='#D9E3D8';PALE='#E7EFE2'
 c=canvas.Canvas(str(OUT),pagesize=(W,H),pageCompression=1)
@@ -35,7 +37,9 @@ def wrap(x,y,s,width,size=16,color=MUTED,leading=None,bold=False):
     return y+len(lines)*leading
 def start(n,title,subtitle=''):
     rect(0,0,W,H,PAPER);text(36,20,TEAM['project_title'],10,GREEN,True)
-    text(36,65,title,30,INK,True)
+    size=30
+    while stringWidth(title,'Helvetica-Bold',size)>888:size-=1
+    text(36,65,title,size,INK,True)
     if subtitle:wrap(36,109,subtitle,884,13)
     rect(36,498,888,1,LINE);text(36,513,'CONTINUITYGUARD | Synthetic telemetry; no patient data | Public source and measured evidence',8,MUTED)
     text(898,513,f'{n:02}',8,MUTED)
@@ -59,7 +63,7 @@ text(36,369,TEAM['institution'],17,MUTED)
 link(36,447,'Public code: github.com/ANBU-SELVAN-1907/RASCALS-IBM-DATATHON','https://github.com/ANBU-SELVAN-1907/RASCALS-IBM-DATATHON',12)
 end()
 
-start(2,'A system failure can interrupt essential care','Our target users are hospital IT operators responsible for shared digital-service infrastructure.')
+start(2,'Problem statement','Identify abnormal system activity as it happens and alert organizations before a major disruption. Target users: hospital IT operators.')
 text(36,172,'1,294+',44,GREEN,True);text(36,228,'outpatient appointments postponed',17,INK,True)
 wrap(36,271,'NHS England reported this disruption across two affected trusts for 10-16 June 2024 after the Synnovis cyber incident.',390,16)
 link(36,377,'Source: NHS England, 20 June 2024','https://www.england.nhs.uk/london/2024/06/20/update-on-cyber-incident-clinical-impact-in-south-east-london-thursday-20-june/',11)
@@ -69,7 +73,7 @@ text(506,343,'The decision we support',20,GREEN,True)
 wrap(506,381,'Which dependency needs attention, which software services matter most, and what should an operator inspect next?',392,18,INK)
 end()
 
-start(3,'The complete path runs on LinuxONE','The browser is a client through SSH. Telemetry, inference, local generation and the journal stay in the provided VM.')
+start(3,'Solution: a warning-to-decision pipeline','The browser uses TLS or SSH. Telemetry, inference, local generation and the journal stay in the LinuxONE VM.')
 rect(36,165,888,83,PALE);text(53,176,'JUPYTER CONTAINER / NATIVE s390x',12,GREEN,True)
 text(53,204,'Fit candidates > separate calibration > validation policy > fresh final test > hashed model',17,INK)
 for i,(a,b) in enumerate([('Ingest','Validated queue'),('Observe','Causal features'),('Score','Forecast + guard'),('Decide','Evidence + runbook')]):
@@ -112,7 +116,13 @@ text(36,472,'*Among early detections only. Zero healthy-run alerts in 10 service
 end()
 
 start(7,'The response is inspectable and bounded','Evidence, service priorities, approved investigation steps and a reproducible response preview form one decision workflow.')
-shot('evidence/dashboard.png',36,155,382,324,crop=(870,1010,1235,1430))
+rect(36,155,382,324,PALE)
+text(51,171,'ACTUAL SAVED APPLICATION OUTPUT',11,GREEN,True)
+wrap(51,204,DEMO['explanation']['summary'],352,15,INK)
+preview=DEMO['response_preview']
+text(51,340,f"+{preview['urgent_success_difference']} successful urgent-results transactions",14,GREEN,True)
+wrap(51,370,f"Modeled breach: {preview['urgent_breach_seconds_without']} s without action to {preview['urgent_breach_seconds_with']} s with action. Tradeoff: {preview['deferred_batch_requests']} optional requests deferred.",350,14,INK)
+text(51,451,'Source: evidence/demo-verification.json / synthetic scenario',9,MUTED)
 text(460,166,'Predictive + generative, locally verified',20,GREEN,True)
 wrap(460,212,f"Granite generated schema-validated wording on s390x in {GEN['elapsed_seconds']:g} seconds in the Jupyter proof. Every evidence ID cited in the summary is retained.",450,17,INK)
 wrap(460,320,'The preview compares allowlisted actions under identical future demand/noise. It reports benefits with deferred optional work. It executes no real remediation.',450,16)
@@ -124,12 +134,55 @@ text(36,163,CHECK['tests_run'],48,GREEN,True);text(36,220,'native tests passed',
 wrap(36,269,'Checks cover leakage, online/offline parity, time gaps, invalid inputs, provenance, overload, consumer failure, model corruption and grounded fallback.',400,15)
 text(36,379,f"{HTTP['processed_events']}/{HTTP['offered_events']} events processed",22,GREEN,True)
 wrap(36,416,f"Real local HTTP path: 100 offered events/s for 10 s. Queue-ack p95 {HTTP['p95_http_queue_ack_ms']:g} ms; queue wait and inference are distinct boundaries.",405,13)
-card(490,163,434,'Application containment','UID 1000 / read-only root / capabilities dropped / no-new-privileges / 2 GiB memory / 1.5 CPU quota / SSH loopback access')
+card(490,163,434,'Application containment','UID 1000 / read-only root / capabilities dropped / no-new-privileges / 2 GiB memory / 1.5 CPU quota / Authenticated TLS / SSH')
 shot('evidence/evaluation.png',490,322,434,126,crop=(250,995,850,1170))
 wrap(505,458,'Actual live proof excerpt. Full screenshot and model hash are in evidence/. No accelerator claim.',400,10)
 end()
 
-start(9,'An accountable path from warning to action','Original integration and measured implementation, with limits that operators and judges can inspect.')
+start(9,'Scenarios: normal change is not always failure','Fixed seed 101 / severity 1.12 / frozen v3 model. These are synthetic illustrations, not a new independent test.')
+for x,label in zip([36,400,620,775],['Scenario','All-service alerts','Urgent warning','Urgent breach']):text(x,164,label,12,MUTED,True)
+for i,row in enumerate(SCENARIOS):
+    y=198+i*34
+    if i%2==0:rect(30,y-4,894,31,PALE)
+    vals=[row['scenario'].replace('_',' '),row['all_service_alerts'],', '.join(str(t)+' s' for t in row['urgent_alert_seconds']) or 'None',str(row['first_urgent_sustained_breach_second'])+' s' if row['first_urgent_sustained_breach_second'] is not None else 'None']
+    for x,v in zip([36,400,620,775],vals):text(x,y,v,15,INK)
+wrap(36,453,'Pool and retry examples warn before sustained breach. Abrupt failure is detected at onset. The memory example alerts another service; it does not invent an urgent-service breach.',875,12)
+end()
+
+start(10,'Original data: measured on this LinuxONE VM','64 actual service observations / bounded request computation / raw CSV, timestamps and SHA-256 retained. No patient or hospital data.')
+shot('artifacts/measured/observed-service.png',36,159,590,290)
+text(655,169,'Observed baseline check',15,GREEN,True)
+text(655,201,f"{OBS['phase_results']['baseline_check']['median_request_p95_ms']:.2f} ms",31,INK,True)
+text(655,260,'Controlled compute pressure',15,GREEN,True)
+text(655,292,f"{OBS['phase_results']['controlled_compute_pressure']['median_request_p95_ms']:.2f} ms",31,INK,True)
+wrap(655,355,'Median measured request p95 across windows. All 12 pressure windows exceeded the fit-baseline novelty cutoff; 2 recovery windows also did.',260,13)
+wrap(36,458,'Separate small novelty experiment. It does not validate the simulator-trained breach model, production recall or real outage prevention.',880,12)
+end()
+
+start(11,'What makes the integration distinctive','The useful output is an inspectable operational decision, not an unexplained anomaly score.')
+for i,(title,body) in enumerate([('Retain the warning evidence','Measurements and declared downstream priorities remain attached to each incident.'),('Constrain local explanation','Granite selects verified wording and complete evidence IDs; invalid generation is explicit.'),('Preview the tradeoff','Compare allowlisted action and no action under the same synthetic future workload.')]):
+    x=36+304*i;text(x,178,str(i+1).zfill(2),32,GREEN,True);wrap(x,232,title,270,23,INK,bold=True);wrap(x,314,body,270,17)
+rect(36,433,888,1,LINE)
+text(36,457,'Established algorithms; original project integration. No world-first or autonomous-prevention claim.',12,MUTED)
+end()
+
+start(12,'Learnings during the datathon','Changes we can explain from actual implementation, tests and corrected evidence.')
+lessons=[('Platform reality','RHEL, Podman and native s390x packages required different setup from Ubuntu examples.'),('Evaluation alignment','A 60-second prediction needs a matching horizon; correcting it reduced the headline.'),('Timing boundaries','Queue acceptance, inference and completed processing are different measurements.'),('Grounded generation','Every evidence reference must match the generated wording; fallback must be labeled.'),('Data provenance','Measured request behavior, controlled simulation and production hospital data are different.')]
+for i,(title,body) in enumerate(lessons):
+    y=163+i*60;text(36,y,str(i+1).zfill(2),20,GREEN,True);text(82,y,title,17,INK,True);wrap(82,y+25,body,827,13)
+end()
+
+start(13,'Implementation and IBM Toolkit fit','Five native Jupyter notebooks, a deployed service, and a documented optional serving path.')
+steps=[('01 / Prepare','Provision the VM, complete assigned labs and retain persistent Jupyter storage.'),('02 / Train and verify','Fit/calibrate/select, then review fresh final results and engineering tests.'),('03 / Measure and deploy','Collect original service measurements; build the resource-limited app and verify its journal.'),('04 / Demonstrate','Open authenticated TLS by IP, inspect an alert and explain/preview the next step.')]
+for i,(title,body) in enumerate(steps):
+    y=164+i*72;text(36,y,title,16,GREEN,True);wrap(36,y+26,body,440,14)
+text(530,164,'IBM AI Toolkit',23,GREEN,True)
+wrap(530,210,'Applied deployment guidance: separate functions, non-root app, read-only root, no-new-privileges, TLS and authentication.',388,16,INK)
+wrap(530,314,'Snap ML preparation: a separate supported-family Random Forest candidate was trained and ONNX-checked on s390x. It is not the deployed model.',388,15)
+wrap(530,415,'Registry access is unavailable. Supported Toolkit container execution and AI acceleration are not claimed.',388,12)
+end()
+
+start(14,'An accountable path from warning to action','Original integration and measured implementation, with limits that operators and judges can inspect.')
 card(36,163,280,'Community value','Earlier investigation of shared service failures; preserve attention for essential software services.')
 card(340,163,280,'Engineering evidence','Native notebooks, actual API ingestion, model hashes, failure tests and local explanations.')
 card(644,163,280,'Next validation','Authorized real telemetry, operator feedback, domain calibration and reviewed runbooks before operational use.')
@@ -139,4 +192,4 @@ wrap(36,461,'AI assistance is disclosed. Open-source resources and a criterion-b
 end()
 c.save()
 assert OUT.stat().st_size<5_000_000
-print(OUT,OUT.stat().st_size,'bytes / 9 pages')
+print(OUT,OUT.stat().st_size,'bytes / 14 pages')

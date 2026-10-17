@@ -1,0 +1,45 @@
+{
+  "architecture": "s390x",
+  "collected_utc": "2026-10-17T11:33:58.809470+00:00",
+  "data_kind": "Original measured service timings and process counters on the assigned LinuxONE VM",
+  "csv_sha256": "03de08d83fd5a646959e0c5ce9555d22d5c60c00f740c94d97c1a76255b6574b",
+  "rows": 64,
+  "features": [
+    "request_latency_p95_ms",
+    "process_cpu_percent"
+  ],
+  "model": "IsolationForest, 100 trees, 30 baseline observations; 95th-percentile fit-only cutoff",
+  "phase_results": {
+    "baseline_fit": {
+      "observations": 30,
+      "median_request_p95_ms": 0.9986075,
+      "above_baseline_cutoff": 2,
+      "failed_requests": 0
+    },
+    "baseline_check": {
+      "observations": 10,
+      "median_request_p95_ms": 0.975139,
+      "above_baseline_cutoff": 0,
+      "failed_requests": 0
+    },
+    "controlled_compute_pressure": {
+      "observations": 12,
+      "median_request_p95_ms": 81.641808,
+      "above_baseline_cutoff": 12,
+      "failed_requests": 0
+    },
+    "recovery": {
+      "observations": 12,
+      "median_request_p95_ms": 1.0119,
+      "above_baseline_cutoff": 2,
+      "failed_requests": 0
+    }
+  },
+  "scope": "Bounded localhost hash-computation microservice. Pressure annotation identifies actual increased computation, not a production failure or hospital outage. No synthetic pool/retry values are added. This separate novelty experiment does not validate or replace the simulator-trained 60-second breach model.",
+  "limitations": [
+    "Single short experiment on one VM",
+    "Only four actual requests per measurement window; p95 is descriptive",
+    "Baseline fit is small and noise/resource contention may affect scores",
+    "No real disruption, incident recall, causal prevention or cross-domain claim"
+  ]
+}

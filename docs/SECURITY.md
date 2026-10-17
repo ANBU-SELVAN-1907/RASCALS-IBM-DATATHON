@@ -1,7 +1,7 @@
 # Security and deployment boundaries
 
-- The app binds to VM loopback. Access uses an SSH tunnel; no public app/notebook firewall opening is needed.
-- A private random app token creates an HTTP-only SameSite=Strict session cookie. The cookie is not marked Secure because the browser-facing connection is localhost HTTP inside the SSH route. Public hosting would require HTTPS, stronger authentication, session management and explicit review.
+- The app binds to VM loopback. Access uses SSH or the dedicated TLS proxy on public ports 8443/8888. Backend ports stay private. See PUBLIC-ACCESS.md for certificate verification and the narrow SELinux policy.
+- A private random app token creates an HTTP-only SameSite=Strict session cookie. The cookie is marked Secure when the request scheme is HTTPS, including the loopback trusted TLS proxy. HTTP localhost access inside the SSH route remains supported. Public access retains token authentication; production still needs stronger identity and session management.
 - API reads except health require a session/bearer token. POST requests require an operator header and matching browser origin when Origin is present. Inputs have bounded batch length, ranges and finite-number validation.
 - The ingestion queue has 128 batches, each at most 128 events. Queue saturation returns 429 with visible rejection counters. A deduplication cache retains 5,000 IDs; duplicates older than this retention may be rejected by event-time ordering rather than recognized as duplicates.
 - Rolling feature history, in-memory incidents/charts and model caches are bounded. The SQLite telemetry journal retains the most recent 5,000 events. Audit history persists and grows; production needs an archive/retention strategy and disk monitoring.

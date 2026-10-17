@@ -17,7 +17,7 @@ A validated bounded queue feeds causal rolling features on LinuxONE. A calibrate
 ## IBM Z / LinuxONE use
 
 ```text
-Training, testing, scoring, novelty, local Granite, API processing and SQLite journaling execute natively on our LinuxONE Community Cloud s390x VM. Three saved Jupyter notebooks retain outputs, model hashes and failure tests. Podman runs the app as UID 1000 with a read-only root, CPU/memory/PID limits, dropped capabilities, no-new-privileges and SSH loopback access. 36 native tests passed. A real local HTTP/queue/journal trial processed 1000/1000 synthetic window events at 100 offered events/s over 10 seconds. Platform screenshots and verification outputs are public. The two relevant provided sample labs executed before project work; exact organizer prerequisite mapping still needs confirmation. We do not claim z/OS integration, AI hardware acceleration or production-scale performance.
+Training, testing, scoring, novelty, local Granite, API processing and SQLite journaling execute natively on our LinuxONE Community Cloud s390x VM. Five saved Jupyter notebooks retain outputs, model hashes and failure tests. Podman runs the app as UID 1000 with a read-only root, CPU/memory/PID limits, dropped capabilities, no-new-privileges and authenticated TLS/SSH access. 37 native tests passed. A real local HTTP/queue/journal trial processed 1000/1000 synthetic window events at 100 offered events/s over 10 seconds. Platform screenshots and verification outputs are public. The two relevant provided sample labs executed before project work; exact organizer prerequisite mapping still needs confirmation. We do not claim z/OS integration, AI hardware acceleration or production-scale performance.
 ```
 
 ## Value and beneficiaries
@@ -32,6 +32,9 @@ Hospital IT operators benefit from one reviewable path from warning to evidence,
 https://github.com/linuxone-community-cloud/jupyter-lab-ml
 https://scikit-learn.org/
 https://numpy.org/
+https://github.com/IBM/ai-toolkit-for-z-and-linuxone
+https://onnx.ai/
+https://github.com/onnx/sklearn-onnx
 https://scipy.org/
 https://joblib.readthedocs.io/
 https://fastapi.tiangolo.com/

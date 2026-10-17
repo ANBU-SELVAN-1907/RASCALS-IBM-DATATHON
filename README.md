@@ -10,6 +10,18 @@ Detect developing system faults from incoming telemetry, inspect an evidence-lin
 
 **Scope:** an operational research prototype with controlled synthetic telemetry. It is not production hospital validation and has not prevented a measured real outage. There is no guarantee of full marks, universal detection or superiority over every baseline.
 
+## Start with the complete guide and outputs
+
+- [Complete problem, solution, model and implementation summary](SUMMARY.md)
+- [Output gallery and scenario results](docs/OUTPUTS.md)
+- [Public-IP Jupyter/dashboard access and certificate check](docs/PUBLIC-ACCESS.md)
+- [IBM Toolkit: applied guidance, ONNX preparation and entitlement boundary](docs/IBM-TOOLKIT.md)
+- [Datathon learnings](SUMMARY.md#14-learnings-during-the-datathon)
+
+The main evaluation uses declared **synthetic** scenarios. A separate native notebook now retains **original measured service data**, raw timestamps/counters and its provenance hash. These evidence classes are not interchangeable.
+
+[Short submission walkthrough](submission/RASCALS-ContinuityGuard-Walkthrough.mp4) / [extended setup guide](submission/RASCALS-Implementation-Guide.mp4), Full HD with labeled synthetic narration.
+
 ## Review the submission
 
 - [Pitch PDF](submission/RASCALS-ContinuityGuard-Pitch.pdf), [narrated evidence walkthrough](submission/RASCALS-ContinuityGuard-Walkthrough.mp4), [form answers](submission/FORM-ANSWERS.md).
@@ -30,7 +42,7 @@ On 60 fresh synthetic runs, both ContinuityGuard and static thresholds warned be
 
 The current model is **boosted_trees_7_leaves**, with sigmoid calibration and a **guarded_forecast** policy at **0.97**. In v3, learned risk OR static thresholds can trigger persistence. Isolation Forest is a separate novelty signal; novelty is not an outage probability or an independent paging trigger. The 60-second forecast and early matching window agree.
 
-36 native tests passed. Actual local authenticated HTTP ingestion processed 1000/1000 events at 100 offered events/s in a 10-second trial. Read [measurement boundaries and uncertainty](docs/RESULTS.md) before quoting latency. Model hash and environment are in [manifest](artifacts/manifest.json).
+37 native tests passed. Actual local authenticated HTTP ingestion processed 1000/1000 events at 100 offered events/s in a 10-second trial. Read [measurement boundaries and uncertainty](docs/RESULTS.md) before quoting latency. Model hash and environment are in [manifest](artifacts/manifest.json).
 
 ![Actual operator console](evidence/dashboard.png)
 
@@ -41,6 +53,8 @@ Open `shared/continuityguard/notebooks` in the supplied native s390x environment
 1. `01_train_and_evaluate.ipynb`: fit, calibrate, select and evaluate.
 2. `02_test_and_benchmark.ipynb`: correctness and direct-engine timing.
 3. `03_engineering_audit.ipynb`: final suite, actual isolated HTTP integration and local predictive/generative proof.
+4. `04_original_measurements.ipynb`: original measured service timings and a separate novelty fit.
+5. `05_toolkit_readiness.ipynb`: Random Forest and checked ONNX export; no entitled Toolkit execution claim.
 
 Each source notebook has a retained executed copy and success record. Rerunning frozen final seeds is reproduction, not a new independent test. The v1/v2 development reports remain in artifacts. See [methodology](docs/METHODOLOGY.md), [data card](docs/DATA-CARD.md) and [model card](docs/MODEL-CARD.md).
 
@@ -51,7 +65,9 @@ python scripts/execute_notebook.py notebooks/03_engineering_audit.ipynb
 python scripts/validate_submission.py
 ```
 
-## Open the private application
+## Open Jupyter and the dashboard
+
+Assigned VM: **https://148.100.99.173:8888/lab** for Jupyter and **https://148.100.99.173:8443** for the dashboard. Verify the short-lived certificate fingerprint in [public access](docs/PUBLIC-ACCESS.md) manually, then enter the appropriate private token. Both run on IBM LinuxONE. SSH is also supported:
 
 ```powershell
 ssh -i "C:\path\to\your-key.pem" -N -o ExitOnForwardFailure=yes -L 127.0.0.1:8080:127.0.0.1:8080 -L 127.0.0.1:38888:127.0.0.1:38888 linux1@YOUR_VM_IP
@@ -72,7 +88,7 @@ python3 scripts/deploy_linuxone.py /absolute/project/path --replace
 python3 scripts/verify_linuxone.py /absolute/project/path --restart --demo
 ```
 
-The host is RHEL 9.8, with Podman. The app is UID 1000, read-only root, capped CPU/memory/PIDs, capabilities dropped and no-new-privileges. It binds loopback through SSH; host networking is an explicit tradeoff. [Deployment](docs/DEPLOYMENT.md) records the pinned-image compatibility path and restart behavior. Do not run a development server on occupied port 8080; use `CG_PORT=8081` for an independent instance.
+The host is RHEL 9.8, with Podman. The app is UID 1000, read-only root, capped CPU/memory/PIDs, capabilities dropped and no-new-privileges. Its backend binds loopback; SSH or an authenticated TLS proxy provides access. Host networking is an explicit tradeoff. [Deployment](docs/DEPLOYMENT.md) records the pinned-image compatibility path and restart behavior. Do not run a development server on occupied port 8080; use `CG_PORT=8081` for an independent instance.
 
 ## Repository organization
 

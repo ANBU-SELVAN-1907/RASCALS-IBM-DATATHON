@@ -42,7 +42,7 @@ The source-model card is not a claim that we performed an independent conversion
 
 The prerequisite examples also use [PyTorch](https://pytorch.org/); their upstream notebook source and data are credited to the organizer-linked repository, not presented as original project code.
 
-Submission-media tooling additionally uses [ReportLab](https://github.com/MrBitBucket/reportlab-mirror), [Pillow](https://github.com/python-pillow/Pillow), [pypdfium2](https://github.com/pypdfium2-team/pypdfium2), [imageio-ffmpeg](https://github.com/imageio/imageio-ffmpeg) and its bundled [FFmpeg](https://ffmpeg.org/). Review their respective licenses when redistributing tools; only generated media is included here. Microsoft Zira/System.Speech supplies the labeled synthetic narration on Windows; it is not an open-source model or a team member's voice.
+Submission-media tooling additionally uses [ReportLab](https://github.com/MrBitBucket/reportlab-mirror), [Pillow](https://github.com/python-pillow/Pillow), [pypdfium2](https://github.com/pypdfium2-team/pypdfium2), [imageio-ffmpeg](https://github.com/imageio/imageio-ffmpeg) and its bundled [FFmpeg](https://ffmpeg.org/). Review their respective licenses when redistributing tools; only generated media is included here. Windows System.Speech supplies the labeled synthetic narration on Windows; it is not an open-source model or a team member's voice.
 
 OpenAI Codex assisted with architecture, implementation, debugging, training orchestration, tests, documentation and submission preparation in this chat at the participant's request. The team is responsible for understanding, verifying, and submitting the work in accordance with organizer guidance. Do not describe the project as unaided or hide assistance in response to a judging question. Assistance is not a claim of IBM endorsement or of originality beyond the specific implementation.
 
@@ -50,3 +50,11 @@ No other team's codebase was imported as the application. The mandatory IBM samp
 
 
 Additional references: [IBM Journey to AI on Z](https://www.ibm.com/support/z-content-solutions/journey-to-ai-on-z/) explains native AI deployment context. [NHS England, 20 June 2024](https://www.england.nhs.uk/london/2024/06/20/update-on-cyber-incident-clinical-impact-in-south-east-london-thursday-20-june/) supports the slide's 1,294 postponed-appointment context for 10-16 June across two affected trusts. The prototype was not evaluated on that incident and does not claim to prevent ransomware. [Prettier](https://github.com/prettier/prettier) formatted the interface source. The participant supplied the copied submission-guidelines reference; its requirements are not evidence of organizer acceptance.
+
+## Additional measured-data and Toolkit preparation resources
+
+- [AI Toolkit for IBM Z and IBM LinuxONE](https://github.com/IBM/ai-toolkit-for-z-and-linuxone): deployment guidance; supported Toolkit container execution is not claimed.
+- [IBM Snap ML container documentation](https://github.com/IBM/ibmz-accelerated-for-snapml) and [model import](https://snapml.readthedocs.io/en/latest/model_import.html): optional future entitled path.
+- [ONNX](https://onnx.ai/) and [sklearn-onnx](https://github.com/onnx/sklearn-onnx): actual separate challenger export and structural check.
+- [Nginx](https://nginx.org/) and [OpenSSL](https://www.openssl.org/): actual authenticated TLS frontend.
+- Original measured service data: collected by this project's measurement code on the assigned LinuxONE VM. There is no external dataset to credit for that CSV.

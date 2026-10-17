@@ -1,0 +1,20 @@
+[
+  {
+    "file": "submission/RASCALS-ContinuityGuard-Walkthrough.mp4",
+    "container_duration_seconds": 164.6,
+    "full_decode": "passed",
+    "resolution": "1920x1080",
+    "video_codec": "H.264",
+    "audio_codec": "AAC",
+    "bytes": 4116046
+  },
+  {
+    "file": "submission/RASCALS-Implementation-Guide.mp4",
+    "container_duration_seconds": 377.99,
+    "full_decode": "passed",
+    "resolution": "1920x1080",
+    "video_codec": "H.264",
+    "audio_codec": "AAC",
+    "bytes": 8819986
+  }
+]

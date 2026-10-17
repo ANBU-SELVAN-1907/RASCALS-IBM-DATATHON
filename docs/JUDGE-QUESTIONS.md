@@ -4,13 +4,13 @@
 
 2. **What is the exact title and team?** RASCALS_IBM Z Datathon 2026 Project / ContinuityGuard. ANBU SELVAN T; SAHANA G; DHARSHINI E; POOJA V. Hindustan Institute of Technology and Science.
 
-3. **What actually runs on LinuxONE?** The native Jupyter training/test kernels, simulator, causal features, forecast, novelty estimator, API, SQLite journal and local Granite. The browser is a client through SSH. Show the live platform proof, model hash and executed notebooks.
+3. **What actually runs on LinuxONE?** The native Jupyter training/test kernels, simulator, causal features, forecast, novelty estimator, API, SQLite journal and local Granite. The browser is a client through TLS or SSH. Show the live platform proof, model hash and executed notebooks.
 
 4. **Why LinuxONE rather than a logo in the slides?** Prediction and local generation execute on s390x beside the prototype telemetry/journal, without exporting telemetry to a remote model API. Containers and verified resource/security controls are applied to this actual runtime. No comparative speed superiority is claimed.
 
 5. **Is this IBM Machine Learning for z/OS?** No. This is open-source AI on LinuxONE Community Cloud Linux. We do not claim z/OS integration, z/OS transactions, Telum/Spyre acceleration or certification.
 
-6. **What does Jupyter prove?** Three native notebooks retain fitting, calibration, selection, evaluation, tests, actual HTTP integration and local generation. Their executed copies, success records and architecture/model outputs are in the repository.
+6. **What does Jupyter prove?** Five native notebooks retain fitting, calibration, selection, evaluation, tests, actual HTTP integration and local generation. Their executed copies, success records and architecture/model outputs are in the repository.
 
 7. **Have both mandatory labs been completed?** The Churn multi-model and Loan predictive/generative sample notebooks executed before original project work. Their timestamps and source commit are recorded. The organizer must confirm the exact mapping to its assigned prerequisites; execution alone is not a course-completion certificate.
 
@@ -48,11 +48,11 @@
 
 24. **Is the journal tamper-proof?** No. It checks hash links and retains history across restart; externally retain a trusted head to detect whole-history replacement. Signed provenance and external anchoring would be production work.
 
-25. **What do the latency numbers include?** The actual local HTTP test processed 1000/1000 synthetic fixture events at 100 offered events/s over 10 seconds. Queue-ack p95 8.032 ms excludes later processing; engine-batch p95 29.31 ms excludes queue wait. Client/server share the VM; no WAN/browser or maximum sustained-capacity claim.
+25. **What do the latency numbers include?** The actual local HTTP test processed 1000/1000 synthetic fixture events at 100 offered events/s over 10 seconds. Queue-ack p95 8.006 ms excludes later processing; engine-batch p95 8.89 ms excludes queue wait. Client/server share the VM; no WAN/browser or maximum sustained-capacity claim.
 
 26. **What security controls were verified?** UID 1000, read-only root, CPU/memory/PID caps, dropped capabilities, no-new-privileges, loopback/SSH, schema/actual body limits, authentication and origin checks. Host networking and single-token access remain explicit prototype limits.
 
-27. **How do you know the implementation works?** 36 native tests pass; inspect the actual test names/output. Additional HTTP, real Granite, container, restart and browser checks retain measured evidence. Passing tests does not prove absence of every bug.
+27. **How do you know the implementation works?** 37 native tests pass; inspect the actual test names/output. Additional HTTP, real Granite, container, restart and browser checks retain measured evidence. Passing tests does not prove absence of every bug.
 
 28. **What remains before adoption/submission?** Production adoption needs authorized real telemetry, domain evaluation/calibration, reviewed response steps, identity/operations hardening and reliability trials. Event submission still needs prerequisite mapping confirmation, reviewed YouTube/Vimeo hosting and manual portal entry.
 

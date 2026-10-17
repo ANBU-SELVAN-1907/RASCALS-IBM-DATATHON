@@ -1,0 +1,14 @@
+{
+  "configured_utc": "2026-10-17T11:33:42.951135+00:00",
+  "jupyter_url": "https://148.100.99.173:8888/lab",
+  "dashboard_url": "https://148.100.99.173:8443",
+  "tls": "TLS 1.2/1.3; self-signed short-lived certificate",
+  "certificate": "sha256 Fingerprint=3F:E1:FD:8C:62:B1:75:73:60:70:92:5A:7A:4D:E0:20:B9:F2:93:F4:BC:07:0E:D4:B3:89:A0:2E:7E:28:54:B4\nnotBefore=Oct 17 11:33:42 2026 GMT\nnotAfter=Oct 24 11:33:42 2026 GMT\n",
+  "authentication": "Existing separate Jupyter/app tokens retained",
+  "private_backends": [
+    "127.0.0.1:38888",
+    "127.0.0.1:8080"
+  ],
+  "verification": "Both public TLS endpoints returned HTTP 200 from participant computer with the certificate verified; see public-connectivity.json. Browser certificate trust remains a manual user step.",
+  "note": "User must verify fingerprint and handle browser trust warning; agent does not bypass certificate interstitials. Do not send tokens over plain HTTP."
+}
